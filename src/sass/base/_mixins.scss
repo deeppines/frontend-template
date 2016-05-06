@@ -1,0 +1,133 @@
+//====================================//
+//
+//		Mixins library ver 0.1
+//
+//===================================//
+
+
+/// Clearfix
+
+@mixin clearfix {
+	*zoom: 1;
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+/// Text Shadow
+/// $x [2px] - X
+/// $y [2px] - Y
+/// $blur [2px] - Blur
+/// $color [rgba(0,0,0,.4)] - Color
+
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+    text-shadow: $x $y $blur $color;
+}
+
+/// Box Shadow
+/// $x [0px] - X
+/// $y [1px] - Y
+/// $blur [2px] - Blur
+/// $color [rgba(0,0,0,0.25)] - Color
+
+@mixin box-shadow ($x: 0, $y: 1px, $blur: 2px, $spread: 0, $color: rgba(0,0,0, 0.25)) {
+	-webkit-box-shadow: $x $y $blur $spread $color;
+	-moz-box-shadow:    $x $y $blur $spread $color;
+	box-shadow:         $x $y $blur $spread $color;
+}
+
+/// Inner Shadow
+/// $x [0px] - X
+/// $y [1px] - Y
+/// $blur [2px] - Blur
+/// $color [rgba(0,0,0,0.25)] - Color
+
+@mixin inner-shadow ($x: 0, $y: 1px, $blur: 2px, $spread: 0, $color: rgba(0,0,0, 0.25)) {
+	-webkit-box-shadow: inset $x $y $blur $spread $color;
+	-moz-box-shadow:    inset $x $y $blur $spread $color;
+	box-shadow:         inset $x $y $blur $spread $color;
+}
+
+/// Gradient
+/// $startColor [#3C3C3C] - Start Color
+/// $endColor [#999999] - End Color
+
+@mixin gradient($startColor: #3C3C3C, $endColor: #999999) {
+    background-color: $startColor;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+    background-image:    -moz-linear-gradient(top, $startColor, $endColor);
+    background-image:     -ms-linear-gradient(top, $startColor, $endColor);
+    background-image:      -o-linear-gradient(top, $startColor, $endColor);
+    background-image:         linear-gradient(top, $startColor, $endColor);
+    filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');
+}
+
+/// Horizontal Gradient
+/// $startColor [#3C3C3C] - Start Color
+/// $endColor [#999999] - End Color
+
+@mixin gradient-horizontal($startColor: #3C3C3C, $endColor: #999999) {
+    background-color: $startColor;
+    background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(left, $startColor, $endColor);
+    background-image:    -moz-linear-gradient(left, $startColor, $endColor);
+    background-image:     -ms-linear-gradient(left, $startColor, $endColor);
+    background-image:      -o-linear-gradient(left, $startColor, $endColor);
+    background-image:         linear-gradient(left, $startColor, $endColor);
+    filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}', gradientType='1');
+}
+
+/// Translate
+/// $x [0] - X
+/// $y [0] - Y
+
+@mixin translate ($x, $y:0) {
+	-webkit-transform:   translate($x, $y);
+	-moz-transform: 	 translate($x, $y);
+	-ms-transform: 		 translate($x, $y);
+	-o-transform: 		 translate($x, $y);
+	transform: 		     translate($x, $y);
+}
+
+/// Rotate
+/// $deg [0] - degree
+
+@mixin rotate ($deg: 0) {
+	-webkit-transform:   rotate($deg);
+	-moz-transform: 	 rotate($deg);
+	-ms-transform: 		 rotate($deg);
+	-o-transform: 		 rotate($deg);
+	transform: 		     rotate($deg);
+}
+
+/// Transition
+///
+///
+
+@mixin transition ($transition) {
+	-webkit-transition: $transition;
+	-moz-transition:    $transition;
+	-ms-transition:     $transition;
+	-o-transition:      $transition;
+	transition:         $transition;
+}
+
+/// Placeholder text
+/// $color [#eee] - placeholder color
+///
+
+@mixin placeholder($color: #eee ) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}

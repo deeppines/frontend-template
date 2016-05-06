@@ -1,0 +1,102 @@
+//===============================
+//
+// NEWS BLOCK COMPONENT
+//
+//===============================
+
+//=============== SETTING
+
+//== Grid
+//
+//## Setting grid for news block component
+$news-block-postion:        relative;
+$news-block-display:        block;
+$news-block-width:          100%;
+$news-block-height:         auto;
+$news-block-border:         none;
+$news-block-radius:         0;
+$news-block-float:          none;
+
+$news-thumbnail-position:   relative;
+
+//== Colors
+//
+//## Colors for news block component
+
+//== Background
+$news-block-background:     transparent;
+
+//== Link Colors
+$news-link-color:           #337ab7;
+$news-link-color-hover:     darken($news-link-color, 6.5%);
+
+//== Others Colors
+$news-data-color:           #d9534f;
+$preview-color:             #000;
+
+//=============== LAYOUT
+
+.news-block {
+	position:               $news-block-postion;
+	display:                $news-block-display;
+	width:                  $news-block-width;
+	height:                 $news-block-height;
+	border:                 $news-block-border;
+	border-radius:          $news-block-radius;
+	float:                  $news-block-float;
+	background:             $news-block-background;
+
+	.news-thumbnail {
+		position:           $news-thumbnail-position;
+
+		a {
+			color:          $news-link-color;
+
+			&:focus {
+
+			}
+
+			&:hover {
+				color:      $news-link-color-hover;
+			}
+
+			&:active {
+
+			}
+
+			&:focus img {
+
+			}
+
+			&:hover img {
+				background: rgba(255,255,255, .5);
+			}
+
+			&:active img {
+
+			}
+		}
+
+		img {
+
+		}
+
+		&:before {
+
+		}
+
+	}
+
+	.data {
+		color:               $news-data-color;
+
+		&:before {
+			margin-right:    $small-margin; //5px
+		}
+	}
+
+	.preview {
+		color:               $preview-color;
+	}
+
+}

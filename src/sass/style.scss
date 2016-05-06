@@ -1,0 +1,32 @@
+//=========================//
+//
+//			Import
+//
+//=========================//
+
+// CORE IMPORT
+//==========================
+@import "base/base";
+
+// LAYOUT IMPORT
+//==========================
+@import "layout/header";
+@import "layout/footer";
+
+// COMPONENTS IMPORT
+//==========================
+@import "modules/form";
+@import "modules/modal";
+@import "modules/social-block";
+@import "modules/news-block";
+
+// PAGES IMPORT
+//==========================
+@import "pages/home";
+@import "pages/view";
+
+// STATE IMPORT
+//==========================
+
+// VENDORS IMPORT
+//==========================

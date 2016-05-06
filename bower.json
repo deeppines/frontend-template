@@ -1,0 +1,24 @@
+{
+  "name": "smileexpo",
+  "description": "gulp smileexpo project",
+  "main": "",
+  "authors": [
+    "Lucas"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+	"dependencies": {
+    "normalize.css": "*",
+    "jquery": "2.*",
+	"bootstrap": "3.*",
+	"font-awesome": "4.*",
+	"slick-carousel": "1.*",
+	"css-hamburgers": "*"
+  }
+}

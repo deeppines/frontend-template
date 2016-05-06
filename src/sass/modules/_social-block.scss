@@ -1,0 +1,72 @@
+//===============================
+//
+// SOCIAL BLOCK COMPONENT
+//
+//===============================
+
+//============= SETTING
+
+$social-position:                inherit;
+
+$icon-color:                     #000;
+$icon-color-hover:               #fff;
+$icon-color-shadow:              rgba(0,0,0, 0.3);
+$icon-color-shadow-active:       rgba(0,0,0, 0.5);
+
+$icon-display:                   inline-block;
+$icon-margin-right:              5px;
+$icon-margin-bottom:             5px;
+$icon-width:                     30px;
+$icon-height:                    30px;
+$icon-border-weight:             1px;
+$icon-radius:                    0;
+$icon-size:                      16px;
+
+//============= LAYOUT
+
+.social-block {
+	position:                    $social-position;
+	list-style:                  none;
+	padding:                     0;
+	margin:                      0;
+
+	li {
+		display:                 $icon-display;
+		margin-right:            $icon-margin-right;
+		margin-bottom:           $icon-margin-bottom;
+		width:                   $icon-width;
+		height:                  $icon-height;
+		text-align:              center;
+		border:                  $icon-border-weight solid $icon-color;
+		border-radius:           $icon-radius;
+
+		&:last-child {
+			margin-right:        0;
+		}
+
+		a {
+			display:             block;
+			text-decoration:     none;
+			line-height:         $icon-height;
+			font-size:           $icon-size;
+			color:               $icon-color;
+			@include             inner-shadow(0,0,0,0, $icon-color-shadow);
+			@include             transition(all .2s ease-out .1s);
+
+			&:focus {
+				outline:         none;
+			}
+
+			&:hover {
+				text-decoration: none;
+				color:           $icon-color-hover;
+				@include         inner-shadow(0,-30px,0,0, $icon-color-shadow);
+			}
+
+			&:active {
+				text-decoration: none;
+				@include         inner-shadow(0,-30px,0,0, $icon-color-shadow-active);
+			}
+		}
+	}
+}
