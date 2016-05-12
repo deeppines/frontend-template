@@ -16,21 +16,21 @@
 
 // THEME IMPORT
 //==========================
-@import "theme/header"
-@import "theme/main"
-@import "theme/footer"
-
-// COMPONENTS IMPORT
-//==========================
-@import "modules/form";
-@import "modules/modal";
-@import "modules/social-block";
-@import "modules/news-block";
+@import "theme/header";
+@import "theme/main";
+@import "theme/footer";
 
 // PAGES IMPORT
 //==========================
 @import "pages/home";
 @import "pages/view";
+
+// MODULES IMPORT
+//==========================
+@import "modules/form";
+@import "modules/modal";
+@import "modules/social-block";
+@import "modules/news-block";
 
 // VENDORS IMPORT
 //==========================
