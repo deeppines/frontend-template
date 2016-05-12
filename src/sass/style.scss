@@ -1,6 +1,6 @@
 //=========================//
 //
-//			Import
+//			IMPORT
 //
 //=========================//
 
@@ -11,7 +11,14 @@
 // LAYOUT IMPORT
 //==========================
 @import "layout/header";
+@import "layout/main";
 @import "layout/footer";
+
+// THEME IMPORT
+//==========================
+@import "theme/header"
+@import "theme/main"
+@import "theme/footer"
 
 // COMPONENTS IMPORT
 //==========================
@@ -24,9 +31,6 @@
 //==========================
 @import "pages/home";
 @import "pages/view";
-
-// STATE IMPORT
-//==========================
 
 // VENDORS IMPORT
 //==========================
