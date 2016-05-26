@@ -68,11 +68,11 @@ gulp.task('html:build', function () {
 gulp.task('js:build', function () {
     gulp.src(path.src.js) //Найдем наш common файл
         .pipe(rigger()) //Прогоним через rigger
-        .pipe(sourcemaps.init()) //Инициализируем sourcemap
-        .pipe(uglify().on('error', function(e){
-				console.log(e); //При возникновении ошибки покажет где проблема
-			  })) //Сожмем наш js
-        .pipe(sourcemaps.write()) //Пропишем карты
+//        .pipe(sourcemaps.init()) //Инициализируем sourcemap
+//        .pipe(uglify().on('error', function(e){
+//				console.log(e); //При возникновении ошибки покажет где проблема
+//			  })) //Сожмем наш js
+//        .pipe(sourcemaps.write()) //Пропишем карты
         .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
         .pipe(reload({stream: true})); //И перезагрузим сервер
 });
