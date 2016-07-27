@@ -19,12 +19,12 @@ var gulp = require('gulp'),
 //Прописываем объект содержащий все необходимые пути
 var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
-        html: 'build/',
-        js: 'build/js/',
-        css: 'build/css/',
-        img: 'build/images/',
-        fonts: 'build/fonts/',
-		libs: 'build/libs/'
+        html: 'web/',
+        js: 'web/js/',
+        css: 'web/css/',
+        img: 'web/images/',
+        fonts: 'web/fonts/',
+		libs: 'web/libs/'
     },
     src: { //Пути откуда брать исходники
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
@@ -42,13 +42,13 @@ var path = {
         img: 'src/images/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
-    clean: './build'
+    clean: './web'
 };
 
 //Переменная с настройками dev сервера
 var config = {
     server: {
-        baseDir: "./build"
+        baseDir: "./web"
     },
     tunnel: false,
     host: 'localhost',
