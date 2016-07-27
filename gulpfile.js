@@ -174,7 +174,7 @@ gulp.task('filter', function() {
 		.pipe(gulp.dest('dist'));
  
 	// Вываливаем в билд 
-	jsFilter.restore.pipe(gulp.dest('build/libs/'));
+	jsFilter.restore.pipe(gulp.dest('web/libs/'));
  
 	return stream;
 });
