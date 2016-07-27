@@ -8,29 +8,23 @@
 //==========================
 @import "base/base";
 
-// LAYOUT IMPORT
-//==========================
-@import "layout/header";
-@import "layout/main";
-@import "layout/footer";
-
-// THEME IMPORT
-//==========================
-@import "theme/header";
-@import "theme/main";
-@import "theme/footer";
-
-// PAGES IMPORT
-//==========================
-@import "pages/home";
-@import "pages/view";
-
 // MODULES IMPORT
 //==========================
 @import "modules/form";
 @import "modules/modal";
 @import "modules/social-block";
 @import "modules/news-block";
+
+// LAYOUT IMPORT
+//==========================
+@import "layout/header";
+@import "layout/main";
+@import "layout/footer";
+
+// PAGES IMPORT
+//==========================
+@import "pages/home";
+@import "pages/view";
 
 // VENDORS IMPORT
 //==========================
