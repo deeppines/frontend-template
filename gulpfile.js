@@ -82,7 +82,9 @@ gulp.task('style:build', function () {
 	//Кусок для файла style
     gulp.src(path.src.style) //Выберем наш style.scss
 //        .pipe(sourcemaps.init()) //То же самое что и с js
-        .pipe(sass()) //Скомпилируем
+        .pipe(sass({
+			outputStyle: 'expanded'
+		})) //Скомпилируем
         .pipe(prefixer()) //Добавим вендорные префиксы
 //        .pipe(cssmin()) //Сожмем
 //        .pipe(sourcemaps.write())
@@ -92,7 +94,9 @@ gulp.task('style:build', function () {
 	//Кусок для файла media
 	gulp.src(path.src.media) //Выберем наш media.scss
 //        .pipe(sourcemaps.init()) //То же самое что и с js
-        .pipe(sass()) //Скомпилируем
+        .pipe(sass({
+			outputStyle: 'expanded'
+		})) //Скомпилируем
         .pipe(prefixer()) //Добавим вендорные префиксы
 //        .pipe(cssmin()) //Сожмем
 //        .pipe(sourcemaps.write())
