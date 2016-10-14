@@ -90,7 +90,7 @@ gulp.task('style:build', function () {
 //        .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css)) //И в build
         .pipe(reload({stream: true}));
-	
+
 	//Кусок для файла media
 	gulp.src(path.src.media) //Выберем наш media.scss
 //        .pipe(sourcemaps.init()) //То же самое что и с js
@@ -107,18 +107,18 @@ gulp.task('style:build', function () {
 //Таск для переваривания картинок
 gulp.task('image:build', function () {
     gulp.src(path.src.img) //Выберем наши картинки
-        .pipe(imagemin({ //Сожмем их
-            progressive: true,
-            svgoPlugins: [
-                {removeViewBox: false}
-            ],
-			use: [pngquant()]
-        }))
+        // .pipe(imagemin({ //Сожмем их
+        //     progressive: true,
+        //     svgoPlugins: [
+        //         {removeViewBox: false}
+        //     ],
+		// 	use: [pngquant()]
+        // }))
         .pipe(gulp.dest(path.build.img)) //И бросим в build
         .pipe(reload({stream: true}));
 });
 
-//Таск десантирования шрифтов 
+//Таск десантирования шрифтов
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts))
@@ -163,23 +163,23 @@ gulp.task('filter', function() {
 	//Настраиваем фильтры для файлов
 	const jsFilter = filter(['*.js', '!src/vendor'], {restore: true, passthrough: false});
 	const cssFilter = filter(['*.css', '!src/vendor'], {restore: true, passthrough: false});
- 	
+
 	//Для нормальных плагинов отработает этот кусок кода
 	const stream = gulp.src([
-			'bower_components/**/*.min.*', 
-			'bower_components/**/fonts/*', 
-			'bower_components/**/*.css', 
+			'bower_components/**/*.min.*',
+			'bower_components/**/fonts/*',
+			'bower_components/**/*.css',
 			'!bower_components/**/*.map'
 		])
-		// Фильтруем содержимое на наличие js и css 
+		// Фильтруем содержимое на наличие js и css
 		.pipe(jsFilter)
 		.pipe(cssFilter)
-		// run them through a plugin 
+		// run them through a plugin
 		.pipe(gulp.dest('dist'));
- 
-	// Вываливаем в билд 
+
+	// Вываливаем в билд
 	jsFilter.restore.pipe(gulp.dest('web/libs/'));
- 
+
 	return stream;
 });
 
