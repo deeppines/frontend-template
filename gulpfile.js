@@ -193,4 +193,4 @@ gulp.task('build', [
 ]);
 
 //Дефолтный таск старта
-gulp.task('default', ['bower', 'build', 'filter', 'webserver', 'watch']);
+gulp.task('default', ['bower', 'build', 'webserver', 'watch']);
