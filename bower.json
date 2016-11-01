@@ -11,11 +11,12 @@
     "node_modules",
     "bower_components"
   ],
-	"dependencies": {
+    "dependencies": {
     "jquery": "2.*",
-	"bootstrap": "3.*",
-	"font-awesome": "4.*",
-	"slick-carousel": "1.*",
-	"css-hamburgers": "*"
+    "bootstrap": "3.*",
+    "font-awesome": "4.*",
+    "slick-carousel": "1.*",
+    "css-hamburgers": "*",
+    "normalize-css": "*"
   }
 }
