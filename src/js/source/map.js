@@ -1,5 +1,4 @@
 //Custom Google Map style
-
 $(function () {
 	if ($("#map").length > 0) { //#map - id conteiner
 
