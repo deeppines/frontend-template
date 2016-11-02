@@ -8,8 +8,9 @@
 
 $site-font: "Roboto", sans-serif;
 
-html,body {
-	font-family: $site-font;
+html,
+body {
+    font-family: $site-font;
 }
 
 //=============== SETTING FOR H1
@@ -24,14 +25,14 @@ $margin-top-h1: 20px;
 $margin-bottom-h1: 10px;
 
 h1 {
-	font-family:              $font-family-h1;
-	font-weight:              $font-weight-h1;
-	font-size:                $font-size-h1;
-	line-height:              $line-height-h1;
-	text-transform:           $text-transform-h1;
-	color:                    $color-h1;
-	margin-top:               $margin-top-h1;
-	margin-bottom:            $margin-bottom-h1;
+    font-family:              $font-family-h1;
+    font-weight:              $font-weight-h1;
+    font-size:                $font-size-h1;
+    line-height:              $line-height-h1;
+    text-transform:           $text-transform-h1;
+    color:                    $color-h1;
+    margin-top:               $margin-top-h1;
+    margin-bottom:            $margin-bottom-h1;
 }
 
 //=============== SETTING FOR H2
@@ -46,14 +47,14 @@ $margin-top-h2: 20px;
 $margin-bottom-h2: 10px;
 
 h2 {
-	font-family:              $font-family-h2;
-	font-weight:              $font-weight-h2;
-	font-size:                $font-size-h2;
-	line-height:              $line-height-h2;
-	text-transform:           $text-transform-h2;
-	color:                    $color-h2;
-	margin-top:               $margin-top-h2;
-	margin-bottom:            $margin-bottom-h2;
+    font-family:              $font-family-h2;
+    font-weight:              $font-weight-h2;
+    font-size:                $font-size-h2;
+    line-height:              $line-height-h2;
+    text-transform:           $text-transform-h2;
+    color:                    $color-h2;
+    margin-top:               $margin-top-h2;
+    margin-bottom:            $margin-bottom-h2;
 }
 
 //=============== SETTING FOR H3
@@ -68,14 +69,14 @@ $margin-top-h3: 20px;
 $margin-bottom-h3: 10px;
 
 h3 {
-	font-family:              $font-family-h3;
-	font-weight:              $font-weight-h3;
-	font-size:                $font-size-h3;
-	line-height:              $line-height-h3;
-	text-transform:           $text-transform-h3;
-	color:                    $color-h3;
-	margin-top:               $margin-top-h3;
-	margin-bottom:            $margin-bottom-h3;
+    font-family:              $font-family-h3;
+    font-weight:              $font-weight-h3;
+    font-size:                $font-size-h3;
+    line-height:              $line-height-h3;
+    text-transform:           $text-transform-h3;
+    color:                    $color-h3;
+    margin-top:               $margin-top-h3;
+    margin-bottom:            $margin-bottom-h3;
 }
 
 //=============== SETTING FOR P
@@ -86,16 +87,16 @@ $font-size-p: 14px;
 $line-height-p: 1.1;
 $text-transform-p: none;
 $color-p: inherit;
-$margin-top-p: 0px;
+$margin-top-p: 0;
 $margin-bottom-p: 10px;
 
 p {
-	font-family:              $font-family-p;
-	font-weight:              $font-weight-p;
-	font-size:                $font-size-p;
-	line-height:              $line-height-p;
-	text-transform:           $text-transform-p;
-	color:                    $color-p;
-	margin-top:               $margin-top-p;
-	margin-bottom:            $margin-bottom-p;
+    font-family:              $font-family-p;
+    font-weight:              $font-weight-p;
+    font-size:                $font-size-p;
+    line-height:              $line-height-p;
+    text-transform:           $text-transform-p;
+    color:                    $color-p;
+    margin-top:               $margin-top-p;
+    margin-bottom:            $margin-bottom-p;
 }
