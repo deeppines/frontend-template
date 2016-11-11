@@ -5,7 +5,7 @@ package.json*
 bower.json*
 gulpfile.js*
 
-# Ignore built files
+# Ignore build files
 
 web/*
 !web/js/common.js
