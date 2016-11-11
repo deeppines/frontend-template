@@ -172,7 +172,7 @@ gulp.task('filter', function() {
         'bower_components/**/fonts/*',
         'bower_components/**/*.css',
         '!bower_components/**/*.map'
-    ]);
+    ])
 
     // Фильтруем содержимое на наличие js и css
     .pipe(jsFilter)
