@@ -1,8 +1,8 @@
 # SmileTemp
 npm config for start web project
 
-1.[How it use](#howto)
-2.[Code style](#codestyle)
+1. [How it use](#howto)
+2. [Code style](#codestyle)
 
 ## <a name="howto"></a> How it use
 ##### - Install <a href="https://nodejs.org">node.js+npm</a> and <a href="https://git-scm.com/downloads">Git</a>
