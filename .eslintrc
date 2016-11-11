@@ -1,0 +1,11 @@
+{
+    # Yandex style guide for eslint.
+    # See full yandex description https://github.com/yandex/codestyle/.
+    "extends": "yandex",
+    "env": {
+        "browser": true,
+        "jquery": true
+    },
+    "rules": {
+    }
+}
