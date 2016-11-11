@@ -15,8 +15,8 @@ $(document).ready(function(){
     //--------- Custom Scripts -----------
     //====================================
 
-	//= source/map.js
-	//= source/button-top.js
-	//= source/modal.js
+    //= source/map.js
+    //= source/button-top.js
+    //= source/modal.js
 
 });
