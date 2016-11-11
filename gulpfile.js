@@ -1,4 +1,5 @@
 'use strict';
+
 // Импортируем необходимые плагины в проект
 var gulp = require('gulp'),
     bower = require('gulp-bower'),
@@ -16,6 +17,7 @@ var gulp = require('gulp'),
 
 // Прописываем объект содержащий все необходимые пути
 var path = {
+
     build: { // Тут мы укажем куда складывать готовые после сборки файлы
         html: 'web/',
         js: 'web/js/',
@@ -42,14 +44,17 @@ var path = {
         img: 'src/images/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
+
     clean: './web'
 };
 
 // Переменная с настройками dev сервера
 var config = {
+
     server: {
         baseDir: "./web"
     },
+
     tunnel: false,
     host: 'localhost',
     port: 9000,
@@ -72,7 +77,7 @@ gulp.task('js:build', function () {
         // .pipe(uglify().on('error', function(e){
         //     console.log(e); // При возникновении ошибки покажет где проблема
         // })) // Сожмем наш js
-       .pipe(sourcemaps.write()) // Пропишем карты
+        // .pipe(sourcemaps.write()) // Пропишем карты
         .pipe(gulp.dest(path.build.js)) // Выплюнем готовый файл в build
         .pipe(reload({stream: true})); // И перезагрузим сервер
 });
@@ -122,15 +127,19 @@ gulp.task('watch', function(){
     watch([path.watch.html], function(event, cb) { // Посмотрели html
         gulp.start('html:build'); // Выплюнули в билд
     });
+
     watch([path.watch.style], function(event, cb) { // Посмотрели стили
         gulp.start('style:build'); // Выплюнули в билд
     });
+
     watch([path.watch.js], function(event, cb) { // Посмотрели скрипты
         gulp.start('js:build'); // Выплюнули в билд
     });
+
     watch([path.watch.img], function(event, cb) { // Посмотрели картинки
         gulp.start('image:build'); // Выплюнули в билд
     });
+
     watch([path.watch.fonts], function(event, cb) { // Посмотрели шрифты
         gulp.start('fonts:build'); // Выплюнули в билд
     });
@@ -163,7 +172,8 @@ gulp.task('filter', function() {
         'bower_components/**/fonts/*',
         'bower_components/**/*.css',
         '!bower_components/**/*.map'
-    ])
+    ]);
+
     // Фильтруем содержимое на наличие js и css
     .pipe(jsFilter)
     .pipe(cssFilter)

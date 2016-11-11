@@ -1,22 +1,24 @@
 {
-  "name": "smileexpo",
-  "description": "gulp smileexpo project",
-  "main": "",
-  "authors": [
-    "LucasKane"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components"
-  ],
+    "name": "smileexpo",
+    "description": "gulp smileexpo project",
+    "main": "",
+    "authors": [
+        "LucasKane"
+    ],
+    
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components"
+    ],
+
     "dependencies": {
-    "jquery": "2.*",
-    "bootstrap": "3.*",
-    "font-awesome": "4.*",
-    "slick-carousel": "1.*",
-    "css-hamburgers": "*",
-    "normalize-css": "*"
-  }
+        "jquery": "2.*",
+        "bootstrap": "3.*",
+        "font-awesome": "4.*",
+        "slick-carousel": "1.*",
+        "css-hamburgers": "*",
+        "normalize-css": "*"
+    }
 }
