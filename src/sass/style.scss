@@ -1,30 +1,30 @@
 //=========================//
 //
-//			IMPORT
+//        IMPORT
 //
 //=========================//
 
 // CORE IMPORT
 //==========================
-@import "base/base";
+@import 'base/base';
 
 // MODULES IMPORT
 //==========================
-@import "modules/form";
-@import "modules/modal";
-@import "modules/social";
+@import 'modules/form';
+@import 'modules/modal';
+@import 'modules/social';
 
 // LAYOUT IMPORT
 //==========================
-@import "layout/header";
-@import "layout/main";
-@import "layout/footer";
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
 
 // PAGES IMPORT
 //==========================
-@import "pages/home";
-@import "pages/view";
+@import 'pages/home';
+@import 'pages/view';
 
 // VENDORS IMPORT
 //==========================
-@import "vendors/vendors";
+@import 'vendors/vendors';
