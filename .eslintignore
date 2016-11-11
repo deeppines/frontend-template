@@ -7,5 +7,7 @@ gulpfile.js*
 
 # Ignore build files
 
+src/js/common.js*
+
 web/*
 !web/js/common.js
