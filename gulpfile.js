@@ -1,7 +1,7 @@
 'use strict';
 //Импортируем необходимые плагины в проект
 var gulp = require('gulp'),
-	bower = require('gulp-bower'),
+    bower = require('gulp-bower'),
     watch = require('gulp-watch'),
     prefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
@@ -13,7 +13,7 @@ var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"),
-	filter = require('gulp-filter'),
+    filter = require('gulp-filter'),
     reload = browserSync.reload;
 
 //Прописываем объект содержащий все необходимые пути
@@ -24,17 +24,19 @@ var path = {
         css: 'web/css/',
         img: 'web/images/',
         fonts: 'web/fonts/',
-		libs: 'web/libs/'
+        libs: 'web/libs/'
     },
+
     src: { //Пути откуда брать исходники
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         js: 'src/js/common.js',//В скриптах нам понадобятся только common файл
         style: 'src/sass/style.scss', //В стилях берем два файла style и media
-		media: 'src/sass/media.scss',
+        media: 'src/sass/media.scss',
         img: 'src/images/**/*.*', //Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         fonts: 'src/fonts/**/*.*',
-		libs: './bower_components/'
+        libs: './bower_components/'
     },
+    
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         html: 'src/**/*.html',
         js: 'src/js/**/*.js',
