@@ -12,6 +12,7 @@ $(document).ready(function(){
     //= source/map.js
     //= source/button-top.js
     //= source/modal.js
+    //= source/responsive-iframe.js
 
     //====================================
     //--------- Setting libs -------------
