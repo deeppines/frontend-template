@@ -4,6 +4,9 @@ $(document).ready(function(){
     //====================================
 
     //= source/debounce.js
+    //= source/map.js
+    //= source/button-top.js
+    //= source/modal.js
 
     //====================================
     //--------- Setting libs -------------
@@ -15,8 +18,5 @@ $(document).ready(function(){
     //--------- Custom Scripts -----------
     //====================================
 
-    //= source/map.js
-    //= source/button-top.js
-    //= source/modal.js
 
 });
