@@ -1,7 +1,6 @@
 // Custom Google Map style
 $(function () {
     if ($('#map').length > 0) { // #map - id conteiner
-
         jQuery(function ($) {
             var isMobile = {
                 android: function () {
@@ -65,7 +64,6 @@ $(function () {
                     'color': '#ffffff'
                 }]
             }];
-
             var styledMap = new google.maps.StyledMapType(styles, {
                 name: 'Styled Map'
             });
@@ -80,20 +78,17 @@ $(function () {
             var map = new google.maps.Map(
                 document.getElementById('map'), myOptions);
             var image = 'images/marker.png'; // icon map image
-
             var beachMarker = new google.maps.Marker({
                 position: position,
                 map: map,
                 icon: image
             });
-
             var marker = new google.maps.Marker({
                 position: position,
                 map: map,
                 icon: image,
                 title: 'CasinoForumBatumi' // marker text
             });
-
             var lat = 55.800129; // latitude
             var lng = 37.674181; // longitude
             var position = new google.maps.LatLng(lat, lng);
