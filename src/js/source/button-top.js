@@ -5,7 +5,7 @@ $(function () {
     var btnTop = $('#toTop'); // Button id
 
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 0 && !$('#toTop').hasClass('scrolling')) {
+        if ($(this).scrollTop() > 0 && !btnTop.hasClass('scrolling')) {
             btnTop.fadeIn();
         } else {
             btnTop.fadeOut();
