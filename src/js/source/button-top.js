@@ -1,33 +1,37 @@
-//Button Top
-//How use
-//Add <div id="toTop"></div>
+// Button Top
+// How use
+// Add <div id="toTop"></div>
 $(function () {
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 0 && !$('#toTop').hasClass('scrolling')) {
-			$('#toTop').fadeIn();
-		} else {
-			$('#toTop').fadeOut();
-		}
-	});
-	$('#toTop').click(function () {
-		$('#toTop').fadeOut().addClass('scrolling');
-		$('body,html').animate({
-			scrollTop: 0
-		}, 800, function () {
+    var btnTop = $('#toTop'); // Button id
 
-			$('#toTop').removeClass('scrolling');
-		});
-	});
-	$('.smoothScroll').click(function (event) {
-		var href = $(this).attr('href');
-		var target = $(href);
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 0 && !$('#toTop').hasClass('scrolling')) {
+            btnTop.fadeIn();
+        } else {
+            btnTop.fadeOut();
+        }
+    });
 
-		if (target.length) {
-			event.preventDefault();
-			var top = target.offset().top;
-			$('html,body').animate({
-				scrollTop: top - 190
-			}, 500);
-		}
-	});
+    btnTop.click(function () {
+        btnTop.fadeOut().addClass('scrolling');
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800, function () {
+
+            btnTop.removeClass('scrolling');
+        });
+    });
+
+    $('.smoothScroll').click(function (event) {
+        var href = $(this).attr('href');
+        var target = $(href);
+        var top = target.offset().top;
+
+        if (target.length) {
+            event.preventDefault();
+            $('html,body').animate({
+                scrollTop: top - 190
+            }, 500);
+        }
+    });
 });
