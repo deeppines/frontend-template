@@ -17,7 +17,8 @@
         "gulp-uglify": "^1.5.3",
         "gulp-watch": "^4.3.5",
         "gulp-filter": "^4.0.0",
-        "rimraf": "^2.5.2"
+        "rimraf": "^2.5.2",
+        "gulp-csscomb": "^3.0.8"
     },
 
     "devDependencies": {

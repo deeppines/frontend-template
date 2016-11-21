@@ -13,6 +13,7 @@ var gulp = require('gulp'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"),
     filter = require('gulp-filter'),
+    csscomb = require('gulp-csscomb'),
     reload = browserSync.reload;
 
 // Прописываем объект содержащий все необходимые пути
@@ -93,6 +94,7 @@ gulp.task('style:build', function () {
         .pipe(prefixer()) // Добавим вендорные префиксы
         // .pipe(cssmin()) // Сожмем
         // .pipe(sourcemaps.write())
+        .pipe(csscomb('csscomb.json'))
         .pipe(gulp.dest(path.build.css)) // И в build
         .pipe(reload({stream: true}));
 
