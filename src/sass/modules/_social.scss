@@ -6,67 +6,237 @@
 
 //============= SETTING
 
-$social-position:                inherit;
+// Setting block
+$social-position:                relative;
+$social-margin-bottom:           15px;
 
-$icon-color:                     #000;
-$icon-color-hover:               #fff;
-$icon-color-shadow:              rgba(0,0,0, 0.3);
-$icon-color-shadow-active:       rgba(0,0,0, 0.5);
+// Setting <li>
+$li-margin-right:                10px;
+$li-margin-bottom:               0;
 
-$icon-display:                   inline-block;
-$icon-margin-right:              5px;
-$icon-margin-bottom:             5px;
+// Setting link
+$icon-position:                  relative;
+$icon-display:                   block;
 $icon-width:                     30px;
 $icon-height:                    30px;
-$icon-border-weight:             1px;
-$icon-radius:                    0;
+$icon-aligin:                    center;
+$icon-border-width:              1px;
+$icon-border-style:              solid;
+$icon-border-radius:             100%;
 $icon-size:                      16px;
+$icon-hover-animation:           all .3s;
+
+// Theme setting
+$icon-background-color:          transparent;
+$icon-border-color:              #fff;
+$icon-color:                     #fff;
+$icon-shadow:                    none;
+
+// Brand color switch
+$brand-color-switch:             true;
 
 //============= LAYOUT
 
 .social {
-	position:                    $social-position;
-	list-style:                  none;
-	padding:                     0;
-	margin:                      0;
+    @include clearfix();
+    position: $social-position;
+    padding: 0;
+    margin: 0 0 $social-margin-bottom;
+    list-style: none;
 
-	li {
-		display:                 $icon-display;
-		margin-right:            $icon-margin-right;
-		margin-bottom:           $icon-margin-bottom;
-		width:                   $icon-width;
-		height:                  $icon-height;
-		text-align:              center;
-		border:                  $icon-border-weight solid $icon-color;
-		border-radius:           $icon-radius;
+    li {
+        float: left;
+        margin-right: $li-margin-right;
+        margin-bottom: $li-margin-bottom;
 
-		&:last-child {
-			margin-right:        0;
-		}
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 
-		a {
-			display:             block;
-			text-decoration:     none;
-			line-height:         $icon-height;
-			font-size:           $icon-size;
-			color:               $icon-color;
-			@include             inner-shadow(0,0,0,0, $icon-color-shadow);
-			@include             transition(all .2s ease-out .1s);
+    a {
+        position: $icon-position;
+        display: $icon-display;
+        width: $icon-width;
+        height: $icon-height;
+        text-align: $icon-aligin;
+        border: $icon-border-width $icon-border-style $icon-border-color;
+        border-radius: $icon-border-radius;
+        transition: $icon-hover-animation;
 
-			&:focus {
-				outline:         none;
-			}
+        // Theme setting
+        background: $icon-background-color;
+        color: $icon-color;
+        box-shadow: $icon-shadow;
 
-			&:hover {
-				text-decoration: none;
-				color:           $icon-color-hover;
-				@include         inner-shadow(0,-30px,0,0, $icon-color-shadow);
-			}
+        &:focus,
+        &:hover {
+            outline: none;
+        }
+    }
 
-			&:active {
-				text-decoration: none;
-				@include         inner-shadow(0,-30px,0,0, $icon-color-shadow-active);
-			}
-		}
-	}
+    .fa {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        font-size: $icon-size;
+    }
+
+    // Icon brand-color block
+    @if $brand-color-switch == true {
+        .color {
+
+            &-facebook a {
+                $color-facebook: rgba(59, 89, 152, 1);
+                $color-facebook-hover: transparent;
+
+                background-color: $color-facebook;
+                border-color: $color-facebook;
+
+                &:focus,
+                &:hover {
+                    background-color: $color-facebook-hover;
+                    color: $color-facebook;
+                }
+            }
+
+            &-vkontakte a {
+                $color-vkontakte: rgba(80, 114, 153, 1);
+                $color-vkontakte-hover: transparent;
+
+                background-color: $color-vkontakte;
+                border-color: $color-vkontakte;
+
+                &:focus,
+                &:hover {
+                    background-color: $color-vkontakte-hover;
+                    color: $color-vkontakte;
+                }
+            }
+
+            &-twitter a {
+                $color-twitter: rgba(0, 172, 237, 1);
+                $color-twitter-hover: transparent;
+
+                background-color: $color-twitter;
+                border-color: $color-twitter;
+
+                &:focus,
+                &:hover {
+                    background-color: $color-twitter-hover;
+                    color: $color-twitter;
+                }
+            }
+
+            &-pinterest a {
+                $color-pinterest: rgba(203, 32, 39, 1);
+                $color-pinterest-hover: transparent;
+
+                background-color: $color-pinterest;
+                border-color: $color-pinterest;
+
+                &:focus,
+                &:hover {
+                    background-color: $color-pinterest-hover;
+                    color: $color-pinterest;
+                }
+            }
+
+            &-linkedin a {
+                $color-linkedin: rgba(0, 123, 182, 1);
+                $color-linkedin-hover: transparent;
+
+                background-color: $color-linkedin;
+                border-color: $color-linkedin;
+
+                &:focus,
+                &:hover {
+                    background-color: $color-linkedin-hover;
+                    color: $color-linkedin;
+                }
+            }
+
+            &-odnoklasniki a {
+                $color-odnoklasniki: rgba(242, 114, 12, 1);
+                $color-odnoklasniki-hover: transparent;
+
+                background-color: $color-odnoklasniki;
+                border-color: $color-odnoklasniki;
+
+                &:focus,
+                &:hover {
+                    background-color: $color-odnoklasniki-hover;
+                    color: $color-odnoklasniki;
+                }
+            }
+
+            &-googleplus a {
+                $color-googleplus: rgba(221, 75, 57, 1);
+                $color-googleplus-hover: transparent;
+
+                background-color: $color-googleplus;
+                border-color: $color-googleplus;
+
+                &:focus,
+                &:hover {
+                    background-color: $color-googleplus-hover;
+                    color: $color-googleplus;
+                }
+            }
+
+            &-instagram a {
+                $color-instagram: #3897f0;
+                $color-instagram-1: #fec564;
+                $color-instagram-2: #5258cf;
+                $color-instagram-3: #893dc2;
+                $color-instagram-4: #d9317a;
+                $color-instagram-5: linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+                $color-instagram-hover: transparent;
+
+                background:
+                    // Use radial gradients to get the rounded
+                    // gradient effect in each corner
+
+                    // left bottom
+                    radial-gradient(circle farthest-corner at 35% 90%, $color-instagram-1, transparent 50%),
+                    radial-gradient(circle farthest-corner at 0 140%, $color-instagram-1, transparent 50%),
+                    // left top
+                    radial-gradient(ellipse farthest-corner at 0 -25%, $color-instagram-2, transparent 50%),
+                    radial-gradient(ellipse farthest-corner at 20% -50%, $color-instagram-2, transparent 50%),
+                    //  right top
+                    radial-gradient(ellipse farthest-corner at 100% 0, $color-instagram-3, transparent 50%),
+                    radial-gradient(ellipse farthest-corner at 60% -20%, $color-instagram-3, transparent 50%),
+                    // right bottom
+                    radial-gradient(ellipse farthest-corner at 100% 100%, $color-instagram-4, transparent),
+
+                    // create a base coat to smooth
+                    // corner gradients
+                    $color-instagram-5;
+                border: 0 $icon-border-style transparent;
+
+                &:focus,
+                &:hover {
+                    background: $color-instagram-hover;
+                    color: $color-instagram;
+                    border: $icon-border-width $icon-border-style $color-instagram;
+                }
+            }
+
+            &-youtube a {
+                $color-youtube: rgba(187, 0, 0, 1);
+                $color-youtube-hover: transparent;
+
+                background-color: $color-youtube;
+                border-color: $color-youtube;
+
+                &:focus,
+                &:hover {
+                    background-color: $color-youtube-hover;
+                    color: $color-youtube;
+                }
+            }
+        }
+    }
 }
