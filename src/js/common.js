@@ -4,6 +4,7 @@ $(document).ready(function(){
     //====================================
 
     //= source/debounce.js
+    //= source/equalHeight.js
 
     //====================================
     //--------- Custom Scripts -----------
