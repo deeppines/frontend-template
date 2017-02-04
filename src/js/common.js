@@ -6,6 +6,7 @@ $(document).ready(function(){
     //= source/debounce.js
     //= source/equalHeight.js
     //= source/miss-click.js
+    //= source/responsive-iframe.js
 
     //====================================
     //--------- Custom Scripts -----------
@@ -14,7 +15,6 @@ $(document).ready(function(){
     //= source/map.js
     //= source/button-top.js
     //= source/modal.js
-    //= source/responsive-iframe.js
 
     //====================================
     //--------- Setting libs -------------
