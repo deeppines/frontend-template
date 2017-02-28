@@ -1,9 +1,9 @@
 {
     "name": "smileexpo",
-    "version": "1.0.5",
-    "description": "template for smile expo project",
-    "author": "lucas",
-    "license": "ISC",
+    "version": "1.0.6",
+    "description": "The template for quick start of web project with Gulp, Bower etc.",
+    "author": "Kirdyashkin Egor <egorkir41@gmail.com> (https://github.com/egorkir)",
+    "license": "MIT",
 
     "dependencies": {
         "browser-sync": "^2.12.5",
@@ -13,8 +13,6 @@
         "gulp-clean-css": "^2.0.7",
         "gulp-rigger": "^0.5.8",
         "gulp-sass": "^2.3.1",
-        "gulp-sourcemaps": "^2.0.0-alpha",
-        "gulp-uglify": "^1.5.3",
         "gulp-watch": "^4.3.5",
         "gulp-filter": "^4.0.0",
         "rimraf": "^2.5.2",

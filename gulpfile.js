@@ -1,20 +1,18 @@
 'use strict';
 
 // Импортируем необходимые плагины в проект
-var gulp = require('gulp'),
-    bower = require('gulp-bower'),
-    watch = require('gulp-watch'),
-    prefixer = require('gulp-autoprefixer'),
-    uglify = require('gulp-uglify'),
-    sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    rigger = require('gulp-rigger'),
-    cssmin = require('gulp-clean-css'),
-    rimraf = require('rimraf'),
-    browserSync = require("browser-sync"),
-    filter = require('gulp-filter'),
-    csscomb = require('gulp-csscomb'),
-    reload = browserSync.reload;
+var gulp = require('gulp');
+var bower = require('gulp-bower');
+var watch = require('gulp-watch');
+var prefixer = require('gulp-autoprefixer');
+var sass = require('gulp-sass');
+var rigger = require('gulp-rigger');
+var cssmin = require('gulp-clean-css');
+var rimraf = require('rimraf');
+var browserSync = require("browser-sync");
+var filter = require('gulp-filter');
+var csscomb = require('gulp-csscomb');
+var reload = browserSync.reload;
 
 // Прописываем объект содержащий все необходимые пути
 var path = {
@@ -74,11 +72,6 @@ gulp.task('html:build', function () {
 gulp.task('js:build', function () {
     gulp.src(path.src.js) // Найдем наш common файл
         .pipe(rigger()) // Прогоним через rigger
-        // .pipe(sourcemaps.init()) // Инициализируем sourcemap
-        // .pipe(uglify().on('error', function(e){
-        //     console.log(e); // При возникновении ошибки покажет где проблема
-        // })) // Сожмем наш js
-        // .pipe(sourcemaps.write()) // Пропишем карты
         .pipe(gulp.dest(path.build.js)) // Выплюнем готовый файл в build
         .pipe(reload({stream: true})); // И перезагрузим сервер
 });
@@ -87,26 +80,22 @@ gulp.task('js:build', function () {
 gulp.task('style:build', function () {
     // Кусок для файла style
     gulp.src(path.src.style) // Выберем наш style.scss
-        // .pipe(sourcemaps.init()) // То же самое что и с js
         .pipe(sass({
             outputStyle: 'expanded'
         })) // Скомпилируем
         .pipe(prefixer()) // Добавим вендорные префиксы
         // .pipe(cssmin()) // Сожмем
-        // .pipe(sourcemaps.write())
         .pipe(csscomb('csscomb.json'))
         .pipe(gulp.dest(path.build.css)) // И в build
         .pipe(reload({stream: true}));
 
     // Кусок для файла media
     gulp.src(path.src.media) // Выберем наш media.scss
-        // .pipe(sourcemaps.init()) // То же самое что и с js
         .pipe(sass({
             outputStyle: 'expanded'
         })) // Скомпилируем
         .pipe(prefixer()) // Добавим вендорные префиксы
         // .pipe(cssmin()) // Сожмем
-        // .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css)) // И в build
         .pipe(reload({stream: true}));
 });
