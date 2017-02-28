@@ -1,23 +1,30 @@
 'use strict';
 
-// Импортируем необходимые плагины в проект
+// =============================
+// ------ Import Plugins -------
+// =============================
+
 var gulp = require('gulp');
 var bower = require('gulp-bower');
 var watch = require('gulp-watch');
-var prefixer = require('gulp-autoprefixer');
+var autoprefixer = require('autoprefixer');
+var postcss = require('gulp-postcss');
 var sass = require('gulp-sass');
 var rigger = require('gulp-rigger');
 var cssmin = require('gulp-clean-css');
 var rimraf = require('rimraf');
-var browserSync = require("browser-sync");
+var browserSync = require("browser-sync").create();
 var filter = require('gulp-filter');
 var csscomb = require('gulp-csscomb');
 var reload = browserSync.reload;
 
-// Прописываем объект содержащий все необходимые пути
+// =============================
+// ------- Add var path --------
+// =============================
+
 var path = {
 
-    build: { // Тут мы укажем куда складывать готовые после сборки файлы
+    build: {
         html: 'web/',
         js: 'web/js/',
         css: 'web/css/',
@@ -26,17 +33,17 @@ var path = {
         libs: 'web/libs/'
     },
 
-    src: { // Пути откуда брать исходники
-        html: 'src/*.html', // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
-        js: 'src/js/common.js',// В скриптах нам понадобятся только common файл
-        style: 'src/sass/style.scss', // В стилях берем два файла style и media
+    src: {
+        html: 'src/*.html',                 // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
+        js: 'src/js/common.js',             // В скриптах нам понадобятся только common файл
+        style: 'src/sass/style.scss',       // В стилях берем два файла style и media
         media: 'src/sass/media.scss',
-        img: 'src/images/**/*.*', // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        img: 'src/images/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         fonts: 'src/fonts/**/*.*',
         libs: './bower_components/'
     },
 
-    watch: { // Тут мы укажем, за изменением каких файлов мы хотим наблюдать
+    watch: {
         html: 'src/**/*.html',
         js: 'src/js/**/*.js',
         style: 'src/sass/**/*.scss',
@@ -47,110 +54,127 @@ var path = {
     clean: './web'
 };
 
-// Переменная с настройками dev сервера
-var config = {
+// =============================
+// ---- Add plugins options ----
+// =============================
 
-    server: {
-        baseDir: "./web"
+var option = {
+
+    browserSync: {
+        server: './web',
+        tunnel: false,
+        host: 'localhost',
+        port: 9000,
+        logPrefix: "lucas"
     },
 
-    tunnel: false,
-    host: 'localhost',
-    port: 9000,
-    logPrefix: "lucas"
-};
+    sass: {
+        outputStyle: 'expanded'
+    },
 
-// Таск для сборки .html
+    postcss: [
+        autoprefixer({
+            cascade: true
+        }),
+    ],
+
+    csscomb: 'csscomb.json',
+
+}
+
+// =============================
+// --------- Sub tasks ---------
+// =============================
+
+// Удаление скомпилированных файлов
+gulp.task('clean', function (cb) {
+    return rimraf(path.clean, cb);
+});
+
+// Запуск сервера с livereload
+gulp.task('serve', function () {
+    return browserSync.init(option.browserSync);
+});
+
+// Загрузка плагинов из Bower
+gulp.task('bower', function() {
+    return bower();
+});
+
+// =============================
+// ------- Build tasks ---------
+// =============================
+
 gulp.task('html:build', function () {
-    gulp.src(path.src.html) // Выберем файлы по нужному пути
-        .pipe(rigger()) // Прогоним через rigger
-        .pipe(gulp.dest(path.build.html)) // Выплюнем их в папку build
-        .pipe(reload({stream: true})); // И перезагрузим наш сервер для обновлений
+    gulp.src(path.src.html)
+        .pipe(rigger())
+        .pipe(gulp.dest(path.build.html))
+        .pipe(reload({stream: true}));
 });
 
-// Таск для сборки common.js
 gulp.task('js:build', function () {
-    gulp.src(path.src.js) // Найдем наш common файл
-        .pipe(rigger()) // Прогоним через rigger
-        .pipe(gulp.dest(path.build.js)) // Выплюнем готовый файл в build
-        .pipe(reload({stream: true})); // И перезагрузим сервер
+    gulp.src(path.src.js)
+        .pipe(rigger())
+        .pipe(gulp.dest(path.build.js))
+        .pipe(reload({stream: true}));
 });
 
-// Таск для сборки .scss файлов
 gulp.task('style:build', function () {
-    // Кусок для файла style
-    gulp.src(path.src.style) // Выберем наш style.scss
-        .pipe(sass({
-            outputStyle: 'expanded'
-        })) // Скомпилируем
-        .pipe(prefixer()) // Добавим вендорные префиксы
-        // .pipe(cssmin()) // Сожмем
-        .pipe(csscomb('csscomb.json'))
-        .pipe(gulp.dest(path.build.css)) // И в build
+    // style.css
+    gulp.src(path.src.style)
+        .pipe(sass(option.sass))
+        .pipe(postcss(option.postcss))
+        .pipe(csscomb(option.csscomb))
+        .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
 
-    // Кусок для файла media
-    gulp.src(path.src.media) // Выберем наш media.scss
-        .pipe(sass({
-            outputStyle: 'expanded'
-        })) // Скомпилируем
-        .pipe(prefixer()) // Добавим вендорные префиксы
-        // .pipe(cssmin()) // Сожмем
-        .pipe(gulp.dest(path.build.css)) // И в build
+    // media.css
+    gulp.src(path.src.media)
+        .pipe(sass(option.sass))
+        .pipe(postcss(option.postcss))
+        .pipe(csscomb(option.csscomb))
+        .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
 });
 
-// Таск для переваривания картинок
 gulp.task('image:build', function () {
     gulp.src(path.src.img) // Выберем наши картинки
         .pipe(gulp.dest(path.build.img)) // И бросим в build
         .pipe(reload({stream: true}));
 });
 
-// Таск десантирования шрифтов
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts))
 });
 
-// Таск на просмотр изменения файлов
+// =============================
+// ------- Watch-task ----------
+// =============================
+
 gulp.task('watch', function(){
-    watch([path.watch.html], function(event, cb) { // Посмотрели html
-        gulp.start('html:build'); // Выплюнули в билд
+    watch([path.watch.html], function(event, cb) {
+        gulp.start('html:build');
     });
 
-    watch([path.watch.style], function(event, cb) { // Посмотрели стили
-        gulp.start('style:build'); // Выплюнули в билд
+    watch([path.watch.style], function(event, cb) {
+        gulp.start('style:build');
     });
 
-    watch([path.watch.js], function(event, cb) { // Посмотрели скрипты
-        gulp.start('js:build'); // Выплюнули в билд
+    watch([path.watch.js], function(event, cb) {
+        gulp.start('js:build');
     });
 
-    watch([path.watch.img], function(event, cb) { // Посмотрели картинки
-        gulp.start('image:build'); // Выплюнули в билд
+    watch([path.watch.img], function(event, cb) {
+        gulp.start('image:build');
     });
 
-    watch([path.watch.fonts], function(event, cb) { // Посмотрели шрифты
-        gulp.start('fonts:build'); // Выплюнули в билд
+    watch([path.watch.fonts], function(event, cb) {
+        gulp.start('fonts:build');
     });
 });
 
-// Таск запуска локального сервера с livereload
-gulp.task('webserver', function () {
-    browserSync(config);
-});
-
-// Таск очистки
-gulp.task('clean', function (cb) {
-    rimraf(path.clean, cb);
-});
-
-// Таск сборки сторонних библиотек через bower
-gulp.task('bower', function() {
-    return bower();
-});
-
+// TODO: Разобрать таски и переписать
 // Фильтруем библиотеки и вынимаем только нужные файлы
 gulp.task('filter', function() {
     // Настраиваем фильтры для файлов
@@ -187,4 +211,4 @@ gulp.task('build', [
 ]);
 
 // Дефолтный таск старта
-gulp.task('default', ['bower', 'build', 'webserver', 'watch']);
+gulp.task('default', ['bower', 'build', 'serve', 'watch']);
