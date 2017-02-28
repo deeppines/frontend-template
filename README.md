@@ -1,4 +1,4 @@
-# SmileTemp
+# Frontend template
 npm config for start web project
 
 1. [How it use](#howto)
