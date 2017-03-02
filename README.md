@@ -3,7 +3,7 @@ Config for quick start web project with Gulp
 
 1. [Features](#features)
 2. [How it use](#howto)
-3. [Code style](#codestyle)
+3. [Main tasks](#maintasks)
 4. [Sass guide](https://github.com/egorkir/sass-guide)
 
 ## <a name="features"></a> Features
@@ -13,6 +13,7 @@ Config for quick start web project with Gulp
 + SASS preprocessor (gulp-sass)
 + CSS formatting (gulp-csscomb)
 + Any files concatenation (gulp-rigger)
++ Compiled files package in zip (gulp-zip)
 
 ## <a name="howto"></a> How it use
 ##### - Install <a href="https://nodejs.org">node.js+npm</a> and <a href="https://git-scm.com/downloads">Git</a>
@@ -37,9 +38,8 @@ $ npm i
 ```js
 $ gulp
 ```
-## <a name="codestyle"></a> Code style
-Общие правила оформления кода в проекте.
-
-+ Кодировка - UTF-8
-+ Окончания строк - LF
-+ Табуляция четырмя пробелами
+## <a name="maintasks"></a> Main tasks
++ `gulp bower` download vendor plugins and filtered files
++ `gulp build` compile a project
++ `gulp dev` compile a project and launches watchers/server
++ `gulp zip` compile a project in zip
