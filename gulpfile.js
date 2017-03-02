@@ -208,7 +208,7 @@ gulp.task('watch', function(){
 // -------- Main task ----------
 // =============================
 
-gulp.task('bower', [
+gulp.task('vendor', [
     'bower',
     'filter'
 ]);

@@ -39,7 +39,7 @@ $ npm i
 $ gulp
 ```
 ## <a name="maintasks"></a> Main tasks
-+ `gulp bower` download vendor plugins and filtered files
++ `gulp vendor` download vendor plugins and filtered files
 + `gulp build` compile a project
 + `gulp dev` compile a project and launches watchers/server
 + `gulp zip` compile a project in zip
