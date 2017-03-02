@@ -18,9 +18,9 @@ var plumber = require('gulp-plumber');
 var util    = require('gulp-util');
 
 var autoprefixer = require('autoprefixer');
-var rimraf = require('rimraf');
-var browserSync = require("browser-sync").create();
-var reload = browserSync.reload;
+var browserSync  = require("browser-sync").create();
+var rimraf       = require('rimraf');
+var reload       = browserSync.reload;
 
 // =============================
 // -------- Functions ----------
@@ -65,8 +65,8 @@ var path = {
 
     src: {
         html: 'src/*.html',                 // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
-        js: 'src/js/common.js',             // В скриптах нам понадобятся только common файл
-        style: 'src/sass/style.scss',       // В стилях берем два файла style и media
+        js: 'src/js/common.js',
+        style: 'src/sass/style.scss',
         media: 'src/sass/media.scss',
         img: 'src/images/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         fonts: 'src/fonts/**/*.*',
@@ -176,9 +176,9 @@ gulp.task('build:css', function () {
 });
 
 gulp.task('build:img', function () {
-    gulp.src(path.src.img) // Выберем наши картинки
+    gulp.src(path.src.img)
         .pipe(plumber(option.plumber))
-        .pipe(gulp.dest(path.build.img)) // И бросим в build
+        .pipe(gulp.dest(path.build.img))
         .pipe(reload({stream: true}));
 });
 
