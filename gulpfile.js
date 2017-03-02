@@ -208,6 +208,16 @@ gulp.task('watch', function(){
 // -------- Main task ----------
 // =============================
 
+gulp.task('bower', [
+    'bower',
+    'filter'
+]);
+
+gulp.task('zip', [
+    'build',
+    'build:zip'
+]);
+
 gulp.task('build', [
     'build:html',
     'build:css',
@@ -217,14 +227,12 @@ gulp.task('build', [
 ]);
 
 gulp.task('dev', [
-    'bower',
-    'filter',
     'build',
     'watch',
     'serve'
 ]);
 
-// Дефолтный таск старта
+// Default task
 gulp.task('default', ['dev']);
 
 
