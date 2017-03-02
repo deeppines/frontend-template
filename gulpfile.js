@@ -173,7 +173,7 @@ gulp.task('build:zip', function() {
     var datetime = '-' + getDateTime();
     var zipName = 'web' + datetime + '.zip';
 
-    gulp.src('web/*')
+    gulp.src('web/**/*.*')
         .pipe(zip(zipName))
         .pipe(gulp.dest('dist'));
 });
