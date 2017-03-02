@@ -4,19 +4,40 @@
 // ------ Import Plugins -------
 // =============================
 
-var gulp = require('gulp');
-var bower = require('gulp-bower');
-var watch = require('gulp-watch');
-var autoprefixer = require('autoprefixer');
+var gulp    = require('gulp');
+var bower   = require('gulp-bower');
+var watch   = require('gulp-watch');
 var postcss = require('gulp-postcss');
-var sass = require('gulp-sass');
-var rigger = require('gulp-rigger');
-var cssmin = require('gulp-clean-css');
+var sass    = require('gulp-sass');
+var rigger  = require('gulp-rigger');
+var cssmin  = require('gulp-clean-css');
+var filter  = require('gulp-filter');
+var csscomb = require('gulp-csscomb');
+var zip     = require('gulp-zip');
+
+var autoprefixer = require('autoprefixer');
 var rimraf = require('rimraf');
 var browserSync = require("browser-sync").create();
-var filter = require('gulp-filter');
-var csscomb = require('gulp-csscomb');
 var reload = browserSync.reload;
+
+// =============================
+// -------- Functions ----------
+// =============================
+
+function correctNumber(number) {
+    return number < 10 ? '0' + number : number;
+}
+
+// Return timestamp
+function getDateTime() {
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = correctNumber(now.getMonth() + 1);
+    var day = correctNumber(now.getDate());
+    var hours = correctNumber(now.getHours());
+    var minutes = correctNumber(now.getMinutes());
+    return year + '-' + month + '-' + day + '-' + hours + minutes;
+};
 
 // =============================
 // ------- Add var path --------
@@ -105,21 +126,21 @@ gulp.task('bower', function() {
 // ------- Build tasks ---------
 // =============================
 
-gulp.task('html:build', function () {
+gulp.task('build:html', function () {
     gulp.src(path.src.html)
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html))
         .pipe(reload({stream: true}));
 });
 
-gulp.task('js:build', function () {
+gulp.task('build:js', function () {
     gulp.src(path.src.js)
         .pipe(rigger())
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({stream: true}));
 });
 
-gulp.task('style:build', function () {
+gulp.task('build:css', function () {
     // style.css
     gulp.src(path.src.style)
         .pipe(sass(option.sass))
@@ -137,42 +158,75 @@ gulp.task('style:build', function () {
         .pipe(reload({stream: true}));
 });
 
-gulp.task('image:build', function () {
+gulp.task('build:img', function () {
     gulp.src(path.src.img) // Выберем наши картинки
         .pipe(gulp.dest(path.build.img)) // И бросим в build
         .pipe(reload({stream: true}));
 });
 
-gulp.task('fonts:build', function() {
+gulp.task('build:fonts', function() {
     gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts))
 });
 
+gulp.task('build:zip', function() {
+    var datetime = '-' + getDateTime();
+    var zipName = 'web' + datetime + '.zip';
+
+    gulp.src('web/*')
+        .pipe(zip(zipName))
+        .pipe(gulp.dest('dist'));
+});
+
 // =============================
-// ------- Watch-task ----------
+// ------- Watch task ----------
 // =============================
 
 gulp.task('watch', function(){
     watch([path.watch.html], function(event, cb) {
-        gulp.start('html:build');
+        gulp.start('build:html');
     });
 
     watch([path.watch.style], function(event, cb) {
-        gulp.start('style:build');
+        gulp.start('build:css');
     });
 
     watch([path.watch.js], function(event, cb) {
-        gulp.start('js:build');
+        gulp.start('build:js');
     });
 
     watch([path.watch.img], function(event, cb) {
-        gulp.start('image:build');
+        gulp.start('build:img');
     });
 
     watch([path.watch.fonts], function(event, cb) {
-        gulp.start('fonts:build');
+        gulp.start('build:fonts');
     });
 });
+
+// =============================
+// -------- Main task ----------
+// =============================
+
+gulp.task('build', [
+    'build:html',
+    'build:css',
+    'build:js',
+    'build:img',
+    'build:fonts'
+]);
+
+gulp.task('dev', [
+    'bower',
+    'filter',
+    'build',
+    'watch',
+    'serve'
+]);
+
+// Дефолтный таск старта
+gulp.task('default', ['dev']);
+
 
 // TODO: Разобрать таски и переписать
 // Фильтруем библиотеки и вынимаем только нужные файлы
@@ -196,19 +250,7 @@ gulp.task('filter', function() {
     .pipe(gulp.dest('dist'));
 
     // Вываливаем в билд
-    jsFilter.restore.pipe(gulp.dest('web/libs/'));
+    jsFilter.restore.pipe(gulp.dest(path.build.libs));
 
     return stream;
 });
-
-// Таск "Сделать хорошо"
-gulp.task('build', [
-    'html:build',
-    'js:build',
-    'style:build',
-    'fonts:build',
-    'image:build'
-]);
-
-// Дефолтный таск старта
-gulp.task('default', ['bower', 'build', 'serve', 'watch']);
