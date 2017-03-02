@@ -1,6 +1,6 @@
 {
     "name": "frontend-template",
-    "version": "1.0.6",
+    "version": "1.0.8",
     "description": "The template for quick start of web project with Gulp, Bower etc.",
     "author": "Kirdyashkin Egor <egorkir41@gmail.com> (https://github.com/egorkir)",
     "license": "MIT",
