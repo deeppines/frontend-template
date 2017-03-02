@@ -14,6 +14,8 @@ var cssmin  = require('gulp-clean-css');
 var filter  = require('gulp-filter');
 var csscomb = require('gulp-csscomb');
 var zip     = require('gulp-zip');
+var plumber = require('gulp-plumber');
+var util    = require('gulp-util');
 
 var autoprefixer = require('autoprefixer');
 var rimraf = require('rimraf');
@@ -23,6 +25,13 @@ var reload = browserSync.reload;
 // =============================
 // -------- Functions ----------
 // =============================
+
+// Error handler for gulp-plumber
+function errorHandler(err) {
+    util.log([ (err.name + ' in ' + err.plugin).bold.red, '', err.message, '' ].join('\n'));
+
+    this.emit('end');
+}
 
 function correctNumber(number) {
     return number < 10 ? '0' + number : number;
@@ -89,6 +98,10 @@ var option = {
         logPrefix: "lucas"
     },
 
+    plumber: {
+        errorHandler: errorHandler
+    },
+
     sass: {
         outputStyle: 'expanded'
     },
@@ -128,6 +141,7 @@ gulp.task('bower', function() {
 
 gulp.task('build:html', function () {
     gulp.src(path.src.html)
+        .pipe(plumber(option.plumber))
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html))
         .pipe(reload({stream: true}));
@@ -135,6 +149,7 @@ gulp.task('build:html', function () {
 
 gulp.task('build:js', function () {
     gulp.src(path.src.js)
+        .pipe(plumber(option.plumber))
         .pipe(rigger())
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({stream: true}));
@@ -143,6 +158,7 @@ gulp.task('build:js', function () {
 gulp.task('build:css', function () {
     // style.css
     gulp.src(path.src.style)
+        .pipe(plumber(option.plumber))
         .pipe(sass(option.sass))
         .pipe(postcss(option.postcss))
         .pipe(csscomb(option.csscomb))
@@ -151,6 +167,7 @@ gulp.task('build:css', function () {
 
     // media.css
     gulp.src(path.src.media)
+        .pipe(plumber(option.plumber))
         .pipe(sass(option.sass))
         .pipe(postcss(option.postcss))
         .pipe(csscomb(option.csscomb))
@@ -160,12 +177,14 @@ gulp.task('build:css', function () {
 
 gulp.task('build:img', function () {
     gulp.src(path.src.img) // Выберем наши картинки
+        .pipe(plumber(option.plumber))
         .pipe(gulp.dest(path.build.img)) // И бросим в build
         .pipe(reload({stream: true}));
 });
 
 gulp.task('build:fonts', function() {
     gulp.src(path.src.fonts)
+        .pipe(plumber(option.plumber))
         .pipe(gulp.dest(path.build.fonts))
 });
 
