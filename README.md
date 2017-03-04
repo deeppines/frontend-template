@@ -42,7 +42,7 @@ $ npm i
 $ gulp
 ```
 
-- In browser open page with address http://localhost:9000/
+- In browser open page with address <a href="http://localhost:9000/">http://localhost:9000/</a>
 
 ## <a name="maintasks"></a> Main tasks
 + `gulp vendor` download vendor plugins and filtered files
