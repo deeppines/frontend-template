@@ -27,6 +27,7 @@
         "gulp-plumber": "^1.1.0",
         "gulp-util": "^3.0.8",
         "gulp-zip": "^4.0.0",
+        "gulp-posthtml": "^2.0.0",
         "autoprefixer": "^6.0.0",
         "browser-sync": "^2.12.5",
         "rimraf": "^2.5.2",
