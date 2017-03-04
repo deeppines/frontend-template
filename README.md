@@ -19,28 +19,31 @@ Config for quick start web project with Gulp
 + Sort HTML attributes (posthtml-attrs-sorter)
 
 ## <a name="howto"></a> How it use
-##### - Install <a href="https://nodejs.org">node.js+npm</a> and <a href="https://git-scm.com/downloads">Git</a>
-##### - Install <a href="http://bower.io/">Bower</a>
+- Install <a href="https://nodejs.org">node.js+npm</a> and <a href="https://git-scm.com/downloads">Git</a>
+- Install <a href="http://bower.io/">Bower</a> (once!)
 
 ```js
 $ npm install -g bower
 ```
-Скопируйте файлы в рабочую директорию и запустите в ней консоль.<br>
-Инициализируем в рабочей дериктории git
+Copy files in the working directory and run it in the console.<br>
+Initialize git in working directory
 
 ```js
 $ git init
 ```
-Запускаем npm
+Install npm dependencies
 
 ```js
 $ npm i
 ```
-Стартуем проект и запускаем сборщик
+Start gulp
 
 ```js
 $ gulp
 ```
+
+In browser open page with address http://localhost:9000/
+
 ## <a name="maintasks"></a> Main tasks
 + `gulp vendor` download vendor plugins and filtered files
 + `gulp build` compile a project
