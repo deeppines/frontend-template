@@ -4,21 +4,23 @@
 // ------ Import Plugins -------
 // =============================
 
-var gulp    = require('gulp');
-var bower   = require('gulp-bower');
-var watch   = require('gulp-watch');
-var postcss = require('gulp-postcss');
-var sass    = require('gulp-sass');
-var rigger  = require('gulp-rigger');
-var cssmin  = require('gulp-clean-css');
-var filter  = require('gulp-filter');
-var csscomb = require('gulp-csscomb');
-var zip     = require('gulp-zip');
-var plumber = require('gulp-plumber');
-var util    = require('gulp-util');
+var gulp     = require('gulp');
+var bower    = require('gulp-bower');
+var watch    = require('gulp-watch');
+var postcss  = require('gulp-postcss');
+var sass     = require('gulp-sass');
+var rigger   = require('gulp-rigger');
+var cssmin   = require('gulp-clean-css');
+var filter   = require('gulp-filter');
+var csscomb  = require('gulp-csscomb');
+var zip      = require('gulp-zip');
+var plumber  = require('gulp-plumber');
+var util     = require('gulp-util');
+var posthtml = require('gulp-posthtml');
 
 var autoprefixer = require('autoprefixer');
-var browserSync  = require("browser-sync").create();
+var browserSync  = require('browser-sync').create();
+var attrSorter   = require('posthtml-attrs-sorter');
 var rimraf       = require('rimraf');
 var reload       = browserSync.reload;
 
@@ -112,6 +114,31 @@ var option = {
         }),
     ],
 
+    posthtml: {
+        plugins: [
+            attrSorter({
+                order: [
+                    'class',
+                    'id',
+                    'name',
+                    'data',
+                    'ng',
+                    'src',
+                    'for',
+                    'type',
+                    'href',
+                    'values',
+                    'title',
+                    'alt',
+                    'role',
+                    'aria',
+                    'tabindex'
+                ]
+            })
+        ],
+        options: {}
+    },
+
     csscomb: 'csscomb.json',
 
 }
@@ -143,6 +170,7 @@ gulp.task('build:html', function () {
     gulp.src(path.src.html)
         .pipe(plumber(option.plumber))
         .pipe(rigger())
+        .pipe(posthtml(option.posthtml.plugins, option.posthtml.options))
         .pipe(gulp.dest(path.build.html))
         .pipe(reload({stream: true}));
 });
