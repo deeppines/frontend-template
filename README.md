@@ -25,24 +25,24 @@ Config for quick start web project with Gulp
 ```js
 $ npm install -g bower
 ```
-Copy files in the working directory and run it in the console.<br>
-Initialize git in working directory
+- Copy files in the working directory and run it in the console.<br>
+- Initialize git in working directory
 
 ```js
 $ git init
 ```
-Install npm dependencies
+- Install npm dependencies
 
 ```js
 $ npm i
 ```
-Start gulp
+- Start gulp
 
 ```js
 $ gulp
 ```
 
-In browser open page with address http://localhost:9000/
+- In browser open page with address http://localhost:9000/
 
 ## <a name="maintasks"></a> Main tasks
 + `gulp vendor` download vendor plugins and filtered files
