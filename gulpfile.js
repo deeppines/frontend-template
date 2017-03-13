@@ -57,33 +57,33 @@ function getDateTime() {
 var path = {
 
     build: {
-        html: 'web/',
-        js: 'web/js/',
-        css: 'web/css/',
-        img: 'web/images/',
-        fonts: 'web/fonts/',
-        libs: 'web/libs/'
+        html:   'web/',
+        js:     'web/js/',
+        css:    'web/css/',
+        img:    'web/images/',
+        fonts:  'web/fonts/',
+        libs:   'web/libs/'
     },
 
     src: {
-        html: 'src/*.html',                 // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
-        js: 'src/js/common.js',
-        style: 'src/sass/style.scss',
-        media: 'src/sass/media.scss',
-        img: 'src/images/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-        fonts: 'src/fonts/**/*.*',
-        libs: './bower_components/'
+        html:   'src/*.html',                 // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
+        js:     'src/js/common.js',
+        style:  'src/sass/style.scss',
+        media:  'src/sass/media.scss',
+        img:    'src/images/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        fonts:  'src/fonts/**/*.*',
+        libs:   './bower_components/'
     },
 
     watch: {
-        html: 'src/**/*.html',
-        js: 'src/js/**/*.js',
-        style: 'src/sass/**/*.scss',
-        img: 'src/images/**/*.*',
-        fonts: 'src/fonts/**/*.*'
+        html:   'src/**/*.html',
+        js:     'src/js/**/*.js',
+        style:  'src/sass/**/*.scss',
+        img:    'src/images/**/*.*',
+        fonts:  'src/fonts/**/*.*'
     },
 
-    clean: './web'
+    clean:      './web'
 };
 
 // =============================
@@ -95,6 +95,7 @@ var option = {
     browserSync: {
         server: './web',
         tunnel: false,
+        open: false,
         host: 'localhost',
         port: 9000,
         logPrefix: "lucas"
