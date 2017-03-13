@@ -17,6 +17,7 @@ var zip      = require('gulp-zip');
 var plumber  = require('gulp-plumber');
 var util     = require('gulp-util');
 var posthtml = require('gulp-posthtml');
+var mmq      = require('gulp-merge-media-queries');
 
 var autoprefixer = require('autoprefixer');
 var browserSync  = require('browser-sync').create();
@@ -140,6 +141,11 @@ var option = {
         options: {}
     },
 
+    mmq: {
+        log: true,
+        use_external: true
+    },
+
     csscomb: 'csscomb.json',
 
 }
@@ -190,15 +196,7 @@ gulp.task('build:css', function () {
         .pipe(plumber(option.plumber))
         .pipe(sass(option.sass))
         .pipe(postcss(option.postcss))
-        .pipe(csscomb(option.csscomb))
-        .pipe(gulp.dest(path.build.css))
-        .pipe(reload({stream: true}));
-
-    // media.css
-    gulp.src(path.src.media)
-        .pipe(plumber(option.plumber))
-        .pipe(sass(option.sass))
-        .pipe(postcss(option.postcss))
+        .pipe(mmq(option.mmq))
         .pipe(csscomb(option.csscomb))
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
