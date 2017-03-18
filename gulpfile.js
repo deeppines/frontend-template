@@ -22,7 +22,6 @@ var mmq      = require('gulp-merge-media-queries');
 var autoprefixer = require('autoprefixer');
 var browserSync  = require('browser-sync').create();
 var attrSorter   = require('posthtml-attrs-sorter');
-var rimraf       = require('rimraf');
 var del          = require('del');
 var reload       = browserSync.reload;
 

@@ -31,7 +31,6 @@
         "gulp-posthtml": "^2.0.0",
         "autoprefixer": "^6.0.0",
         "browser-sync": "^2.12.5",
-        "rimraf": "^2.5.2",
         "eslint": "^3.9.1",
         "eslint-config-yandex": "^1.0.6",
         "posthtml-attrs-sorter": "^1.1.0"
