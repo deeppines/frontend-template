@@ -23,6 +23,7 @@ var autoprefixer = require('autoprefixer');
 var browserSync  = require('browser-sync').create();
 var attrSorter   = require('posthtml-attrs-sorter');
 var rimraf       = require('rimraf');
+var del          = require('del');
 var reload       = browserSync.reload;
 
 // =============================
@@ -156,7 +157,7 @@ var option = {
 
 // Удаление скомпилированных файлов
 gulp.task('clean', function (cb) {
-    return rimraf(path.clean, cb);
+    return del(path.clean, cb);
 });
 
 // Запуск сервера с livereload
@@ -174,7 +175,7 @@ gulp.task('bower', function() {
 // =============================
 
 gulp.task('build:html', function () {
-    gulp.src(path.src.html)
+    return gulp.src(path.src.html)
         .pipe(plumber(option.plumber))
         .pipe(rigger())
         .pipe(posthtml(option.posthtml.plugins, option.posthtml.options))
@@ -183,7 +184,7 @@ gulp.task('build:html', function () {
 });
 
 gulp.task('build:js', function () {
-    gulp.src(path.src.js)
+    return gulp.src(path.src.js)
         .pipe(plumber(option.plumber))
         .pipe(rigger())
         .pipe(gulp.dest(path.build.js))
@@ -192,7 +193,7 @@ gulp.task('build:js', function () {
 
 gulp.task('build:css', function () {
     // style.css
-    gulp.src(path.src.style)
+    return gulp.src(path.src.style)
         .pipe(plumber(option.plumber))
         .pipe(sass(option.sass))
         .pipe(postcss(option.postcss))
@@ -203,14 +204,14 @@ gulp.task('build:css', function () {
 });
 
 gulp.task('build:img', function () {
-    gulp.src(path.src.img)
+    return gulp.src(path.src.img)
         .pipe(plumber(option.plumber))
         .pipe(gulp.dest(path.build.img))
         .pipe(reload({stream: true}));
 });
 
 gulp.task('build:fonts', function() {
-    gulp.src(path.src.fonts)
+    return gulp.src(path.src.fonts)
         .pipe(plumber(option.plumber))
         .pipe(gulp.dest(path.build.fonts))
 });
@@ -219,7 +220,7 @@ gulp.task('build:zip', function() {
     var datetime = '-' + getDateTime();
     var zipName = 'web' + datetime + '.zip';
 
-    gulp.src('web/**/*.*')
+    return gulp.src('web/**/*.*')
         .pipe(zip(zipName))
         .pipe(gulp.dest('dist'));
 });
@@ -230,23 +231,23 @@ gulp.task('build:zip', function() {
 
 gulp.task('watch', function(){
     watch([path.watch.html], function(event, cb) {
-        gulp.start('build:html');
+        return gulp.start('build:html');
     });
 
     watch([path.watch.style], function(event, cb) {
-        gulp.start('build:css');
+        return gulp.start('build:css');
     });
 
     watch([path.watch.js], function(event, cb) {
-        gulp.start('build:js');
+        return gulp.start('build:js');
     });
 
     watch([path.watch.img], function(event, cb) {
-        gulp.start('build:img');
+        return gulp.start('build:img');
     });
 
     watch([path.watch.fonts], function(event, cb) {
-        gulp.start('build:fonts');
+        return gulp.start('build:fonts');
     });
 });
 
