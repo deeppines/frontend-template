@@ -19,8 +19,10 @@ var util      = require('gulp-util');
 var posthtml  = require('gulp-posthtml');
 var mmq       = require('gulp-merge-media-queries');
 var sourcemap = require('gulp-sourcemaps');
+var rename    = require("gulp-rename");
 
 var autoprefixer = require('autoprefixer');
+var runSequence  = require('run-sequence');
 var browserSync  = require('browser-sync').create();
 var attrSorter   = require('posthtml-attrs-sorter');
 var del          = require('del');
@@ -190,8 +192,7 @@ gulp.task('build:js', function () {
         .pipe(reload({stream: true}));
 });
 
-gulp.task('build:css', function () {
-    // style.css
+gulp.task('build:css', function (cb) {
     return gulp.src(path.src.style)
         .pipe(plumber(option.plumber))
         .pipe(sourcemap.init())
@@ -204,6 +205,17 @@ gulp.task('build:css', function () {
         .pipe(reload({stream: true}));
 });
 
+gulp.task('build:media', function () {
+    gulp.src(path.build.css + '*.responsive.css')
+        .pipe(plumber(option.plumber))
+        .pipe(sourcemap.init())
+        .pipe(rename({basename: 'media'}))
+        .pipe(sourcemap.write('.'))
+        .pipe(gulp.dest(path.build.css));
+
+    return del(path.build.css + '*.responsive.css');
+});
+
 gulp.task('build:img', function () {
     return gulp.src(path.src.img)
         .pipe(plumber(option.plumber))
@@ -212,7 +224,7 @@ gulp.task('build:img', function () {
 });
 
 gulp.task('build:fonts', function() {
-    return gulp.src(path.src.fonts)
+    return gulp.src(path.src.fonts, {read: false})
         .pipe(plumber(option.plumber))
         .pipe(gulp.dest(path.build.fonts))
         .pipe(reload({stream: true}));
@@ -257,23 +269,36 @@ gulp.task('watch', function(){
 // -------- Main task ----------
 // =============================
 
-gulp.task('vendor', [
-    'bower',
-    'filter'
-]);
-
-gulp.task('zip', [
-    'build',
-    'build:zip'
-]);
+gulp.task('build:style', function (cb) {
+    return runSequence(
+        'build:css',
+        'build:media'
+    );
+});
 
 gulp.task('build', [
     'build:html',
-    'build:css',
+    'build:style',
     'build:js',
     'build:img',
     'build:fonts'
 ]);
+
+gulp.task('vendor', function (cb) {
+    return runSequence(
+        'bower',
+        'filter',
+        cb
+    );
+});
+
+gulp.task('zip', function (cb) {
+    return runSequence(
+        'build',
+        'build:zip',
+        cb
+    );
+});
 
 gulp.task('dev', [
     'build',
