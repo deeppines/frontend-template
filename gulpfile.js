@@ -215,6 +215,7 @@ gulp.task('build:fonts', function() {
     return gulp.src(path.src.fonts)
         .pipe(plumber(option.plumber))
         .pipe(gulp.dest(path.build.fonts))
+        .pipe(reload({stream: true}));
 });
 
 gulp.task('build:zip', function() {
