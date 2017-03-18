@@ -18,6 +18,7 @@
         "gulp": "^3.9.1",
         "gulp-bower": "^0.0.13",
         "gulp-postcss": "^6.0.0",
+        "gulp-sourcemaps": "^2.4.1",
         "gulp-clean-css": "^2.0.7",
         "gulp-rigger": "^0.5.8",
         "gulp-sass": "^2.3.1",

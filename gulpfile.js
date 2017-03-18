@@ -4,20 +4,21 @@
 // ------ Import Plugins -------
 // =============================
 
-var gulp     = require('gulp');
-var bower    = require('gulp-bower');
-var watch    = require('gulp-watch');
-var postcss  = require('gulp-postcss');
-var sass     = require('gulp-sass');
-var rigger   = require('gulp-rigger');
-var cssmin   = require('gulp-clean-css');
-var filter   = require('gulp-filter');
-var csscomb  = require('gulp-csscomb');
-var zip      = require('gulp-zip');
-var plumber  = require('gulp-plumber');
-var util     = require('gulp-util');
-var posthtml = require('gulp-posthtml');
-var mmq      = require('gulp-merge-media-queries');
+var gulp      = require('gulp');
+var bower     = require('gulp-bower');
+var watch     = require('gulp-watch');
+var postcss   = require('gulp-postcss');
+var sass      = require('gulp-sass');
+var rigger    = require('gulp-rigger');
+var cssmin    = require('gulp-clean-css');
+var filter    = require('gulp-filter');
+var csscomb   = require('gulp-csscomb');
+var zip       = require('gulp-zip');
+var plumber   = require('gulp-plumber');
+var util      = require('gulp-util');
+var posthtml  = require('gulp-posthtml');
+var mmq       = require('gulp-merge-media-queries');
+var sourcemap = require('gulp-sourcemaps');
 
 var autoprefixer = require('autoprefixer');
 var browserSync  = require('browser-sync').create();
@@ -193,10 +194,12 @@ gulp.task('build:css', function () {
     // style.css
     return gulp.src(path.src.style)
         .pipe(plumber(option.plumber))
+        .pipe(sourcemap.init())
         .pipe(sass(option.sass))
         .pipe(postcss(option.postcss))
         .pipe(mmq(option.mmq))
         .pipe(csscomb(option.csscomb))
+        .pipe(sourcemap.write('.'))
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
 });
