@@ -1,7 +1,7 @@
 # Frontend template
-Config for quick start web project with Gulp
-
 [![Build Status](https://travis-ci.org/egorkir/frontend-template.svg?branch=master)](https://travis-ci.org/egorkir/frontend-template)
+
+Config for quick start web project with Gulp
 
 1. [Features](#features)
 2. [How it use](#howto)
