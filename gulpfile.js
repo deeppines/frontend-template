@@ -249,7 +249,7 @@ gulp.task('watch', function(){
     });
 
     watch([path.watch.style], function(event, cb) {
-        return gulp.start('build:css');
+        return gulp.start('build:style');
     });
 
     watch([path.watch.js], function(event, cb) {
