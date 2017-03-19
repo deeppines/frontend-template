@@ -10,7 +10,6 @@ var watch     = require('gulp-watch');
 var postcss   = require('gulp-postcss');
 var sass      = require('gulp-sass');
 var rigger    = require('gulp-rigger');
-var cssmin    = require('gulp-clean-css');
 var filter    = require('gulp-filter');
 var csscomb   = require('gulp-csscomb');
 var zip       = require('gulp-zip');
