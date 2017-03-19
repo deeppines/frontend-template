@@ -156,17 +156,14 @@ var option = {
 // --------- Sub tasks ---------
 // =============================
 
-// Удаление скомпилированных файлов
 gulp.task('clean', function (cb) {
     return del(path.clean, cb);
 });
 
-// Запуск сервера с livereload
 gulp.task('serve', function () {
     return browserSync.init(option.browserSync);
 });
 
-// Загрузка плагинов из Bower
 gulp.task('bower', function() {
     return bower();
 });
