@@ -8,15 +8,17 @@
 /// Clearfix
 
 @mixin clearfix {
-	*zoom: 1;
-	&:before,
-	&:after {
-		display: table;
-		content: "";
-	}
-	&:after {
-		clear: both;
-	}
+    *zoom: 1;
+
+    &::before,
+    &::after {
+        display: table;
+        content: '';
+    }
+
+    &::after {
+        clear: both;
+    }
 }
 
 /// Text Shadow
@@ -36,9 +38,9 @@
 /// $color [rgba(0,0,0,0.25)] - Color
 
 @mixin box-shadow ($x: 0, $y: 1px, $blur: 2px, $spread: 0, $color: rgba(0,0,0, 0.25)) {
-	-webkit-box-shadow: $x $y $blur $spread $color;
-	-moz-box-shadow:    $x $y $blur $spread $color;
-	box-shadow:         $x $y $blur $spread $color;
+    -webkit-box-shadow: $x $y $blur $spread $color;
+    -moz-box-shadow:    $x $y $blur $spread $color;
+    box-shadow:         $x $y $blur $spread $color;
 }
 
 /// Inner Shadow
@@ -48,9 +50,9 @@
 /// $color [rgba(0,0,0,0.25)] - Color
 
 @mixin inner-shadow ($x: 0, $y: 1px, $blur: 2px, $spread: 0, $color: rgba(0,0,0, 0.25)) {
-	-webkit-box-shadow: inset $x $y $blur $spread $color;
-	-moz-box-shadow:    inset $x $y $blur $spread $color;
-	box-shadow:         inset $x $y $blur $spread $color;
+    -webkit-box-shadow: inset $x $y $blur $spread $color;
+    -moz-box-shadow:    inset $x $y $blur $spread $color;
+    box-shadow:         inset $x $y $blur $spread $color;
 }
 
 /// Gradient
@@ -88,22 +90,22 @@
 /// $y [0] - Y
 
 @mixin translate ($x, $y:0) {
-	-webkit-transform:   translate($x, $y);
-	-moz-transform: 	 translate($x, $y);
-	-ms-transform: 		 translate($x, $y);
-	-o-transform: 		 translate($x, $y);
-	transform: 		     translate($x, $y);
+    -webkit-transform:   translate($x, $y);
+    -moz-transform: 	 translate($x, $y);
+    -ms-transform: 		 translate($x, $y);
+    -o-transform: 		 translate($x, $y);
+    transform: 		     translate($x, $y);
 }
 
 /// Rotate
 /// $deg [0] - degree
 
 @mixin rotate ($deg: 0) {
-	-webkit-transform:   rotate($deg);
-	-moz-transform: 	 rotate($deg);
-	-ms-transform: 		 rotate($deg);
-	-o-transform: 		 rotate($deg);
-	transform: 		     rotate($deg);
+    -webkit-transform:   rotate($deg);
+    -moz-transform: 	 rotate($deg);
+    -ms-transform: 		 rotate($deg);
+    -o-transform: 		 rotate($deg);
+    transform: 		     rotate($deg);
 }
 
 /// Transition
@@ -111,11 +113,11 @@
 ///
 
 @mixin transition ($transition) {
-	-webkit-transition: $transition;
-	-moz-transition:    $transition;
-	-ms-transition:     $transition;
-	-o-transition:      $transition;
-	transition:         $transition;
+    -webkit-transition: $transition;
+    -moz-transition:    $transition;
+    -ms-transition:     $transition;
+    -o-transition:      $transition;
+    transition:         $transition;
 }
 
 /// Placeholder text
@@ -123,11 +125,12 @@
 ///
 
 @mixin placeholder($color: #eee ) {
-  // Firefox
-  &::-moz-placeholder {
-    color: $color;
-    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
-  }
-  &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
-  &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+    // Firefox
+    &::-moz-placeholder {
+        color: $color;
+        opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+    }
+
+    &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+    &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
 }
