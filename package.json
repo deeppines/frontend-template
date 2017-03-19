@@ -25,6 +25,7 @@
         "gulp-filter": "^4.0.0",
         "gulp-csscomb": "^3.0.8",
         "gulp-plumber": "^1.1.0",
+        "gulp-rename": "^1.2.2",
         "gulp-util": "^3.0.8",
         "gulp-merge-media-queries": "^0.2.1",
         "gulp-zip": "^4.0.0",

@@ -26,8 +26,8 @@ $(document).ready(function(){
     //------ Listener functions ----------
     //====================================
 
-    //= resizeListener.js
-    //= scrollListener.js
+    //= source/resizeListener.js
+    //= source/scrollListener.js
 
     //====================================
     //--------- Setting libs -------------
