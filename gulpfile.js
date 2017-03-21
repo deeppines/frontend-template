@@ -164,16 +164,14 @@ gulp.task('build:html', function () {
         .pipe($.plumber(option.plumber))
         .pipe($.rigger())
         .pipe($.posthtml(option.posthtml.plugins, option.posthtml.options))
-        .pipe(gulp.dest(path.build.html))
-        .pipe(reload({stream: true}));
+        .pipe(gulp.dest(path.build.html));
 });
 
 gulp.task('build:js', function () {
     return gulp.src(path.src.js)
         .pipe($.plumber(option.plumber))
         .pipe($.rigger())
-        .pipe(gulp.dest(path.build.js))
-        .pipe(reload({stream: true}));
+        .pipe(gulp.dest(path.build.js));
 });
 
 gulp.task('build:css', function (cb) {
@@ -185,8 +183,7 @@ gulp.task('build:css', function (cb) {
         .pipe(mmq(option.mmq))
         .pipe($.csscomb(option.csscomb))
         .pipe($.sourcemaps.write('.'))
-        .pipe(gulp.dest(path.build.css))
-        .pipe(reload({stream: true}));
+        .pipe(gulp.dest(path.build.css));
 });
 
 gulp.task('build:media', function () {
@@ -203,15 +200,13 @@ gulp.task('build:media', function () {
 gulp.task('build:img', function () {
     return gulp.src(path.src.img)
         .pipe($.plumber(option.plumber))
-        .pipe(gulp.dest(path.build.img))
-        .pipe(reload({stream: true}));
+        .pipe(gulp.dest(path.build.img));
 });
 
 gulp.task('build:fonts', function() {
     return gulp.src(path.src.fonts, {read: false})
         .pipe($.plumber(option.plumber))
-        .pipe(gulp.dest(path.build.fonts))
-        .pipe(reload({stream: true}));
+        .pipe(gulp.dest(path.build.fonts));
 });
 
 gulp.task('build:zip', function() {
@@ -229,23 +224,23 @@ gulp.task('build:zip', function() {
 
 gulp.task('watch', function(){
     $.watch([path.watch.html], function(event, cb) {
-        return gulp.start('build:html');
+        return runSequence('build:html', reload);
     });
 
     $.watch([path.watch.style], function(event, cb) {
-        return gulp.start('build:style');
+        return runSequence('build:css', 'build:media', reload);
     });
 
     $.watch([path.watch.js], function(event, cb) {
-        return gulp.start('build:js');
+        return runSequence('build:js', reload);
     });
 
     $.watch([path.watch.img], function(event, cb) {
-        return gulp.start('build:img');
+        return runSequence('build:img', reload);
     });
 
     $.watch([path.watch.fonts], function(event, cb) {
-        return gulp.start('build:fonts');
+        return runSequence('build:fonts', reload);
     });
 });
 
