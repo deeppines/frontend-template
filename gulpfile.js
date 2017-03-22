@@ -251,7 +251,8 @@ gulp.task('watch', function(){
 gulp.task('build:style', function (cb) {
     return runSequence(
         'build:css',
-        'build:media'
+        'build:media',
+        cb
     );
 });
 
