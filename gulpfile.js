@@ -204,7 +204,7 @@ gulp.task('build:img', function () {
 });
 
 gulp.task('build:fonts', function() {
-    return gulp.src(path.src.fonts, {read: false})
+    return gulp.src(path.src.fonts)
         .pipe($.plumber(option.plumber))
         .pipe(gulp.dest(path.build.fonts));
 });
