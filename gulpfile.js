@@ -109,7 +109,7 @@ var option = {
         imgName: 'sprite.png',
         cssName: '_sprite.scss',
         cssFormat: 'scss',
-        algorithm: 'binary-tree',
+        // algorithm: 'binary-tree',
         padding: 8
     },
 
