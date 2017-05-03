@@ -57,7 +57,9 @@
         "vinyl-buffer": "^1.0.0",
         "eslint": "^3.9.1",
         "eslint-config-yandex": "^1.0.6",
-        "posthtml-attrs-sorter": "^1.1.0"
+        "posthtml-attrs-sorter": "^1.1.0",
+        "imagemin-jpeg-recompress": "^5.1.0",
+        "imagemin-pngquant": "^5.0.0"
     }
 
 }

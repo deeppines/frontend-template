@@ -14,6 +14,9 @@ var spritesmith  = require('gulp.spritesmith');
 var browserSync  = require('browser-sync').create();
 var attrSorter   = require('posthtml-attrs-sorter');
 var del          = require('del');
+var buffer       = require('vinyl-buffer');
+var imageminPngquant = require('imagemin-pngquant');
+var imageminJpegRecompress = require('imagemin-jpeg-recompress');
 var reload       = browserSync.reload;
 
 // =============================
@@ -100,6 +103,34 @@ var option = {
 
     sass: {
         outputStyle: 'expanded'
+    },
+
+    spritesmith: {
+        imgName: 'sprite.png',
+        cssName: '_ sprite.scss',
+        cssFormat: 'scss',
+        algorithm: 'binary-tree',
+        padding: 8
+    },
+
+    imagemin: {
+        images: [
+            $.imagemin.gifsicle({
+                interlaced: true,
+                optimizationLevel: 3
+            }),
+            imageminJpegRecompress({
+                progressive: true,
+                max: 80,
+                min: 70
+            }),
+            imageminPngquant({ quality: '75-85' }),
+            $.imagemin.svgo({
+                plugins: [{
+                    removeViewBox: false
+                }]
+            })
+        ],
     },
 
     postcss: [
@@ -213,12 +244,17 @@ gulp.task('build:fonts', function() {
 });
 
 gulp.task('build:sprite', function () {
-    var spriteData = gulp.src(path.src.sprites).pipe(spritesmith({
-        imgName: 'sprite.png',
-        cssName: 'sprite.css'
-    }));
+    var spriteData = gulp.src(path.src.sprites)
+        .pipe(spritesmith(option.spritesmith));
 
-    return spriteData.pipe(gulp.dest(path.build.sprites));
+    spriteData.img.pipe(buffer())
+        .pipe($.imagemin(option.imagemin.images))
+        .pipe(gulp.dest(path.build.sprites));
+
+    spriteData.css.pipe(buffer())
+        .pipe(gulp.dest('src/sass/base/'));
+
+    return spriteData.img.pipe(buffer());
 });
 
 gulp.task('build:zip', function() {
