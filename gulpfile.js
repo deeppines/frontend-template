@@ -107,7 +107,7 @@ var option = {
 
     spritesmith: {
         imgName: 'sprite.png',
-        cssName: '_ sprite.scss',
+        cssName: '_sprite.scss',
         cssFormat: 'scss',
         algorithm: 'binary-tree',
         padding: 8
