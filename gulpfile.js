@@ -10,6 +10,7 @@ var mmq       = require('gulp-merge-media-queries');
 
 var autoprefixer = require('autoprefixer');
 var runSequence  = require('run-sequence');
+var spritesmith  = require('gulp.spritesmith');
 var browserSync  = require('browser-sync').create();
 var attrSorter   = require('posthtml-attrs-sorter');
 var del          = require('del');
@@ -48,21 +49,23 @@ function getDateTime() {
 var path = {
 
     build: {
-        html:   'web/',
-        js:     'web/js/',
-        css:    'web/css/',
-        img:    'web/images/',
-        fonts:  'web/fonts/',
-        libs:   'web/libs/'
+        html:    'web/',
+        js:      'web/js/',
+        css:     'web/css/',
+        img:     'web/images/',
+        sprites: 'web/images/sprites',
+        fonts:   'web/fonts/',
+        libs:    'web/libs/'
     },
 
     src: {
-        html:   'src/*.html',                 // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
-        js:     'src/js/common.js',
-        style:  'src/sass/style.scss',
-        img:    'src/images/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-        fonts:  'src/fonts/**/*.*',
-        libs:   './bower_components/'
+        html:    'src/*.html',                 // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
+        js:      'src/js/common.js',
+        style:   'src/sass/style.scss',
+        img:     'src/images/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        sprites: 'src/images/sprites/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        fonts:   'src/fonts/**/*.*',
+        libs:    './bower_components/'
     },
 
     watch: {
@@ -207,6 +210,15 @@ gulp.task('build:fonts', function() {
     return gulp.src(path.src.fonts)
         .pipe($.plumber(option.plumber))
         .pipe(gulp.dest(path.build.fonts));
+});
+
+gulp.task('build:sprite', function () {
+    var spriteData = gulp.src(path.src.sprites).pipe(spritesmith({
+        imgName: 'sprite.png',
+        cssName: 'sprite.css'
+    }));
+
+    return spriteData.pipe(gulp.dest(path.build.sprites));
 });
 
 gulp.task('build:zip', function() {
