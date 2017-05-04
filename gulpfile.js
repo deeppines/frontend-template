@@ -289,7 +289,7 @@ gulp.task('watch', function(){
         return runSequence('build:img', reload);
     });
 
-    $.watch([path.watch.img], function(event, cb) {
+    $.watch([path.watch.sprites], function(event, cb) {
         return runSequence('build:sprite', reload);
     });
 
@@ -312,6 +312,7 @@ gulp.task('build:style', function (cb) {
 
 gulp.task('build', [
     'build:html',
+    'build:sprite',
     'build:style',
     'build:js',
     'build:img',
