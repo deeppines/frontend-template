@@ -10,9 +10,13 @@ var mmq       = require('gulp-merge-media-queries');
 
 var autoprefixer = require('autoprefixer');
 var runSequence  = require('run-sequence');
+var spritesmith  = require('gulp.spritesmith');
 var browserSync  = require('browser-sync').create();
 var attrSorter   = require('posthtml-attrs-sorter');
 var del          = require('del');
+var buffer       = require('vinyl-buffer');
+var imageminPngquant = require('imagemin-pngquant');
+var imageminJpegRecompress = require('imagemin-jpeg-recompress');
 var reload       = browserSync.reload;
 
 // =============================
@@ -48,29 +52,32 @@ function getDateTime() {
 var path = {
 
     build: {
-        html:   'web/',
-        js:     'web/js/',
-        css:    'web/css/',
-        img:    'web/images/',
-        fonts:  'web/fonts/',
-        libs:   'web/libs/'
+        html:    'web/',
+        js:      'web/js/',
+        css:     'web/css/',
+        img:     'web/images/',
+        sprites: 'web/images/sprites',
+        fonts:   'web/fonts/',
+        libs:    'web/libs/'
     },
 
     src: {
-        html:   'src/*.html',                 // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
-        js:     'src/js/common.js',
-        style:  'src/sass/style.scss',
-        img:    'src/images/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-        fonts:  'src/fonts/**/*.*',
-        libs:   './bower_components/'
+        html:    'src/*.html',                 // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
+        js:      'src/js/common.js',
+        style:   'src/sass/style.scss',
+        img:     'src/images/content/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        sprites: 'src/images/sprites/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        fonts:   'src/fonts/**/*.*',
+        libs:    './bower_components/'
     },
 
     watch: {
-        html:   'src/**/*.html',
-        js:     'src/js/**/*.js',
-        style:  'src/sass/**/*.scss',
-        img:    'src/images/**/*.*',
-        fonts:  'src/fonts/**/*.*'
+        html:    'src/**/*.html',
+        js:      'src/js/**/*.js',
+        style:   'src/sass/**/*.scss',
+        img:     'src/images/content/**/*.*',
+        sprites: 'src/images/sprites/**/*.*',
+        fonts:   'src/fonts/**/*.*'
     },
 
     clean:      './web'
@@ -97,6 +104,35 @@ var option = {
 
     sass: {
         outputStyle: 'expanded'
+    },
+
+    spritesmith: {
+        imgName: 'sprite.png',
+        imgPath: '/images/sprites/sprite.png',
+        cssName: '_sprite.scss',
+        cssFormat: 'css',
+        algorithm: 'binary-tree',
+        padding: 8
+    },
+
+    imagemin: {
+        images: [
+            $.imagemin.gifsicle({
+                interlaced: true,
+                optimizationLevel: 3
+            }),
+            imageminJpegRecompress({
+                progressive: true,
+                max: 80,
+                min: 70
+            }),
+            imageminPngquant({ quality: '75-85' }),
+            $.imagemin.svgo({
+                plugins: [{
+                    removeViewBox: false
+                }]
+            })
+        ],
     },
 
     postcss: [
@@ -209,6 +245,20 @@ gulp.task('build:fonts', function() {
         .pipe(gulp.dest(path.build.fonts));
 });
 
+gulp.task('build:sprite', function () {
+    var spriteData = gulp.src(path.src.sprites)
+        .pipe(spritesmith(option.spritesmith));
+
+    spriteData.img.pipe(buffer())
+        .pipe($.imagemin(option.imagemin.images))
+        .pipe(gulp.dest(path.build.sprites));
+
+    spriteData.css.pipe(buffer())
+        .pipe(gulp.dest('src/sass/base/'));
+
+    return spriteData.img.pipe(buffer());
+});
+
 gulp.task('build:zip', function() {
     var datetime = '-' + getDateTime();
     var zipName = 'web' + datetime + '.zip';
@@ -239,6 +289,10 @@ gulp.task('watch', function(){
         return runSequence('build:img', reload);
     });
 
+    $.watch([path.watch.sprites], function(event, cb) {
+        return runSequence('build:sprite', reload);
+    });
+
     $.watch([path.watch.fonts], function(event, cb) {
         return runSequence('build:fonts', reload);
     });
@@ -258,6 +312,7 @@ gulp.task('build:style', function (cb) {
 
 gulp.task('build', [
     'build:html',
+    'build:sprite',
     'build:style',
     'build:js',
     'build:img',
