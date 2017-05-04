@@ -22,6 +22,7 @@ Config for quick start web project with Gulp
 + Errors output without stopping gulp (gulp-plumber)
 + Sort HTML attributes (posthtml-attrs-sorter)
 + Merge and sort media queries in external file (gulp-merge-media-queries)
++ Build of png sprites (gulp-spritesmith)
 
 ## <a name="howto"></a> How it use
 - Install <a href="https://nodejs.org">node.js+npm</a> and <a href="https://git-scm.com/downloads">Git</a>
