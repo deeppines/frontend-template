@@ -72,11 +72,12 @@ var path = {
     },
 
     watch: {
-        html:   'src/**/*.html',
-        js:     'src/js/**/*.js',
-        style:  'src/sass/**/*.scss',
-        img:    'src/images/content/**/*.*',
-        fonts:  'src/fonts/**/*.*'
+        html:    'src/**/*.html',
+        js:      'src/js/**/*.js',
+        style:   'src/sass/**/*.scss',
+        img:     'src/images/content/**/*.*',
+        sprites: 'src/images/sprites/**/*.*',
+        fonts:   'src/fonts/**/*.*'
     },
 
     clean:      './web'
@@ -286,6 +287,10 @@ gulp.task('watch', function(){
 
     $.watch([path.watch.img], function(event, cb) {
         return runSequence('build:img', reload);
+    });
+
+    $.watch([path.watch.img], function(event, cb) {
+        return runSequence('build:sprite', reload);
     });
 
     $.watch([path.watch.fonts], function(event, cb) {
