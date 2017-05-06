@@ -66,7 +66,7 @@ var path = {
         js:      'source/js/common.js',
         style:   'source/scss/style.scss',
         img:     'source/images/content/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-        sprites: 'source/images/sprites/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        sprites: ['source/images/sprites/**/*.*', '!source/images/sprites/**/*.md'],  // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         fonts:   'source/fonts/**/*.*',
         libs:    './bower_components/'
     },
