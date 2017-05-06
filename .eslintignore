@@ -3,11 +3,12 @@
 
 package.json*
 bower.json*
+csscomb.json*
 gulpfile.js*
 
 # Ignore build files
 
-src/js/common.js*
+source/js/common.js*
 
 web/*
 !web/js/common.js
