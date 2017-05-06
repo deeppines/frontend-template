@@ -8,8 +8,7 @@ Config for quick start web project with Gulp
 1. [Features](#features)
 2. [How it use](#howto)
 3. [Main tasks](#maintasks)
-4. [Sass guide](https://github.com/egorkir/sass-guide)
-5. [License](#license)
+4. [License](#license)
 
 ## <a name="features"></a> Features
 + Fast and easy collector (gulp)
