@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    //= modules/meta.html
-</head>
+doctype html
+html(lang="ru")
 
-<body>
-    <header role="banner">
-        //= modules/header.html
-    </header>
-    <main role="main">
+head
+    include modules/meta.pug
 
-    </main>
-    <footer role="contentinfo">
-        //= modules/footer.html
-    </footer>
-</body>
+body
+    header(role="banner")
+        include modules/header.pug
 
-</html>
+    main(role="main")
+
+    footer(role="contentinfo")
+        include modules/footer.pug
