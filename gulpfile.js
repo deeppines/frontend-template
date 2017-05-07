@@ -113,6 +113,19 @@ var option = {
         pretty: '\t'
     },
 
+    htmlPrettify: {
+        'unformatted': [ 'pre', 'code', 'textarea' ],
+        'extra_liners': ['head', 'body', '/html', 'header', 'main', 'footer'],
+        'indent_size': 4,
+        'indent_char': ' ',
+        'indent_with_tabs': false,
+        'eol': '\n',
+        'end-with-newline': true,
+        'preserve_newlines': true,
+        'indent-inner-html': true,
+        'brace_style': 'expand'
+    },
+
     spritesmith: {
         imgName: 'sprite.png',
         imgPath: '/images/sprites/sprite.png',
@@ -207,6 +220,7 @@ gulp.task('build:html', function () {
         .pipe($.plumber(option.plumber))
         .pipe($.pug(option.pug))
         .pipe($.posthtml(option.posthtml.plugins, option.posthtml.options))
+        .pipe($.prettify(option.htmlPrettify))
         .pipe(gulp.dest(path.build.html));
 });
 
