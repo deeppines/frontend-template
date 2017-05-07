@@ -65,7 +65,7 @@ var path = {
         html:    'source/*.pug',                 // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         js:      'source/js/common.js',
         style:   'source/scss/style.scss',
-        img:     'source/images/content/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        img:     'source/images/content/**/*.*', // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         sprites: [
             'source/images/sprites/**/*.*',
             '!source/images/sprites/**/*.md'
