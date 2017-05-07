@@ -59,7 +59,43 @@ $ gulp
 + `gulp zip` compile a project in zip
 
 ## <a name="structure"></a> Files and folders structure
-
+```
+frontend-template/                     # Project root
+├── psd                                # Layout psd files folder
+├── web                                # Compiled files
+├── dest                               # Folder with zip archives
+├── source                             # Source files
+│   ├── fonts                          # Custom fonts folder
+│   ├── images                         # Images folder
+│   │   ├── content                    # Content Images folder
+│   │   └── sprites                    # Static files
+│   ├── js                             # Scripts folder
+│   |   ├── custom                     # Custom scripts folder
+│   |   ├── functions                  # Functions scripts
+│   │   └── common.js                  # Common JavaScript file
+│   ├── modules                        # Modules folder
+│   ├── scss                           # Scss style folder
+│   |   ├── core                       # JavaScript files
+│   |   ├── components                 # Components style folder
+│   |   ├── vendors                    # JavaScript files
+│   |   ├── _common.scss               # Other style
+│   |   ├── _media.scss                # @media
+│   |   └── style.scss                 # Config styles file
+│   └── index.pug                      # Index pug template file
+|
+├── .eslintignore                      # JavaScript linter config
+├── .eslintrc                          # JavaScript linter config
+├── .pug-lintrc                        # Pug linter config
+├── .scss-lint.yml                     # Scss linter config
+├── bower.json                         # Bower config
+├── package.json                       # Dependencies for node.js
+├── .csscomb.json                      # csscomb config
+├── .travis.yml                        # TravisCI config
+├── gulpfile.js                        # gulp.js config
+├── browserslist                       # Autoprefixer browser list
+├── LICENSE                            # License
+└── README.md                          # File you read
+```
 
 ## <a name="license"></a> License
 [The MIT License (MIT)](https://github.com/egorkir/frontend-template/blob/master/LICENSE)
