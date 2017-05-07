@@ -75,9 +75,9 @@ frontend-template/                     # Project root
 │   │   └── common.js                  # Common JavaScript file
 │   ├── modules                        # Modules folder
 │   ├── scss                           # Scss style folder
-│   |   ├── core                       # JavaScript files
+│   |   ├── core                       # Base style, variables, mixins etc
 │   |   ├── components                 # Components style folder
-│   |   ├── vendors                    # JavaScript files
+│   |   ├── vendors                    # Vendors plugins style
 │   |   ├── _common.scss               # Other style
 │   |   ├── _media.scss                # @media
 │   |   └── style.scss                 # Config styles file
@@ -87,10 +87,10 @@ frontend-template/                     # Project root
 ├── .eslintrc                          # JavaScript linter config
 ├── .pug-lintrc                        # Pug linter config
 ├── .scss-lint.yml                     # Scss linter config
-├── bower.json                         # Bower config
-├── package.json                       # Dependencies for node.js
 ├── .csscomb.json                      # csscomb config
 ├── .travis.yml                        # TravisCI config
+├── bower.json                         # Bower config
+├── package.json                       # Dependencies for node.js
 ├── gulpfile.js                        # gulp.js config
 ├── browserslist                       # Autoprefixer browser list
 ├── LICENSE                            # License
