@@ -61,6 +61,8 @@
         "posthtml-attrs-sorter": "^1.1.0",
         "imagemin-jpeg-recompress": "^5.1.0",
         "imagemin-pngquant": "^5.0.0"
-    }
+    },
+
+    "extends": ".pug-lintrc"
 
 }
