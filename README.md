@@ -8,7 +8,8 @@ Config for quick start web project with Gulp
 1. [Features](#features)
 2. [How it use](#howto)
 3. [Main tasks](#maintasks)
-4. [License](#license)
+4. [Files and folders structure](#structure)
+5. [License](#license)
 
 ## <a name="features"></a> Features
 + Fast and easy collector (gulp)
@@ -56,6 +57,9 @@ $ gulp
 + `gulp build` compile a project
 + `gulp dev` compile a project and launches watchers/server
 + `gulp zip` compile a project in zip
+
+## <a name="structure"></a> Files and folders structure
+
 
 ## <a name="license"></a> License
 [The MIT License (MIT)](https://github.com/egorkir/frontend-template/blob/master/LICENSE)
