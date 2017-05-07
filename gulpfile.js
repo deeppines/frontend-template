@@ -62,17 +62,20 @@ var path = {
     },
 
     src: {
-        html:    'source/*.html',                 // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
+        html:    'source/*.pug',                 // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         js:      'source/js/common.js',
         style:   'source/scss/style.scss',
         img:     'source/images/content/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-        sprites: ['source/images/sprites/**/*.*', '!source/images/sprites/**/*.md'],  // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        sprites: [
+            'source/images/sprites/**/*.*',
+            '!source/images/sprites/**/*.md'
+        ],  // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         fonts:   'source/fonts/**/*.*',
         libs:    './bower_components/'
     },
 
     watch: {
-        html:    'source/**/*.html',
+        html:    'source/**/*.pug',
         js:      'source/js/**/*.js',
         style:   'source/sсss/**/*.scss',
         img:     'source/images/content/**/*.*',
@@ -104,6 +107,10 @@ var option = {
 
     sass: {
         outputStyle: 'expanded'
+    },
+
+    pug: {
+        pretty: '\t'
     },
 
     spritesmith: {
@@ -198,7 +205,7 @@ gulp.task('bower', function() {
 gulp.task('build:html', function () {
     return gulp.src(path.src.html)
         .pipe($.plumber(option.plumber))
-        .pipe($.rigger())
+        .pipe($.pug(option.pug))
         .pipe($.posthtml(option.posthtml.plugins, option.posthtml.options))
         .pipe(gulp.dest(path.build.html));
 });
