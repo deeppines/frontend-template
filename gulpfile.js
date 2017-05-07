@@ -62,22 +62,25 @@ var path = {
     },
 
     src: {
-        html:    'src/*.html',                 // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
-        js:      'src/js/common.js',
-        style:   'src/sass/style.scss',
-        img:     'src/images/content/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-        sprites: 'src/images/sprites/**/*.*',           // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-        fonts:   'src/fonts/**/*.*',
+        html:    'source/*.pug',                 // Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
+        js:      'source/js/common.js',
+        style:   'source/scss/style.scss',
+        img:     'source/images/content/**/*.*', // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        sprites: [
+            'source/images/sprites/**/*.*',
+            '!source/images/sprites/**/*.md'
+        ],  // Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        fonts:   'source/fonts/**/*.*',
         libs:    './bower_components/'
     },
 
     watch: {
-        html:    'src/**/*.html',
-        js:      'src/js/**/*.js',
-        style:   'src/sass/**/*.scss',
-        img:     'src/images/content/**/*.*',
-        sprites: 'src/images/sprites/**/*.*',
-        fonts:   'src/fonts/**/*.*'
+        html:    'source/**/*.pug',
+        js:      'source/js/**/*.js',
+        style:   'source/sсss/**/*.scss',
+        img:     'source/images/content/**/*.*',
+        sprites: 'source/images/sprites/**/*.*',
+        fonts:   'source/fonts/**/*.*'
     },
 
     clean:      './web'
@@ -104,6 +107,23 @@ var option = {
 
     sass: {
         outputStyle: 'expanded'
+    },
+
+    pug: {
+        pretty: '\t'
+    },
+
+    htmlPrettify: {
+        'unformatted': [ 'pre', 'code', 'textarea' ],
+        'extra_liners': ['head', 'body', '/html', 'header', 'main', 'footer'],
+        'indent_size': 4,
+        'indent_char': ' ',
+        'indent_with_tabs': false,
+        'eol': '\n',
+        'end-with-newline': true,
+        'preserve_newlines': true,
+        'indent-inner-html': true,
+        'brace_style': 'expand'
     },
 
     spritesmith: {
@@ -198,8 +218,9 @@ gulp.task('bower', function() {
 gulp.task('build:html', function () {
     return gulp.src(path.src.html)
         .pipe($.plumber(option.plumber))
-        .pipe($.rigger())
+        .pipe($.pug(option.pug))
         .pipe($.posthtml(option.posthtml.plugins, option.posthtml.options))
+        .pipe($.prettify(option.htmlPrettify))
         .pipe(gulp.dest(path.build.html));
 });
 

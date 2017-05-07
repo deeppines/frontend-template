@@ -8,7 +8,7 @@ Config for quick start web project with Gulp
 1. [Features](#features)
 2. [How it use](#howto)
 3. [Main tasks](#maintasks)
-4. [Sass guide](https://github.com/egorkir/sass-guide)
+4. [Files and folders structure](#structure)
 5. [License](#license)
 
 ## <a name="features"></a> Features
@@ -23,6 +23,8 @@ Config for quick start web project with Gulp
 + Sort HTML attributes (posthtml-attrs-sorter)
 + Merge and sort media queries in external file (gulp-merge-media-queries)
 + Build of png sprites (gulp-spritesmith)
++ Pug template and HTML preprocessor (gulp-pug)
++ HTML formatting (gulp-prettify)
 
 ## <a name="howto"></a> How it use
 - Install <a href="https://nodejs.org">node.js+npm</a> and <a href="https://git-scm.com/downloads">Git</a>
@@ -55,6 +57,45 @@ $ gulp
 + `gulp build` compile a project
 + `gulp dev` compile a project and launches watchers/server
 + `gulp zip` compile a project in zip
+
+## <a name="structure"></a> Files and folders structure
+```
+frontend-template/                     # Project root
+├── psd                                # Layout psd files folder
+├── web                                # Compiled files
+├── dest                               # Folder with zip archives
+├── source                             # Source files
+│   ├── fonts                          # Custom fonts folder
+│   ├── images                         # Images folder
+│   │   ├── content                    # Content Images folder
+│   │   └── sprites                    # Static files
+│   ├── js                             # Scripts folder
+│   |   ├── custom                     # Custom scripts folder
+│   |   ├── functions                  # Functions scripts
+│   │   └── common.js                  # Common JavaScript file
+│   ├── modules                        # Modules folder
+│   ├── scss                           # Scss style folder
+│   |   ├── core                       # Base style, variables, mixins etc
+│   |   ├── components                 # Components style folder
+│   |   ├── vendors                    # Vendors plugins style
+│   |   ├── _common.scss               # Other style
+│   |   ├── _media.scss                # @media
+│   |   └── style.scss                 # Config styles file
+│   └── index.pug                      # Index pug template file
+|
+├── .eslintignore                      # JavaScript linter config
+├── .eslintrc                          # JavaScript linter config
+├── .pug-lintrc                        # Pug linter config
+├── .scss-lint.yml                     # Scss linter config
+├── .csscomb.json                      # csscomb config
+├── .travis.yml                        # TravisCI config
+├── bower.json                         # Bower config
+├── package.json                       # Dependencies for node.js
+├── gulpfile.js                        # gulp.js config
+├── browserslist                       # Autoprefixer browser list
+├── LICENSE                            # License
+└── README.md                          # File you read
+```
 
 ## <a name="license"></a> License
 [The MIT License (MIT)](https://github.com/egorkir/frontend-template/blob/master/LICENSE)

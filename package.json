@@ -1,6 +1,6 @@
 {
     "name": "frontend-template",
-    "version": "1.1.3",
+    "version": "1.5.0",
     "description": "The template for quick start of web project with Gulp, Bower etc.",
     "keywords": [
         "gulp",
@@ -33,14 +33,15 @@
 
     "devDependencies": {
         "gulp": "^3.9.1",
+        "gulp-pug": "^3.3.0",
         "gulp-bower": "^0.0.13",
-        "gulp-postcss": "^6.0.0",
-        "gulp-sourcemaps": "^2.4.1",
-        "gulp-rigger": "^0.5.8",
         "gulp-sass": "^3.1.0",
-        "gulp-watch": "^4.3.5",
-        "gulp-filter": "^5.0.0",
+        "gulp-postcss": "^7.0.0",
         "gulp-csscomb": "^3.0.8",
+        "gulp-sourcemaps": "^2.6.0",
+        "gulp-rigger": "^0.5.8",
+        "gulp-watch": "^4.3.11",
+        "gulp-filter": "^5.0.0",
         "gulp-plumber": "^1.1.0",
         "gulp-rename": "^1.2.2",
         "gulp-imagemin": "^3.2.0",
@@ -48,18 +49,21 @@
         "gulp-merge-media-queries": "^0.2.1",
         "gulp-zip": "^4.0.0",
         "gulp-posthtml": "^3.0.0",
+        "gulp-prettify": "0.5.0",
         "gulp-load-plugins": "^1.5.0",
         "gulp.spritesmith": "^6.4.0",
         "del": "^2.2.2",
-        "autoprefixer": "^6.0.0",
+        "autoprefixer": "^7.0.0",
         "run-sequence": "^1.2.2",
-        "browser-sync": "^2.12.5",
+        "browser-sync": "^2.18.8",
         "vinyl-buffer": "^1.0.0",
-        "eslint": "^3.9.1",
+        "eslint": "^3.19.0",
         "eslint-config-yandex": "^1.0.6",
         "posthtml-attrs-sorter": "^1.1.0",
         "imagemin-jpeg-recompress": "^5.1.0",
         "imagemin-pngquant": "^5.0.0"
-    }
+    },
+
+    "extends": ".pug-lintrc"
 
 }
