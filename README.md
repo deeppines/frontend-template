@@ -68,8 +68,8 @@ frontend-template/                     # Project root
 │   ├── fonts                          # Custom fonts folder
 │   ├── images                         # Images folder
 │   │   ├── content                    # Content Images folder
-│   │   └── sprites                    # Static files
-│   ├── js                             # Scripts folder
+│   │   └── sprites                    # Sprites images folder
+│   ├── js                             # JavaScript folder
 │   |   ├── custom                     # Custom scripts folder
 │   |   ├── functions                  # Functions scripts
 │   │   └── common.js                  # Common JavaScript file
