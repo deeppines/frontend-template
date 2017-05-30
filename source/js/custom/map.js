@@ -68,6 +68,12 @@ $(function () {
                 name: 'Styled Map'
             });
 
+            var lat = 55.800129; // latitude
+            var lng = 37.674181; // longitude
+            var position = new google.maps.LatLng(lat, lng);
+            var center = new google.maps.LatLng(lat, lng);
+            var drag = true;
+
             var myOptions = {
                 zoom: 18,
                 center: center,
@@ -89,11 +95,6 @@ $(function () {
                 icon: image,
                 title: 'CasinoForumBatumi' // marker text
             });
-            var lat = 55.800129; // latitude
-            var lng = 37.674181; // longitude
-            var position = new google.maps.LatLng(lat, lng);
-            var center = new google.maps.LatLng(lat, lng);
-            var drag = true;
 
             if (isMobile.any()) {
                 drag = false;
