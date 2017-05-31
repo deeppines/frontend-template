@@ -12,7 +12,6 @@ $(document).ready(function () {
     //--------- Custom Scripts -----------
     //====================================
 
-    //= custom/map.js
     //= custom/button-top.js
     //= custom/modal.js
 
