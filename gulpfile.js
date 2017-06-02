@@ -67,7 +67,7 @@ var path = {
             '!source/*.md',
         ],
         js:      [
-            'source/js/common.js',
+            'source/js/*.js',
             '!source/js/**/*.md',
         ],
         style:   [
