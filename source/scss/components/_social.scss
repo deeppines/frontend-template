@@ -76,6 +76,12 @@ $brand-color-switch:             true;
         &:hover {
             outline: none;
         }
+
+        &:hover {
+            color: $icon-color-hover;
+            background-color: $icon-background-color-hover;
+            border-color: $icon-border-color-hover;
+        }
     }
 
     .fa {
