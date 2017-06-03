@@ -36,3 +36,11 @@
     &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
     &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
 }
+
+/// No list style
+
+@mixin nolist {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
