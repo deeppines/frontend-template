@@ -290,7 +290,7 @@ gulp.task('build:sprite', function () {
         .pipe(gulp.dest(path.build.sprites));
 
     spriteData.css.pipe(buffer())
-        .pipe(gulp.dest('src/sass/base/'));
+        .pipe(gulp.dest('source/scss/core/'));
 
     return spriteData.img.pipe(buffer());
 });
