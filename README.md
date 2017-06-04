@@ -17,6 +17,7 @@ Config for quick start web project with Gulp
 + Autosubstitution of vendor prefixes in CSS (autoprefixer)
 + SASS preprocessor (gulp-sass)
 + CSS formatting (gulp-csscomb)
++ CSS min (gulp-csso)
 + Any files concatenation (gulp-rigger)
 + Compiled files package in zip (gulp-zip)
 + Errors output without stopping gulp (gulp-plumber)
