@@ -71,7 +71,7 @@ var path = {
             '!source/js/**/*.md',
         ],
         style:   [
-            'source/scss/style.scss',
+            'source/scss/*.scss',
             '!source/scss/**/*.md',
         ],
         img:     [
@@ -203,10 +203,14 @@ var option = {
 
     mmq: {
         log: true,
-        use_external: true
+        use_external: false
     },
 
     csscomb: 'csscomb.json',
+
+    csso: {
+        filename: '*.min.css',
+    }
 
 }
 
@@ -254,19 +258,11 @@ gulp.task('build:css', function (cb) {
         .pipe($.postcss(option.postcss))
         .pipe(mmq(option.mmq))
         .pipe($.csscomb(option.csscomb))
+        .pipe(gulp.dest(path.build.css))
+        .pipe($.csso(option.csso))
+        .pipe($.rename({suffix: '.min'}))
         .pipe($.sourcemaps.write('.'))
         .pipe(gulp.dest(path.build.css));
-});
-
-gulp.task('build:media', function () {
-    gulp.src(path.build.css + '*.responsive.css')
-        .pipe($.plumber(option.plumber))
-        .pipe($.sourcemaps.init())
-        .pipe($.rename({basename: 'media'}))
-        .pipe($.sourcemaps.write('.'))
-        .pipe(gulp.dest(path.build.css));
-
-    return del(path.build.css + '*.responsive.css');
 });
 
 gulp.task('build:img', function () {
@@ -314,7 +310,7 @@ gulp.task('watch', function(){
     });
 
     $.watch([path.watch.style], function(event, cb) {
-        return runSequence('build:css', 'build:media', reload);
+        return runSequence('build:css', reload);
     });
 
     $.watch([path.watch.js], function(event, cb) {
@@ -341,7 +337,6 @@ gulp.task('watch', function(){
 gulp.task('build:style', function (cb) {
     return runSequence(
         'build:css',
-        'build:media',
         cb
     );
 });
