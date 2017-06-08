@@ -22,11 +22,19 @@ linters:
         max_depth: 4
         ignore_parent_selectors: false
 
+    SelectorFormat:
+        enabled: true
+        convention: strict_BEM
+        ignored_types: [
+            id,
+            attribute,
+            placeholder
+        ]
+
+# Disabled
+
     PropertySortOrder:
         enabled: false
-        ignore_unspecified: false
-        min_properties: 2
-        separate_groups: false
 
     PlaceholderInExtend:
         enabled: false
