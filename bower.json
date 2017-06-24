@@ -1,9 +1,9 @@
 {
-    "name": "smileexpo",
-    "description": "gulp smileexpo project",
+    "name": "frontend-template",
+    "description": "vendor libs for frontend-template",
     "main": "",
     "authors": [
-        "LucasKane"
+        "Kirdyashkin Egor"
     ],
 
     "license": "MIT",
