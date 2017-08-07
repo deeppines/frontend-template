@@ -44,3 +44,11 @@
     margin: 0;
     list-style: none;
 }
+
+/// Responsive image
+
+@mixin imgresponsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
