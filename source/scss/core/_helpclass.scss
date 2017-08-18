@@ -1,6 +1,7 @@
 // scss-lint:disable all
+
 //============================
-// Text aligin
+// Common maps
 //============================
 
 // breackpoint
@@ -18,6 +19,10 @@ $prefix: (
     3: md,
     4: lg
 );
+
+//============================
+// Text aligin
+//============================
 
 // class name
 $class-name: (
@@ -40,6 +45,48 @@ $class-name: (
             @for $j from 1 through 4 {
                 .txt-#{map-get($prefix, $i)}-#{map-get($class-name, $j)} {
                     text-align: #{map-get($class-name, $j)}
+                }
+            }
+        }
+    }
+}
+
+//============================
+// Flex
+//============================
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+$flex-class-name: (
+    1: center,
+    2: between,
+    3: around,
+    4: end
+);
+
+$flex-argue: (
+    1: center,
+    2: space-between,
+    3: space-around,
+    4: flex-end
+);
+
+@for $i from 1 through 4 {
+    @if map-get($breakpoint, $i) == none {
+        @for $j from 1 through 4 {
+            .justify-#{map-get($prefix, $i)}-#{map-get($flex-class-name, $j)} {
+                justify-content: #{map-get($flex-argue, $j)}
+            }
+        }
+    } @else {
+        @media screen and (min-width: #{map-get($breakpoint, $i)}) {
+            @for $j from 1 through 4 {
+                .justify-#{map-get($prefix, $i)}-#{map-get($class-name, $j)} {
+                    justify-content: #{map-get($flex-argue, $j)}
                 }
             }
         }
