@@ -6,7 +6,7 @@
 //===================================//
 
 
-/// Clearfix
+// Clearfix
 
 @mixin clearfix {
     *zoom: 1;
@@ -22,9 +22,9 @@
     }
 }
 
-/// Placeholder text
-/// $color [#eee] - placeholder color
-///
+// Placeholder text
+// $color [#eee] - placeholder color
+//
 
 @mixin placeholder($color: #eee ) {
     // Firefox
@@ -37,7 +37,7 @@
     &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
 }
 
-/// No list style
+// No list style
 
 @mixin nolist {
     padding: 0;
@@ -45,10 +45,31 @@
     list-style: none;
 }
 
-/// Responsive image
+// Responsive image
 
 @mixin imgresponsive {
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+// Absolute position
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin absCenterX {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin absCenterY {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
