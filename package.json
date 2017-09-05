@@ -9,15 +9,15 @@
         "template"
     ],
     "homepage": "https://github.com/egorkir/frontend-template",
-    "author": "Kirdyashkin Egor <egorkir41@gmail.com> (https://github.com/egorkir)",
+    "author": "Kirdyashkin Egor <egorkir41@gmail.com> (https://github.com/deeppines)",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/egorkir/frontend-template.git"
+        "url": "https://github.com/deeppines/frontend-template.git"
     },
     "licenses": {
         "type": "MIT",
-        "url": "https://github.com/egorkir/frontend-template/blob/master/LICENSE"
+        "url": "https://github.com/deeppines/frontend-template/blob/master/LICENSE"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
