@@ -1,6 +1,6 @@
 # Frontend template
-[![Build Status](https://travis-ci.org/egorkir/frontend-template.svg?branch=master)](https://travis-ci.org/egorkir/frontend-template)
-[![devDependencies Status](https://david-dm.org/egorkir/frontend-template/dev-status.svg)](https://david-dm.org/egorkir/frontend-template?type=dev)
+[![Build Status](https://travis-ci.org/deeppines/frontend-template.svg?branch=master)](https://travis-ci.org/egorkir/frontend-template)
+[![devDependencies Status](https://david-dm.org/deeppines/frontend-template/dev-status.svg)](https://david-dm.org/egorkir/frontend-template?type=dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/egorkir/frontend-template/blob/master/LICENSE)
 
 Config for quick start web project with Gulp
@@ -99,4 +99,4 @@ frontend-template/                     # Project root
 ```
 
 ## <a name="license"></a> License
-[The MIT License (MIT)](https://github.com/egorkir/frontend-template/blob/master/LICENSE)
+[The MIT License (MIT)](https://github.com/deeppines/frontend-template/blob/master/LICENSE)
