@@ -55,20 +55,20 @@
 
 // Absolute position
 
-@mixin absCenter {
+@mixin abs-center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-@mixin absCenterX {
+@mixin abs-center-x {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 
-@mixin absCenterY {
+@mixin abs-center-y {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
