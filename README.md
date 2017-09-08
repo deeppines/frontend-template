@@ -80,7 +80,6 @@ frontend-template/                     # Project root
 │   |   ├── components                 # Components style folder
 │   |   ├── vendors                    # Vendors plugins style
 │   |   ├── _common.scss               # Other style
-│   |   ├── _media.scss                # @media
 │   |   └── style.scss                 # Config styles file
 │   └── index.pug                      # Index pug template file
 |

@@ -61,6 +61,10 @@ $class-name: (
     width: 100%;
 }
 
+//============================
+// Flex justify
+//============================
+
 $flex-class-name: (
     1: center,
     2: between,
@@ -87,6 +91,71 @@ $flex-argue: (
             @for $j from 1 through 4 {
                 .justify-#{map-get($prefix, $i)}-#{map-get($class-name, $j)} {
                     justify-content: #{map-get($flex-argue, $j)}
+                }
+            }
+        }
+    }
+}
+
+//============================
+// Flex align item
+//============================
+
+$items-class-name: (
+    1: start,
+    2: end,
+    3: center,
+    4: baseline
+);
+
+$items-argue: (
+    1: flex-start,
+    2: flex-end,
+    3: center,
+    4: baseline
+);
+
+@for $i from 1 through 4 {
+    @if map-get($breakpoint, $i) == none {
+        @for $j from 1 through 4 {
+            .items-#{map-get($prefix, $i)}-#{map-get($items-class-name, $j)} {
+                align-items: #{map-get($items-argue, $j)}
+            }
+        }
+    } @else {
+        @media screen and (min-width: #{map-get($breakpoint, $i)}) {
+            @for $j from 1 through 4 {
+                .items-#{map-get($prefix, $i)}-#{map-get($class-name, $j)} {
+                    align-items: #{map-get($items-argue, $j)}
+                }
+            }
+        }
+    }
+}
+
+//============================
+// Flex order
+//============================
+
+$order-position: (
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4
+);
+
+@for $i from 1 through 4 {
+    @if map-get($breakpoint, $i) == none {
+        @for $j from 1 through 4 {
+            .order-#{map-get($prefix, $i)}-#{map-get($order-position, $j)} {
+                order: #{map-get($order-position, $j)}
+            }
+        }
+    } @else {
+        @media screen and (min-width: #{map-get($breakpoint, $i)}) {
+            @for $j from 1 through 4 {
+                .order-#{map-get($prefix, $i)}-#{map-get($order-position, $j)} {
+                    order: #{map-get($order-position, $j)}
                 }
             }
         }
