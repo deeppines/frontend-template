@@ -1,6 +1,6 @@
 {
     "name": "frontend-template",
-    "version": "1.5.2",
+    "version": "1.5.3",
     "description": "The template for quick start of web project with Gulp, Bower etc.",
     "keywords": [
         "gulp",
