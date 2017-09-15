@@ -89,7 +89,7 @@ $flex-argue: (
     } @else {
         @media screen and (min-width: #{map-get($breakpoint, $i)}) {
             @for $j from 1 through 4 {
-                .justify-#{map-get($prefix, $i)}-#{map-get($class-name, $j)} {
+                .justify-#{map-get($prefix, $i)}-#{map-get($flex-class-name, $j)} {
                     justify-content: #{map-get($flex-argue, $j)}
                 }
             }
@@ -125,7 +125,7 @@ $items-argue: (
     } @else {
         @media screen and (min-width: #{map-get($breakpoint, $i)}) {
             @for $j from 1 through 4 {
-                .items-#{map-get($prefix, $i)}-#{map-get($class-name, $j)} {
+                .items-#{map-get($prefix, $i)}-#{map-get($items-class-name, $j)} {
                     align-items: #{map-get($items-argue, $j)}
                 }
             }
