@@ -1,0 +1,12 @@
+{
+  "name": "frontend-template",
+  "version": "1.0.0",
+  "repository": "git@github.com:egorkir/frontend-template.git",
+  "author": "EgorKir <atheus92@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-watch": "^4.3.11"
+  }
+}
