@@ -5,7 +5,7 @@ const watch = require('gulp-watch');
 
 var path = {
     watch: {
-        modules: 'source/modules/'
+        modules: 'source/modules/*'
     }
 };
 
@@ -22,6 +22,6 @@ var options = {
 
 gulp.task('watch', function () {
     watch([path.watch.modules], options.watchModuls, function (event, cb) {
-        return console.log('Создали папку!');
+        
     });
 });
