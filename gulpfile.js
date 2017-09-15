@@ -12,11 +12,10 @@ var path = {
 var options = {
     watchModuls: {
         read: false,
+        ignorePermissionErrors: true,
         events: [
             'addDir',
-            'unlinkDir',
-            'unlink',
-            'error'
+            'unlinkDir'
         ]
     }
 };
