@@ -31,9 +31,9 @@ gulp.task('watch', function () {
         var folderName = pathArray[pathArray.length-1];
 
         return gulp.src(event.path+ '/*')
-                .pipe(newFile(folderName + '.pug', 'test file'))
-                .pipe(newFile(folderName + '.scss', 'test file'))
-                .pipe(newFile(folderName + '.js', 'test file'))
+                .pipe(newFile(folderName + '.pug', '//- ' + folderName + ' module'))
+                .pipe(newFile(folderName + '.scss', '/* ' + folderName + ' style */'))
+                .pipe(newFile(folderName + '.js', '// ' + folderName + ' JavaScript'))
                 .pipe(gulp.dest(event.path));
     });
 });
