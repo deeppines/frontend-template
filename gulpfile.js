@@ -2,11 +2,15 @@
 
 const gulp = require('gulp');
 const watch = require('gulp-watch');
-const file = require('gulp-file');
+const newFile = require('gulp-file');
 
 var path = {
     watch: {
         modules: 'source/modules/*'
+    },
+
+    test: {
+        file: 'source/'
     }
 };
 
@@ -21,17 +25,15 @@ var options = {
     }
 };
 
-function createFiles(path) {
-    var filesArr = ['.pug', '.scss', '.js'];
-    for (var i = 0; i < filesArr.length; i++) {
-        return console.log(path);
-    }
-};
-// gulp.task('create', );
-
 gulp.task('watch', function () {
     watch([path.watch.modules], options.watchModuls, function (event, cb) {
-        // createFiles(event);
-        console.log(event);
+        var pathArray = event.path.split("\\");
+        var folderName = pathArray[pathArray.length-1];
+
+        return gulp.src(event.path+ '/*')
+                .pipe(newFile(folderName + '.pug', 'test file'))
+                .pipe(newFile(folderName + '.scss', 'test file'))
+                .pipe(newFile(folderName + '.js', 'test file'))
+                .pipe(gulp.dest(event.path));
     });
 });
