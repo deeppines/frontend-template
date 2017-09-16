@@ -1,13 +1,30 @@
 {
-  "name": "frontend-template",
-  "version": "1.0.0",
-  "repository": "git@github.com:egorkir/frontend-template.git",
-  "author": "EgorKir <atheus92@gmail.com>",
-  "license": "MIT",
-  "main": "index.js",
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-watch": "^4.3.11",
-    "gulp-file": "^0.3.0"
-  }
+    "name": "frontend-template",
+    "version": "2.0.0",
+    "description": "The template for quick start of web project with Gulp.",
+    "keywords": [
+        "gulp",
+        "frontend",
+        "project",
+        "template"
+    ],
+    "homepage": "https://github.com/egorkir/frontend-template",
+    "author": "Kirdyashkin Egor <egorkir41@gmail.com> (https://github.com/deeppines)",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/deeppines/frontend-template.git"
+    },
+    "license": "MIT",
+    "licenses": {
+        "type": "MIT",
+        "url": "https://github.com/deeppines/frontend-template/blob/master/LICENSE"
+    },
+
+    "main": "gulpfile.js",
+
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-watch": "^4.3.11",
+        "gulp-file": "^0.3.0"
+    }
 }
