@@ -1,0 +1,1 @@
+# Folder include static resources
