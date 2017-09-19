@@ -1,8 +1,7 @@
 'use strict';
 
 const gulp = require('gulp');
-const watch = require('gulp-watch');
-const newFile = require('gulp-file');
+const $    = require('gulp-load-plugins')();
 
 var path = {
     watch: {
@@ -26,14 +25,14 @@ var options = {
 };
 
 gulp.task('watch', function () {
-    watch([path.watch.modules], options.watchModuls, function (event, cb) {
+    $.watch([path.watch.modules], options.watchModuls, function (event, cb) {
         var pathArray = event.path.split("\\");
         var folderName = pathArray[pathArray.length-1];
 
         return gulp.src(event.path+ '/*')
-                .pipe(newFile(folderName + '.pug', '//- ' + folderName + ' module'))
-                .pipe(newFile(folderName + '.scss', '/* ' + folderName + ' style */'))
-                .pipe(newFile(folderName + '.js', '// ' + folderName + ' JavaScript'))
+                .pipe($.file(folderName + '.pug', '//- ' + folderName + ' module'))
+                .pipe($.file(folderName + '.scss', '/* ' + folderName + ' style */'))
+                .pipe($.file(folderName + '.js', '// ' + folderName + ' JavaScript'))
                 .pipe(gulp.dest(event.path));
     });
 });
