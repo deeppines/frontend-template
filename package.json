@@ -21,7 +21,7 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "gulp": "./node_modules/.bin/gulp",
+        "gulp": "./node_modules/.bin/gulp"
     },
     "engines": {
         "node": ">=6.0.0",

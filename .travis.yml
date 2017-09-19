@@ -3,10 +3,13 @@ node_js:
   - "8"
   - "7"
   - "6"
+
 cache:
   yarn: true
+
 before_script:
   - npm install --global yarn
+
 script:
     - yarn
     - gulp watch
