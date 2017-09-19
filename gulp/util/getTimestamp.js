@@ -1,3 +1,5 @@
+'use strict';
+
 // Return timestamp
 function getTimestamp() {
     var now = new Date();
