@@ -14,6 +14,10 @@ function lazyRequireTask(taskName, path, options) {
     });
 }
 
+lazyRequireTask('clean', './gulp/tasks/clean', {
+    dst: 'web'
+});
+
 var path = {
     watch: {
         modules: 'source/modules/*'
