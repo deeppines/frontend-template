@@ -8,8 +8,6 @@ cache:
   yarn: true
 
 before_script:
-  - npm install --global yarn
   - yarn install
 script:
     - yarn
-    - gulp watch
