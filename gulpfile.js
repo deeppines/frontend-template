@@ -19,5 +19,6 @@ lazyRequireTask('clean', './gulp/tasks/clean', {
 });
 
 lazyRequireTask('watch:modules', './gulp/tasks/watch-modules', {
-    path: 'source/modules/*'
+    path: 'source/modules/*',
+    addJs: false
 });
