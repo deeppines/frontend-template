@@ -18,16 +18,6 @@ lazyRequireTask('clean', './gulp/tasks/clean', {
     dst: 'web'
 });
 
-lazyRequireTask('watch', './gulp/tasks/watch-modules', {
+lazyRequireTask('watch:modules', './gulp/tasks/watch-modules', {
     path: 'source/modules/*'
 });
-
-var path = {
-    watch: {
-        modules: 'source/modules/*'
-    },
-
-    test: {
-        file: 'source/'
-    }
-};
