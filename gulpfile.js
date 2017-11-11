@@ -14,13 +14,13 @@ function lazyRequireTask(taskName, path, options) {
     });
 }
 
-lazyRequireTask('clean', './gulp/tasks/clean', {
+lazyRequireTask('del', './gulp/tasks/del', {
     dst: 'web'
 });
 
-lazyRequireTask('html', '.gulp/tasks/html' {
-    path: 'source/modules/*.pug',
-    dist: 'web/'
+lazyRequireTask('html', './gulp/tasks/html', {
+    path: 'source/pages/*.pug',
+    dst: 'web'
 });
 
 lazyRequireTask('watch:modules', './gulp/tasks/watch-modules', {
