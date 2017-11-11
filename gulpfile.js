@@ -3,13 +3,12 @@
 const config = require('./gulp/config.js');
 
 const gulp = require('gulp');
-const $    = require('gulp-load-plugins')();
 
 function lazyRequireTask(taskName, path, options) {
     options = options || {};
     options.taskName = taskName;
 
-    gulp.task(taskName, function(cb) {
+    gulp.task(taskName, function (cb) {
         let task = require(path).call(this, options);
 
         return task(cb);
