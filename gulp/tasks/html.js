@@ -6,6 +6,7 @@ const $ =      require('gulp-load-plugins')();
 module.exports = function (options) {
     return function () {
         return gulp.src(options.path)
+            .pipe($.plumber())
             .pipe($.pug({ pretty: '\t'}))
             .pipe(gulp.dest(options.dst));
     }
