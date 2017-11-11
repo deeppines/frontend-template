@@ -17,17 +17,17 @@ function lazyRequireTask(taskName, path, options) {
 }
 
 
-lazyRequireTask('del', config.path.del, {
-    dst: 'web'
+lazyRequireTask('del', config.path.task.del, {
+    distr: config.path.distr.root
 });
 
-lazyRequireTask('html', config.path.html, {
-    conf: config.pug,
-    path: 'source/pages/*.pug',
-    dst: 'web'
+lazyRequireTask('html', config.path.task.html, {
+    config: config.options.pug,
+    path: config.path.src.pug,
+    distr: config.path.distr.root
 });
 
-lazyRequireTask('watch:modules', config.path.modules, {
-    path: 'source/modules/*',
+lazyRequireTask('watch:modules', config.path.task.modules, {
+    path: config.pathScr.modules,
     addJs: false
 });

@@ -1,18 +1,31 @@
 'use strict';
 
-var config = {
+const config = {
     // =============================
     // ---- Add var path task ------
     // =============================
 
     path: {
-        del:     './gulp/tasks/del',
-        html:    './gulp/tasks/html',
-        modules: './gulp/tasks/watch-modules'
+        task: {
+            del: './gulp/tasks/del',
+            html: './gulp/tasks/html',
+            modules: './gulp/tasks/watch-modules'
+        },
+
+        src: {
+            pug: 'source/pages/*.pug',
+            modules: 'source/modules/*'
+        },
+
+        distr: {
+            root: 'web'
+        }
     },
 
-    pug: {
-        pretty: '\t'
+    options: {
+        pug: {
+            pretty: '\t'
+        },
     }
 }
 

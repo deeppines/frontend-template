@@ -7,7 +7,7 @@ module.exports = function (options) {
     return function () {
         return gulp.src(options.path)
             .pipe($.plumber())
-            .pipe($.pug(options.conf))
-            .pipe(gulp.dest(options.dst));
+            .pipe($.pug(options.config))
+            .pipe(gulp.dest(options.distr));
     }
 };
