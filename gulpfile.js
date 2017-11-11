@@ -28,6 +28,6 @@ lazyRequireTask('html', config.path.task.html, {
 });
 
 lazyRequireTask('watch:modules', config.path.task.modules, {
-    path: config.pathScr.modules,
+    path: config.path.src.modules,
     addJs: false
 });
