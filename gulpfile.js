@@ -1,5 +1,7 @@
 'use strict';
 
+const pathTask = require('./gulp/config.js');
+
 const gulp = require('gulp');
 const $    = require('gulp-load-plugins')();
 
@@ -14,16 +16,18 @@ function lazyRequireTask(taskName, path, options) {
     });
 }
 
-lazyRequireTask('del', './gulp/tasks/del', {
+
+lazyRequireTask('del', pathTask.del, {
     dst: 'web'
 });
 
-lazyRequireTask('html', './gulp/tasks/html', {
+lazyRequireTask('html', pathTask.html, {
+    conf: 'gulp/config.js',
     path: 'source/pages/*.pug',
     dst: 'web'
 });
 
-lazyRequireTask('watch:modules', './gulp/tasks/watch-modules', {
+lazyRequireTask('watch:modules', pathTask.modules, {
     path: 'source/modules/*',
     addJs: false
 });
