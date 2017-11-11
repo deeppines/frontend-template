@@ -38,6 +38,7 @@
         "gulp-plumber": "^1.1.0",
         "gulp-posthtml": "^3.0.0",
         "gulp-prettify": "0.5.0",
+        "eslint": "^4.11.0",
         "posthtml-attrs-sorter": "^1.1.0"
     }
 }
