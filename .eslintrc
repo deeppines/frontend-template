@@ -6,6 +6,9 @@
         "browser": true,
         "jquery": true
     },
+    "parserOptions": {
+        "ecmaVersion": 6
+    },
     "rules": {
         "linebreak-style": [
             2,
@@ -148,7 +151,7 @@
         "no-redeclare": [
             2,
             {
-                "builtinGlobals": true
+                "builtinGlobals": false
             }
         ],
         "no-with": [
