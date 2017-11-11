@@ -18,6 +18,11 @@ lazyRequireTask('clean', './gulp/tasks/clean', {
     dst: 'web'
 });
 
+lazyRequireTask('html', '.gulp/tasks/html' {
+    path: 'source/modules/*.pug',
+    dist: 'web/'
+});
+
 lazyRequireTask('watch:modules', './gulp/tasks/watch-modules', {
     path: 'source/modules/*',
     addJs: false
