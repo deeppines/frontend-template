@@ -1,0 +1,12 @@
+{
+    "disallowIdLiteralsBeforeAttributes": true,
+    "disallowClassLiteralsBeforeAttributes": true,
+    "disallowClassLiteralsBeforeIdLiterals": true,
+    "disallowSpacesInsideAttributeBrackets":true,
+    "requireStrictEqualityOperators": true,
+    "disallowMultipleLineBreaks": true,
+    "requireLowerCaseAttributes": true,
+    "requireLowerCaseTags": true,
+    "validateIndentation": 4,
+    "validateLineBreaks": "LF"
+}
