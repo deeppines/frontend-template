@@ -2,14 +2,11 @@
 
 const gulp =   require('gulp');
 const $ =      require('gulp-load-plugins')();
-const pug =    require('gulp-pug');
 
-module.exports = function (option) {
+module.exports = function (options) {
     return function () {
-        return gulp.src(option.path)
-            .pipe($.pug({
-                pretty: '\t'
-            }))
-            .pipe(gulp.dest(option.dist));
+        return gulp.src(options.path)
+            .pipe($.pug({ pretty: '\t'}))
+            .pipe(gulp.dest(options.dst));
     }
 };
