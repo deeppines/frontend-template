@@ -1,7 +1,7 @@
 'use strict';
 
-const gulp =   require('gulp');
-const $ =      require('gulp-load-plugins')();
+const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
 
 module.exports = function (options) {
     return function () {
@@ -11,5 +11,5 @@ module.exports = function (options) {
             .pipe($.posthtml(options.config[1], options.config[2]))
             .pipe($.prettify(options.config[3]))
             .pipe(gulp.dest(options.distr));
-    }
+    };
 };
