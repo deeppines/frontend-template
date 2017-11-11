@@ -22,7 +22,12 @@ lazyRequireTask('del', config.path.task.del, {
 });
 
 lazyRequireTask('html', config.path.task.html, {
-    config: config.options.pug,
+    config: [
+        config.options.pug,
+        config.options.posthtml.plugins,
+        config.options.posthtml.options,
+        config.options.htmlPrettify
+    ],
     path: config.path.src.pug,
     distr: config.path.distr.root
 });

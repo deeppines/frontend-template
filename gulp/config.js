@@ -1,5 +1,7 @@
 'use strict';
 
+const attrSorter = require('posthtml-attrs-sorter');
+
 const config = {
     // =============================
     // ------ Add var path ---------
@@ -25,6 +27,44 @@ const config = {
     options: {
         pug: {
             pretty: '\t'
+        },
+
+        htmlPrettify: {
+            'unformatted': ['pre', 'code', 'textarea'],
+            'extra_liners': ['head', 'body', '/html', 'header', 'main', 'footer'],
+            'indent_size': 4,
+            'indent_char': ' ',
+            'indent_with_tabs': false,
+            'eol': '\n',
+            'end-with-newline': true,
+            'preserve_newlines': true,
+            'indent-inner-html': true,
+            'brace_style': 'expand'
+        },
+
+        posthtml: {
+            plugins: [
+                attrSorter({
+                    order: [
+                        'id',
+                        'class',
+                        'name',
+                        'data',
+                        'ng',
+                        'src',
+                        'for',
+                        'type',
+                        'href',
+                        'values',
+                        'title',
+                        'alt',
+                        'role',
+                        'aria',
+                        'tabindex'
+                    ]
+                })
+            ],
+            options: {}
         },
     }
 }
