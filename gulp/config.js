@@ -11,6 +11,7 @@ const config = {
     path: {
         task: {
             del: './gulp/tasks/del',
+            zip: './gulp/tasks/zip',
             html: './gulp/tasks/html',
             modules: './gulp/tasks/watch-modules'
         },
