@@ -1,0 +1,21 @@
+//============================
+// Common maps
+//============================
+
+// breackpoint
+$breakpoint: ( 
+    1: none,
+    2: 576px,
+    3: 768px,
+    4: 992px,
+    5: 1200px
+);
+
+// prefix setting
+$prefix: ( 
+    1: xs,
+    2: ss,
+    3: sm, 
+    4: md, 
+    5: lg
+);
