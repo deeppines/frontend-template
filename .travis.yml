@@ -12,4 +12,5 @@ before_script:
 script:
     - yarn
     - gulp html
+    - gulp zip
     - gulp del
