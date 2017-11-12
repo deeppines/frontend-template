@@ -1,6 +1,6 @@
 'use strict';
 
-const config = require('./gulp/config.js');
+const config = require('./gulp/config');
 const gulp = require('gulp');
 
 function lazyRequireTask(taskName, path, options) {
@@ -17,6 +17,10 @@ function lazyRequireTask(taskName, path, options) {
 
 lazyRequireTask('del', config.path.task.del, {
     distr: config.path.distr.root
+});
+
+lazyRequireTask('zip', config.path.task.zip, {
+    path: config.path.distr.root
 });
 
 lazyRequireTask('html', config.path.task.html, {
