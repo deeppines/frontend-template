@@ -1,6 +1,7 @@
 'use strict';
 
 const attrSorter = require('posthtml-attrs-sorter');
+const errorHandler = require('utils/errorHendler.js');
 
 const config = {
     // =============================
@@ -27,6 +28,10 @@ const config = {
     options: {
         pug: {
             pretty: '\t'
+        },
+
+        plumber: {
+            errorHandler: errorHandler
         },
 
         htmlPrettify: {
