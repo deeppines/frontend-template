@@ -1,7 +1,7 @@
 'use strict';
 
 const attrSorter = require('posthtml-attrs-sorter');
-const errorHandler = require('utils/errorHendler.js');
+const onError = require('./utils/errorHendlers.js');
 
 const config = {
     // =============================
@@ -31,7 +31,7 @@ const config = {
         },
 
         plumber: {
-            errorHandler: errorHandler
+            errorHandler: onError
         },
 
         htmlPrettify: {
@@ -72,6 +72,6 @@ const config = {
             options: {}
         },
     }
-}
+};
 
 module.exports = config;

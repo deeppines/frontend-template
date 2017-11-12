@@ -1,6 +1,7 @@
 'use strict';
 
 const config = require('./gulp/config.js');
+// const errorHandler = require('./gulp/utils/errorHendlers.js');
 const gulp = require('gulp');
 
 function lazyRequireTask(taskName, path, options) {
@@ -21,11 +22,11 @@ lazyRequireTask('del', config.path.task.del, {
 
 lazyRequireTask('html', config.path.task.html, {
     config: [
-        config.options.plumber,
         config.options.pug,
         config.options.posthtml.plugins,
         config.options.posthtml.options,
-        config.options.htmlPrettify
+        config.options.htmlPrettify,
+        config.options.plumber
     ],
     path: config.path.src.pug,
     distr: config.path.distr.root
