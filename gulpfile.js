@@ -1,7 +1,6 @@
 'use strict';
 
 const config = require('./gulp/config.js');
-// const errorHandler = require('./gulp/utils/errorHendlers.js');
 const gulp = require('gulp');
 
 function lazyRequireTask(taskName, path, options) {
