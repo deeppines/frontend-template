@@ -1,7 +1,7 @@
 'use strict';
 
 const attrSorter = require('posthtml-attrs-sorter');
-const onError = require('./utils/errorHendlers.js');
+const onError = require('./utils/errorHendlers');
 
 const config = {
     // =============================
@@ -13,7 +13,7 @@ const config = {
             del: './gulp/tasks/del',
             zip: './gulp/tasks/zip',
             html: './gulp/tasks/html',
-            modules: './gulp/tasks/watch-modules'
+            modules: './gulp/tasks/modules-add'
         },
 
         src: {
