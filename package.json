@@ -20,7 +20,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "gulp": "node_modules/.bin/gulp",
-        "setup": "npm install"
+        "setup": "yarn install"
     },
     "engines": {
         "node": ">=6.0.0",
