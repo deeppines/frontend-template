@@ -12,7 +12,7 @@ Config for quick start web project with Yarn/Gulp4
 
         Once you have Chocolatey installed, you may install yarn by running the following code in your console:
         ```
-        choco install yarn
+        $ choco install yarn
         ```
 
     2. **Install via Scoop**  
@@ -21,13 +21,16 @@ Config for quick start web project with Yarn/Gulp4
 
         Once you have Scoop installed, you may install yarn by running the following code in your console:
         ```
-        scoop install yarn
+        $ scoop install yarn
         ```
-3. Clone or download the project
+3. Clone or [download](https://github.com/deeppines/frontend-template/archive/gulp4.zip) the project
 ```
-
+$ git clone git@github.com:deeppines/frontend-template/tree/gulp4.git --depth 1 my-project
 ```
 4. Go to project folder and run
 ```
-npm run setup
+$ npm run setup
 ```
+
+## <a name="license"></a> License
+[The MIT License (MIT)](https://github.com/deeppines/frontend-template/blob/master/LICENSE)
