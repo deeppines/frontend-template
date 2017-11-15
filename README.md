@@ -25,7 +25,7 @@ Config for quick start web project with Yarn/Gulp4
         ```
 3. Clone or [download](https://github.com/deeppines/frontend-template/archive/gulp4.zip) the project
 ```
-$ git clone git@github.com:deeppines/frontend-template/tree/gulp4.git --depth 1 my-project
+$ git clone git@github.com:deeppines/frontend-template.git --depth 1 my-project
 ```
 4. Go to project folder and run
 ```
