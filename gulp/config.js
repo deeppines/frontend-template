@@ -1,5 +1,6 @@
 import errorHandler from './utils/errorHandler';
 import attrSorter from 'posthtml-attrs-sorter';
+import autoprefixer from 'autoprefixer';
 
 export const path = {
     root: 'web',
@@ -60,4 +61,15 @@ export const posthtmlConfig = {
 
 export const sassConfig = {
     outputStyle: 'expanded'
+};
+
+export const postcssConfig = [
+    autoprefixer({
+        cascade: true
+    }),
+];
+
+export const mmqConfig = {
+    log: true,
+    use_external: false
 };
