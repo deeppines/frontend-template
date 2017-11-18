@@ -9,11 +9,11 @@ Config for quick start web project with Yarn/Gulp4
 2. install the [Yarn](https://yarnpkg.com/en/docs/install)
 3. Clone or [download](https://github.com/deeppines/frontend-template/archive/gulp4.zip) the project
     ```
-    $ git clone git@github.com:deeppines/frontend-template.git -b gulp4 --depth 1 my-project
+    git clone git@github.com:deeppines/frontend-template.git -b gulp4 --depth 1 my-project
     ```
 4. Go to project folder and run
     ```
-    $ npm run setup
+    yarn run setup
     ```
 
 ## <a name="license"></a> License
