@@ -9,6 +9,6 @@ const getDateTime = () => {
     const minutes = correctNumber(now.getMinutes());
 
     return year + '-' + month + '-' + day + '-' + hours + minutes;
-}
+};
 
 export default getDateTime;
