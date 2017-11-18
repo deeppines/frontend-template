@@ -10,6 +10,7 @@ cache:
 before_script:
   - yarn install
 script:
-  - yarn run gulp html
-  - yarn run gulp zip
-  - yarn run gulp del
+  - yarn run html
+  - yarn run zip
+  - yarn run del
+  - yarn run build
