@@ -11,6 +11,7 @@ before_script:
   - yarn install
 script:
   - yarn run html
+  - yarn run css
   - yarn run zip
   - yarn run clear
   - yarn run build
