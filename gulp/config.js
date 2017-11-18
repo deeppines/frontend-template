@@ -73,3 +73,11 @@ export const mmqConfig = {
     log: true,
     use_external: false
 };
+
+export const csscombConfig = {
+    file: 'csscomb.json'
+};
+
+export const cssoConfig = {
+    filename: '*.min.css'
+};

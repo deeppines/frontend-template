@@ -6,12 +6,18 @@ import sassGlob from 'gulp-sass-glob';
 import sourcemaps from 'gulp-sourcemaps';
 import postcss from 'gulp-postcss';
 import mmq from 'gulp-merge-media-queries';
+import csscomb from 'gulp-csscomb';
+import csso from 'gulp-csso';
+import rename from 'gulp-rename';
+import {isDevelopment} from '../utils/env';
 import {
     path,
     plumberConfig,
     sassConfig,
     postcssConfig,
-    mmqConfig
+    mmqConfig,
+    csscombConfig,
+    cssoConfig
 } from '../config';
 
 const css = () => {
@@ -22,6 +28,18 @@ const css = () => {
         .pipe(sass(sassConfig))
         .pipe(postcss(postcssConfig))
         .pipe(mmq(mmqConfig))
+        .pipe(gulpIf(!isDevelopment,
+            csscomb(csscombConfig)
+        ))
+        .pipe(gulpIf(!isDevelopment,
+            gulp.dest(path.build.css)
+        ))
+        .pipe(gulpIf(!isDevelopment,
+            csso(cssoConfig)
+        ))
+        .pipe(gulpIf(!isDevelopment,
+            rename({suffix: '.min'})
+        ))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(path.build.css));
 };
