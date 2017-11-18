@@ -1,7 +1,7 @@
 import {task, series} from 'gulp';
-import pages from './gulp/tasks/html';
+import html from './gulp/tasks/html';
 
-task('pages', pages);
+task('html', html);
 
 // Default task
-task('default', series('pages'));
+task('default', series('html'));
