@@ -1,9 +1,13 @@
 import gulp from 'gulp';
 import pug from 'gulp-pug';
+import {
+    path,
+    pugConfig
+} from '../config';
 
-const pages = () =>
+const html = () =>
     gulp.src(['**/*.pug', '!**/_*.pug'], {cwd: 'source/pages'})
-        .pipe(pug())
-        .pipe(gulp.dest('web'));
+        .pipe(pug(pugConfig))
+        .pipe(gulp.dest(path.root));
 
-export default pages;
+export default html;
