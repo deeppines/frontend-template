@@ -1,15 +1,9 @@
-'use strict';
+import gulp from 'gulp';
+import pug from 'gulp-pug';
 
-const gulp = require('gulp');
-const $ = require('gulp-load-plugins')();
+const pages = () =>
+    gulp.src(['**/*.pug', '!**/_*.pug'], {cwd: 'source/pages'})
+        .pipe(pug())
+        .pipe(gulp.dest('web'));
 
-module.exports = function (options) {
-    return function () {
-        return gulp.src(options.path)
-            .pipe($.plumber(options.config[4]))
-            .pipe($.pug(options.config[0]))
-            .pipe($.posthtml(options.config[1], options.config[2]))
-            .pipe($.prettify(options.config[3]))
-            .pipe(gulp.dest(options.distr));
-    };
-};
+export default pages;
