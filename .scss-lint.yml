@@ -11,30 +11,30 @@ plugin_gems: []
 severity: warning
 
 linters:
-    Indentation:
-        enabled: true
-        allow_non_nested_indentation: false
-        character: space # or 'tab'
-        width: 4
+  Indentation:
+    enabled: true
+    allow_non_nested_indentation: false
+    character: space # or 'tab'
+    width: 4
 
-    NestingDepth:
-        enabled: true
-        max_depth: 4
-        ignore_parent_selectors: false
+  NestingDepth:
+    enabled: true
+    max_depth: 4
+    ignore_parent_selectors: false
 
-    SelectorFormat:
-        enabled: true
-        convention: strict_BEM
-        ignored_types: [
-            id,
-            attribute,
-            placeholder
-        ]
+  SelectorFormat:
+    enabled: true
+    convention: strict_BEM
+    ignored_types: [
+      id,
+      attribute,
+      placeholder
+    ]
 
 # Disabled
 
-    PropertySortOrder:
-        enabled: false
+  PropertySortOrder:
+    enabled: false
 
-    PlaceholderInExtend:
-        enabled: false
+  PlaceholderInExtend:
+    enabled: false
