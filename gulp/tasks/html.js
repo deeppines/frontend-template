@@ -18,8 +18,10 @@ const html = () => {
         .pipe(plumber(plumberConfig))
         .pipe(pug(pugConfig))
         .pipe(gulpIf(!isDevelopment,
-            prettify(prettifyConfig),
-            posthtml(posthtmlConfig)
+            posthtml(posthtmlConfig.plugins, posthtmlConfig.options)
+        ))
+        .pipe(gulpIf(!isDevelopment,
+            prettify(prettifyConfig)
         ))
         .pipe(gulp.dest(path.root));
 };

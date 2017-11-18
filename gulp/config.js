@@ -31,8 +31,8 @@ export const posthtmlConfig = {
     plugins: [
         attrSorter({
             order: [
-                'class',
                 'id',
+                'class',
                 'name',
                 'data',
                 'ng',
@@ -50,4 +50,4 @@ export const posthtmlConfig = {
         })
     ],
     options: {}
-}
+};
