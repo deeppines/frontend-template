@@ -1,8 +1,6 @@
-'use strict';
+import correctNumber from './correctNumber';
 
-const correctNumber = require('./correctNumber');
-
-module.exports = function getDateTime() {
+const getDateTime = () => {
     const now = new Date();
     const year = now.getFullYear();
     const month = correctNumber(now.getMonth() + 1);
@@ -11,4 +9,6 @@ module.exports = function getDateTime() {
     const minutes = correctNumber(now.getMinutes());
 
     return year + '-' + month + '-' + day + '-' + hours + minutes;
-};
+}
+
+export default getDateTime;
