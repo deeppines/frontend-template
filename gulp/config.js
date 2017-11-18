@@ -3,7 +3,13 @@ import attrSorter from 'posthtml-attrs-sorter';
 
 export const path = {
     root: 'web',
-    build: 'dist'
+    dist: 'dist',
+    build: {
+        js: 'web/js',
+        css: 'web/css',
+        img: 'web/images',
+        fonts: 'web/fonts'
+    }
 };
 
 export const plumberConfig = {
@@ -50,4 +56,8 @@ export const posthtmlConfig = {
         })
     ],
     options: {}
+};
+
+export const sassConfig = {
+    outputStyle: 'expanded'
 };

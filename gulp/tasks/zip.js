@@ -8,7 +8,7 @@ import {
 const zip = () => {
     return gulp.src(path.root+'/**/*.*')
         .pipe(gulpZip(zipName))
-        .pipe(gulp.dest(path.build));
+        .pipe(gulp.dest(path.dist));
 };
 
 export default zip;
