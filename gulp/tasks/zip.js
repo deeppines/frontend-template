@@ -1,16 +1,14 @@
-'use strict';
+import gulp from 'gulp';
+import gulpZip from 'gulp-zip';
+import zipName from '../utils/getZipFileName';
+import {
+    path
+} from '../config';
 
-const gulp = require('gulp');
-const $ = require('gulp-load-plugins')();
-const getDateTime = require('../utils/getTimestamp');
-
-module.exports = function (options) {
-    return function () {
-        const datetime = '-' + getDateTime();
-        const zipName = 'web' + datetime + '.zip';
-
-        return gulp.src(options.path)
-            .pipe($.zip(zipName))
-            .pipe(gulp.dest('dist'));
-    };
+const zip = () => {
+    return gulp.src(path.root+'/**/*.*')
+        .pipe(gulpZip(zipName))
+        .pipe(gulp.dest(path.build));
 };
+
+export default zip;

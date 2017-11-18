@@ -4,5 +4,6 @@ export const pugConfig = {
 };
 
 export const path = {
-    root: 'web'
+    root: 'web',
+    build: 'dist'
 };

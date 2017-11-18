@@ -5,9 +5,10 @@ import {
     pugConfig
 } from '../config';
 
-const html = () =>
-    gulp.src(['**/*.pug', '!**/_*.pug'], {cwd: 'source/pages'})
+const html = () => {
+    return gulp.src(['**/*.pug', '!**/_*.pug'], {cwd: 'source/pages'})
         .pipe(pug(pugConfig))
         .pipe(gulp.dest(path.root));
+};
 
 export default html;
