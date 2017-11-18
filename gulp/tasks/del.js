@@ -1,9 +1,10 @@
-'use strict';
+import del from 'del';
+import {
+    path
+} from '../config';
 
-const del = require('del');
-
-module.exports = function (options) {
-    return function () {
-        return del(options.distr);
-    };
+const clear = () => {
+    return del(path.root);
 };
+
+export default clear;
