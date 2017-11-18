@@ -23,6 +23,7 @@
     "setup": "yarn install",
     "clear": "yarn run gulp clear",
     "html": "yarn run gulp html",
+    "css": "yarn run gulp css",
     "zip": "cross-env NODE_ENV=production yarn run gulp zip",
     "build": "cross-env NODE_ENV=production yarn run gulp build"
   },
@@ -44,6 +45,8 @@
     "gulp-if": "^2.0.2",
     "gulp-prettify": "0.5.0",
     "gulp-posthtml": "^3.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-glob": "^1.0.8",
     "eslint": "^4.11.0",
     "eslint-plugin-import": "^2.7.0",
     "del": "^3.0.0",
