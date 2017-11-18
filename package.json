@@ -22,9 +22,9 @@
     "gulp": "./node_modules/.bin/gulp",
     "setup": "yarn install",
     "clear": "yarn run gulp clear",
-    "zip": "yarn run gulp zip",
     "html": "yarn run gulp html",
-    "build": "yarn run gulp build"
+    "zip": "cross-env NODE_ENV=production yarn run gulp zip",
+    "build": "cross-env NODE_ENV=production yarn run gulp build"
   },
   "engines": {
     "node": ">=6.0.0",
@@ -41,10 +41,15 @@
     "gulp-pug": "^3.3.0",
     "gulp-plumber": "^1.1.0",
     "gulp-zip": "^4.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-prettify": "0.5.0",
+    "gulp-posthtml": "^3.0.0",
     "eslint": "^4.11.0",
     "eslint-plugin-import": "^2.7.0",
     "del": "^3.0.0",
     "colors": "^1.1.2",
-    "node-notifier": "^5.0.2"
+    "node-notifier": "^5.0.2",
+    "posthtml-attrs-sorter": "^1.1.0",
+    "cross-env": "^5.0.5"
   }
 }
