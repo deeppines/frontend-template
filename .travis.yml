@@ -15,4 +15,3 @@ script:
   - yarn run zip
   - yarn run clear
   - yarn run build
-  - yarn run gulp dev
