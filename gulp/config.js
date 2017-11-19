@@ -1,6 +1,9 @@
 import errorHandler from './utils/errorHandler';
 import attrSorter from 'posthtml-attrs-sorter';
 import autoprefixer from 'autoprefixer';
+import imagemin from 'gulp-imagemin';
+import imageminJpegRecompress from 'imagemin-jpeg-recompress';
+import imageminPngquant from 'imagemin-pngquant';
 
 export const path = {
     root: 'web',
@@ -88,4 +91,24 @@ export const csscombConfig = {
 
 export const cssoConfig = {
     filename: '*.min.css'
+};
+
+export const imageminConfig = {
+    images: [
+        imagemin.gifsicle({
+            interlaced: true,
+            optimizationLevel: 3
+        }),
+        imageminJpegRecompress({
+            progressive: true,
+            max: 80,
+            min: 70
+        }),
+        imageminPngquant({quality: '75-85'}),
+        imagemin.svgo({
+            plugins: [{
+                removeViewBox: false
+            }]
+        })
+    ]
 };
