@@ -3,8 +3,8 @@ import {
     path
 } from '../config';
 
-const clear = () => {
+const clean = () => {
     return del(path.root);
 };
 
-export default clear;
+export default clean;

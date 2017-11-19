@@ -12,6 +12,5 @@ before_script:
 script:
   - yarn run gulp html
   - yarn run gulp css
-  - yarn run zip
-  - yarn run clear
+  - yarn run gulp assets
   - yarn run build

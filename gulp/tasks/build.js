@@ -1,13 +1,13 @@
 'use strict';
 import {series, parallel} from 'gulp';
-import clear from './clear';
+import clean from './clean';
 import html from './html';
 import css from './scss';
 import zip from './zip';
 import {assets} from './assets';
 
 const build = series(
-    clear,
+    clean,
     series(
         parallel(
             assets,

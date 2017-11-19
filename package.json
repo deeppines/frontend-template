@@ -21,9 +21,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "./node_modules/.bin/gulp",
     "setup": "yarn install",
-    "clear": "yarn run gulp clear",
-    "html": "yarn run gulp html",
-    "css": "yarn run gulp css",
+    "clean": "yarn run gulp clean",
+    "dev": "yarn run gulp dev",
     "zip": "cross-env NODE_ENV=production yarn run gulp zip",
     "build": "cross-env NODE_ENV=production yarn run gulp build"
   },
