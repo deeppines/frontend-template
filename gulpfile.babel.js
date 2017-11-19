@@ -5,12 +5,14 @@ import css from './gulp/tasks/scss';
 import clear from './gulp/tasks/clear';
 import zip from './gulp/tasks/zip';
 import {assets} from './gulp/tasks/assets';
+import {server} from './gulp/tasks/server';
 
 // Debug tasks
 task('html', html);
 task('css', css);
 task('clear', clear);
 task('assets', assets);
+task('server', server);
 
 // Main tasks
 task('build', build);

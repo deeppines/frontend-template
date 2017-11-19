@@ -13,6 +13,14 @@ export const path = {
     }
 };
 
+export const browserSyncConfig = {
+    server: './web',
+    notify: false,
+    open: 'local',
+    host: 'localhost',
+    port: 9000
+};
+
 export const plumberConfig = {
     errorHandler
 };
