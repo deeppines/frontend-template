@@ -1,9 +1,7 @@
 # Frontend template
 [![Build Status](https://travis-ci.org/deeppines/frontend-template.svg?branch=gulp4)](https://travis-ci.org/deeppines/frontend-template)
-
 [![GitHub release](https://img.shields.io/github/release/deeppines/frontend-template.svg)](https://github.com/deeppines/frontend-template/releases)
-
-[![GitHub package version](https://img.shields.io/github/deeppines/frontend-template/package-json/v/badges/shields.svg)]()
+[![Github Releases (by Release)](https://img.shields.io/github/downloads/deeppines/frontend-template/v1.5.3/total.svg)](https://github.com/deeppines/frontend-template/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/deeppines/frontend-template/blob/master/LICENSE)
 
 Config for quick start web project with Yarn/Gulp4
