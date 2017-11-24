@@ -17,10 +17,10 @@ Config for quick start web project with Yarn/Gulp4
     ```
 
 ## Main tasks
-* `yarn run dev`
-* `yarn run build`
-* `yarn run zip`
-* `yarn run clean`
+* `yarn run dev` - compile a project, start watchers and server
+* `yarn run build` - compile a project
+* `yarn run zip` - compile a project in zip
+* `yarn run clean` - clean a project compile folder
 
 ## <a name="license"></a> License
 [The MIT License (MIT)](https://github.com/deeppines/frontend-template/blob/master/LICENSE)
