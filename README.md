@@ -1,10 +1,7 @@
 # Frontend template
 [![Build Status](https://travis-ci.org/deeppines/frontend-template.svg?branch=gulp4)](https://travis-ci.org/deeppines/frontend-template)
-[![GitHub version](https://badge.fury.io/gh/deeppines%2Ffrontend-template%2Ftree%2Fgulp4.svg)](https://github.com/deeppines/frontend-template/tree/gulp4)
+[![GitHub version](https://badge.fury.io/gh/deeppines%2Ffrontend-template.svg)](https://github.com/deeppines/frontend-template)
 [![GitHub release](https://img.shields.io/github/release/deeppines/frontend-template.svg)](https://github.com/deeppines/frontend-template/releases)
-[![GitHub package version](https://img.shields.io/github/deeppines/frontend-template/package-json/v/badges/frontend-template.svg)](https://github.com/deeppines/frontend-template)
-<!-- [![Github all releases](https://img.shields.io/github/downloads/deeppines/frontend-template/total.svg)](https://github.com/deeppines/frontend-template/releases) -->
-<!-- [![Github Releases (by Release)](https://img.shields.io/github/downloads/deeppines/frontend-template/v1.5.3/total.svg)](https://github.com/deeppines/frontend-template/releases) -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/deeppines/frontend-template/blob/master/LICENSE)
 
 Config for quick start web project with Yarn/Gulp4
