@@ -1,4 +1,4 @@
-import {task, series} from 'gulp';
+import {task} from 'gulp';
 import build from './gulp/tasks/build';
 import html from './gulp/tasks/html';
 import css from './gulp/tasks/scss';
