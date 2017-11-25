@@ -7,10 +7,12 @@ import zip from './gulp/tasks/zip';
 import {assets} from './gulp/tasks/assets';
 import {server} from './gulp/tasks/server';
 import dev from './gulp/tasks/dev';
+import scripts from './gulp/tasks/scripts';
 
 // Debug tasks
 task('html', html);
 task('css', css);
+task('scripts', scripts);
 task('assets', assets);
 task('server', server);
 
