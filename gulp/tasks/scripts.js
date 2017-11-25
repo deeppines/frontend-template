@@ -9,7 +9,7 @@ import {
 } from '../config';
 
 const scripts = () => {
-    return gulp.src('./source/static/scripts/common.js')
+    return gulp.src(['*.js', '!_*.js', '!*.md'], {cwd: 'source/static/scripts'})
         .pipe(plumber(plumberConfig))
         .pipe(webpackStream(webpackConfig, webpack))
         .pipe(gulp.dest(path.build.js));
