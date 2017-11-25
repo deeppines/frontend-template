@@ -6,13 +6,19 @@ import {isDevelopment} from './gulp/utils/env';
 const outputFileName = '[name]-webpack.bundle.js';
 
 let options = {
-    entry: './source/static/scripts/common.js',
-    output: {
-        filename: outputFileName,
-        path: path.resolve(__dirname, 'web')
+    context: path.resolve(__dirname + '/source/static/scripts'),
+
+    entry: {
+        common: './common.js',
     },
 
-    devtool: 'source-map',
+    output: {
+        filename: outputFileName,
+        path: path.resolve(__dirname, 'web'),
+        library: '[name]'
+    },
+
+    devtool: !isDevelopment ? 'source-map' : 'none',
 
     module: {
         loaders: [
@@ -30,6 +36,10 @@ options.plugins = [
 
 if (isDevelopment) {
     options.plugins.push(
+
+    );
+} else {
+    options.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: true,
             uglifyOptions: {
@@ -38,16 +48,12 @@ if (isDevelopment) {
             },
             output: {
                 comments: false,
-                beautify: true,
+                beautify: false,
                 bracketize: true,
                 quote_style: 1
             },
-            compress: false
+            compress: true
         }),
-    );
-} else {
-    options.plugins.push(
-
     );
 }
 
