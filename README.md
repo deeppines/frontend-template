@@ -4,9 +4,16 @@
 [![GitHub release](https://img.shields.io/github/release/deeppines/frontend-template.svg)](https://github.com/deeppines/frontend-template/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/deeppines/frontend-template/blob/master/LICENSE)
 
-Config for quick start web project with Yarn/Gulp4
+Config for quick start web project with Yarn/Gulp4/Webpack
 
-## How to use
+1. [Features](#features)
+2. [How it use](#howto)
+3. [Main tasks](#maintasks)
+4. [License](#license)
+
+## <a name="features"></a> Features
+
+## <a name="howto"></a> How to use
 1. install the [node.js](https://nodejs.org)
 2. install the [Yarn](https://yarnpkg.com/en/docs/install)
 3. Clone or [download](https://github.com/deeppines/frontend-template/archive/gulp4.zip) the project
@@ -18,7 +25,7 @@ Config for quick start web project with Yarn/Gulp4
     yarn run setup
     ```
 
-## Main tasks
+## <a name="maintasks"></a> Main tasks
 * `yarn run dev` - compile a project, start watchers and server
 * `yarn run build` - compile a project
 * `yarn run zip` - compile a project in zip
