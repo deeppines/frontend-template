@@ -22,6 +22,7 @@
     "gulp": "./node_modules/.bin/gulp",
     "setup": "yarn install",
     "clean": "yarn run gulp clean",
+    "clean-all": "cross-env NODE_ENV=testing yarn run gulp clean",
     "dev": "yarn run gulp dev",
     "zip": "cross-env NODE_ENV=production yarn run gulp zip",
     "build": "cross-env NODE_ENV=production yarn run gulp build"
