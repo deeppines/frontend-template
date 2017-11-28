@@ -33,7 +33,7 @@ Config for quick start web project with Yarn/Gulp4/Webpack
 * `yarn run clean` - clean a project compile folder
 
 ## <a name="doc"></a> More documentation
-[Full documentation for project]()
+[Full documentation for project](https://github.com/deeppines/frontend-template/blob/gulp4/docs/documentation.md)
 
 ## <a name="license"></a> License
 [The MIT License (MIT)](https://github.com/deeppines/frontend-template/blob/master/LICENSE)
