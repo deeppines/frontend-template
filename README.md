@@ -9,7 +9,8 @@ Config for quick start web project with Yarn/Gulp4/Webpack
 1. [Features](#features)
 2. [How it use](#howto)
 3. [Main tasks](#maintasks)
-4. [License](#license)
+4. [Documentation](#doc)
+5. [License](#license)
 
 ## <a name="features"></a> Features
 
@@ -30,6 +31,9 @@ Config for quick start web project with Yarn/Gulp4/Webpack
 * `yarn run build` - compile a project
 * `yarn run zip` - compile a project in zip
 * `yarn run clean` - clean a project compile folder
+
+## <a name="doc"></a> More documentation
+[Full documentation for project]()
 
 ## <a name="license"></a> License
 [The MIT License (MIT)](https://github.com/deeppines/frontend-template/blob/master/LICENSE)
