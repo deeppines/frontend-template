@@ -63,6 +63,7 @@
     "gulp-sass-glob": "^1.0.8",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-zip": "^4.0.0",
+    "gulp-file": "^0.3.0",
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-pngquant": "^5.0.1",
     "node-notifier": "^5.0.2",
