@@ -18,13 +18,13 @@ task('scripts', scripts);
 task('assets', assets);
 task('server', server);
 task('modules', modules);
+task('watch', watch);
 
 // Main tasks
 task('dev', dev);
 task('build', build);
 task('zip', zip);
 task('clean', clean);
-task('watch', watch);
 
 // Default task
 task('default', dev);
