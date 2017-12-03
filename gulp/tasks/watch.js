@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import {reload} from './server';
 import html from './html';
 import css from './scss';
+import {assets} from './assets';
 
 
 const watch = () => {
@@ -28,6 +29,12 @@ const watch = () => {
     gulp.watch(
         'source/modules/**/*.scss',
         gulp.series(css)
+    );
+
+    // Assets
+    gulp.watch(
+        'source/static/assets/**/*',
+        gulp.series(assets, reload)
     );
 };
 
