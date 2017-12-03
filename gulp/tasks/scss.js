@@ -9,6 +9,7 @@ import mmq from 'gulp-merge-media-queries';
 import csscomb from 'gulp-csscomb';
 import csso from 'gulp-csso';
 import rename from 'gulp-rename';
+import browserSync from 'browser-sync';
 import {isDevelopment} from '../utils/env';
 import {
     path,
@@ -41,7 +42,8 @@ const css = () => {
             rename({suffix: '.min'})
         ))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(path.build.css));
+        .pipe(gulp.dest(path.build.css))
+        .pipe(browserSync.stream());
 };
 
 export default css;
