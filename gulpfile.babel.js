@@ -9,6 +9,7 @@ import {server} from './gulp/tasks/server';
 import dev from './gulp/tasks/dev';
 import scripts from './gulp/tasks/scripts';
 import modules from './gulp/tasks/modules';
+import watch from './gulp/tasks/watch';
 
 // Debug tasks
 task('html', html);
@@ -23,6 +24,7 @@ task('dev', dev);
 task('build', build);
 task('zip', zip);
 task('clean', clean);
+task('watch', watch);
 
 // Default task
 task('default', dev);
