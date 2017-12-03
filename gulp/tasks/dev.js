@@ -1,9 +1,9 @@
-'use strict';
 import {series, parallel} from 'gulp';
 import html from './html';
 import css from './scss';
 import scripts from './scripts';
-import {server, reload} from './server';
+import watch from './watch';
+import {server} from './server';
 import {assets} from './assets';
 
 const dev = series(
@@ -13,8 +13,10 @@ const dev = series(
         css,
         scripts
     ),
-    server,
-    reload
+    parallel(
+        server,
+        watch
+    )
 );
 
 export default dev;
