@@ -2,7 +2,7 @@
 @import 'core/mixins';
 
 // Import modules
-@import '../../modules/*.scss';
+@import '../../modules/**/*.scss';
 
 // Common style
 @import 'common';
