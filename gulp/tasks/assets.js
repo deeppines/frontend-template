@@ -17,8 +17,7 @@ export const assets = () => {
             '!**/*.md'
         ],
         {
-            cwd: 'source/static/assets',
-            since: gulp.lastRun('assets')
+            cwd: 'source/static/assets'
         })
         .pipe(plumber(plumberConfig))
         // Copy favicon.ico
