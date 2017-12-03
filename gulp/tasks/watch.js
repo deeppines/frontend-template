@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import {reload} from './server';
 import html from './html';
 import css from './scss';
+import scripts from './scripts';
 import {assets} from './assets';
 
 
@@ -29,6 +30,12 @@ const watch = () => {
     gulp.watch(
         'source/modules/**/*.scss',
         gulp.series(css)
+    );
+
+    // Static js
+    gulp.watch(
+        'source/static/scripts/**/*.js',
+        gulp.series(scripts, reload)
     );
 
     // Assets
