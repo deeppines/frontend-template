@@ -5,7 +5,6 @@ $(document).ready(function () {
     //====================================
 
     //= functions/debounce.js
-    //= functions/equalHeight.js
     //= functions/miss-click.js
     //= functions/responsive-iframe.js
 
