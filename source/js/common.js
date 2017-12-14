@@ -1,15 +1,11 @@
 'use strict';
-//====================================
-//--------- Functions ----------------
-//====================================
+    //====================================
+    //--------- Functions ----------------
+    //====================================
 
-//= functions/debounce.js
-//= functions/miss-click.js
-//= functions/responsive-iframe.js
-
-//====================================
-//---------- DOCUMENT ----------------
-//====================================
+    //= functions/debounce.js
+    //= functions/miss-click.js
+    //= functions/responsive-iframe.js
 
 $(document).ready(function () {
     //====================================

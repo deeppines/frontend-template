@@ -14,7 +14,7 @@
     ],
 
     "dependencies": {
-        "jquery": "2.*",
+        "jquery": "3.*",
         "bootstrap": "3.*",
         "font-awesome": "4.*",
         "slick-carousel": "1.*",
