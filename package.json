@@ -1,12 +1,13 @@
 {
     "name": "frontend-template",
-    "version": "1.5.3",
-    "description": "The template for quick start of web project with Gulp, Bower etc.",
+    "version": "1.5.4",
+    "description": "The template for quick start of web project with Gulp,Pug, Bower etc.",
     "keywords": [
         "gulp",
         "frontend",
         "project",
-        "template"
+        "template",
+        "pug"
     ],
     "homepage": "https://github.com/egorkir/frontend-template",
     "author": "Kirdyashkin Egor <egorkir41@gmail.com> (https://github.com/deeppines)",
@@ -17,9 +18,7 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "gulp dev",
-        "amo": "node tools/module/add.js",
-        "rmo": "node tools/module/remove.js"
+        "start": "gulp dev"
     },
     "engines": {
         "node": ">=4.0.0",
