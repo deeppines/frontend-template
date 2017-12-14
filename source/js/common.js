@@ -1,5 +1,4 @@
 'use strict';
-$(document).ready(function () {
     //====================================
     //--------- Functions ----------------
     //====================================
@@ -7,6 +6,8 @@ $(document).ready(function () {
     //= functions/debounce.js
     //= functions/miss-click.js
     //= functions/responsive-iframe.js
+
+$(document).ready(function () {
 
     //====================================
     //--------- Custom Scripts -----------
