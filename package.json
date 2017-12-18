@@ -1,6 +1,6 @@
 {
   "name": "frontend-template",
-  "version": "2.0.0",
+  "version": "2.0.0-alpha-1",
   "description": "The template for quick start of web project with Gulp/Pug/SASS",
   "keywords": [
     "gulp",
