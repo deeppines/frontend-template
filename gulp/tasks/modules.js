@@ -7,7 +7,8 @@ import {
 } from '../config';
 
 const modules = () => {
-    return gulp.watch(['source/modules/*', '!source/modules/_*']).on('addDir', function (path) {
+    let watcher = gulp.watch(['source/modules/*', '!source/modules/_*']);
+    return watcher.on('addDir', function (path) {
         let pathArray = path.split('\\');
         let folderName = pathArray[pathArray.length-1];
 
