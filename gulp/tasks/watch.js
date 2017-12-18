@@ -4,6 +4,7 @@ import html from './html';
 import css from './scss';
 import scripts from './scripts';
 import {assets} from './assets';
+import modules from './modules';
 
 
 const watch = () => {
@@ -43,6 +44,8 @@ const watch = () => {
         'source/static/assets/**/*',
         gulp.series(assets, reload)
     );
+
+    modules();
 };
 
 export default watch;
