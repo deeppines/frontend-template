@@ -45,6 +45,7 @@ const watch = () => {
         gulp.series(assets, reload)
     );
 
+    // Modules watcher
     modules();
 };
 
