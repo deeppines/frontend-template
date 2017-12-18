@@ -24,6 +24,10 @@ export const browserSyncConfig = {
     port: 9000
 };
 
+export const modulesConfig = {
+    js: false
+};
+
 export const plumberConfig = {
     errorHandler
 };
