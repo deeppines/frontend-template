@@ -59,7 +59,7 @@ Config for quick start web project with Gulp
  gulp
 ```
 
-+ In browser open page with address <a href="http://localhost:9000/">http://localhost:9000/</a>
++ In browser open page with address <a href="http://localhost:9000/">localhost:9000</a>
 
 ## <a name="maintasks"></a> Main tasks
 
