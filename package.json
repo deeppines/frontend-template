@@ -26,7 +26,6 @@
         "npm": "~3.0.0"
     },
     "main": "gulpfile.js",
-
     "devDependencies": {
         "autoprefixer": "^8.0.0",
         "browser-sync": "^2.23.6",
@@ -61,7 +60,5 @@
         "run-sequence": "^2.2.1",
         "vinyl-buffer": "^1.0.1"
     },
-
     "extends": ".pug-lintrc"
-
 }
