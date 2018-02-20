@@ -4,20 +4,23 @@
 // ------ Import Plugins -------
 // =============================
 
-var gulp      = require('gulp');
-var $         = require('gulp-load-plugins')();
-var mmq       = require('gulp-merge-media-queries');
+const gulp      = require('gulp');
+const $         = require('gulp-load-plugins')();
+const mmq       = require('gulp-merge-media-queries');
+const sassGlob  = require('gulp-sass-glob');
 
-var autoprefixer = require('autoprefixer');
-var runSequence  = require('run-sequence');
-var spritesmith  = require('gulp.spritesmith');
-var browserSync  = require('browser-sync').create();
-var attrSorter   = require('posthtml-attrs-sorter');
-var del          = require('del');
-var buffer       = require('vinyl-buffer');
-var imageminPngquant = require('imagemin-pngquant');
-var imageminJpegRecompress = require('imagemin-jpeg-recompress');
-var reload       = browserSync.reload;
+const autoprefixer = require('autoprefixer');
+const runSequence  = require('run-sequence');
+const spritesmith  = require('gulp.spritesmith');
+const browserSync  = require('browser-sync').create();
+const attrSorter   = require('posthtml-attrs-sorter');
+const del          = require('del');
+const colors       = require('colors');
+const notifer      = require('node-notifier');
+const buffer       = require('vinyl-buffer');
+const imageminPngquant = require('imagemin-pngquant');
+const imageminJpegRecompress = require('imagemin-jpeg-recompress');
+const reload       = browserSync.reload;
 
 // =============================
 // -------- Functions ----------
@@ -25,7 +28,26 @@ var reload       = browserSync.reload;
 
 // Error handler for gulp-plumber
 function errorHandler(err) {
-    $.util.log([ (err.name + ' in ' + err.plugin).bold.red, '', err.message, '' ].join('\n'));
+    const date = new Date();
+    const cwd = process.cwd();
+
+    const now = date.toTimeString().split(' ')[0];
+
+    const title = error.name + ' in ' + error.plugin;
+
+    const shortMessage = error.message.split('\n')[0];
+
+    const message = '[' + colors.grey(now) + '] ' +
+        [title.bold.red, '', error.message, ''].join('\n');
+
+    // Print message to console
+    // eslint-disable-next-line
+    console.log(message);
+
+    notifier.notify({
+        title: title,
+        message: shortMessage
+    });
 
     this.emit('end');
 }
@@ -72,7 +94,8 @@ var path = {
         ],
         style:   [
             'source/scss/*.scss',
-            '!source/scss/**/*.md',
+            '!**/_*.scss',
+            '!**/*.md',
         ],
         img:     [
             'source/images/content/**/*.*',
@@ -93,6 +116,7 @@ var path = {
         html:    'source/**/*.pug',
         js:      'source/js/**/*.js',
         style:   'source/scss/**/*.scss',
+        modules: 'source/modules/**/*.scss',
         img:     'source/images/content/**/*.*',
         sprites: 'source/images/sprites/**/*.*',
         fonts:   'source/fonts/**/*.*'
@@ -210,6 +234,12 @@ var option = {
 
     csso: {
         filename: '*.min.css',
+    },
+
+    sassglob: {
+        ignorePaths: [
+            '**/_*.scss',
+        ]
     }
 
 }
@@ -254,6 +284,7 @@ gulp.task('build:css', function (cb) {
     return gulp.src(path.src.style)
         .pipe($.plumber(option.plumber))
         .pipe($.sourcemaps.init())
+        .pipe(sassGlob(option.sassglob))
         .pipe($.sass(option.sass))
         .pipe($.postcss(option.postcss))
         .pipe(mmq(option.mmq))
@@ -310,6 +341,10 @@ gulp.task('watch', function(){
     });
 
     $.watch([path.watch.style], function(event, cb) {
+        return runSequence('build:css', reload);
+    });
+
+    $.watch([path.watch.modules], function (event, cb) {
         return runSequence('build:css', reload);
     });
 

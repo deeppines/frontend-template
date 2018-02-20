@@ -8,11 +8,9 @@
 //==========================
 @import 'core/core';
 
-// MODULES IMPORT
-//==========================
-@import 'components/form';
-@import 'components/modal';
-@import 'components/social';
+// Import modules
+@import '../modules/**/*.scss';
+
 
 // OTHER STYLE IMPORT
 //==========================
