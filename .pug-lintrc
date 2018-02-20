@@ -1,4 +1,7 @@
 {
+  "puglint.enable": true,
+  "puglint.config": {
+    "requireClassLiteralsBeforeIdLiterals": true,
     "disallowIdLiteralsBeforeAttributes": true,
     "disallowClassLiteralsBeforeAttributes": true,
     "disallowClassLiteralsBeforeIdLiterals": true,
@@ -9,4 +12,5 @@
     "requireLowerCaseTags": true,
     "validateIndentation": 4,
     "validateLineBreaks": "LF"
+  }
 }
