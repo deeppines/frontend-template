@@ -15,6 +15,8 @@ const spritesmith  = require('gulp.spritesmith');
 const browserSync  = require('browser-sync').create();
 const attrSorter   = require('posthtml-attrs-sorter');
 const del          = require('del');
+const colors       = require('colors');
+const notifer      = require('node-notifier');
 const buffer       = require('vinyl-buffer');
 const imageminPngquant = require('imagemin-pngquant');
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
@@ -26,7 +28,26 @@ const reload       = browserSync.reload;
 
 // Error handler for gulp-plumber
 function errorHandler(err) {
-    $.util.log([ (err.name + ' in ' + err.plugin).bold.red, '', err.message, '' ].join('\n'));
+    const date = new Date();
+    const cwd = process.cwd();
+
+    const now = date.toTimeString().split(' ')[0];
+
+    const title = error.name + ' in ' + error.plugin;
+
+    const shortMessage = error.message.split('\n')[0];
+
+    const message = '[' + colors.grey(now) + '] ' +
+        [title.bold.red, '', error.message, ''].join('\n');
+
+    // Print message to console
+    // eslint-disable-next-line
+    console.log(message);
+
+    notifier.notify({
+        title: title,
+        message: shortMessage
+    });
 
     this.emit('end');
 }
