@@ -1,4 +1,5 @@
 # Frontend template
+
 [![Build Status](https://travis-ci.org/deeppines/frontend-template.svg?branch=master)](https://travis-ci.org/deeppines/frontend-template)
 [![devDependencies Status](https://david-dm.org/deeppines/frontend-template/dev-status.svg)](https://david-dm.org/deeppines/frontend-template?type=dev)
 [![GitHub version](https://badge.fury.io/gh/deeppines%2Ffrontend-template.svg)](https://github.com/deeppines/frontend-template)
@@ -14,6 +15,7 @@ Config for quick start web project with Gulp
 5. [License](#license)
 
 ## <a name="features"></a> Features
+
 + Fast and easy collector (gulp)
 + Server and synchronous site testing in the browser (using the browser-sync)
 + Autosubstitution of vendor prefixes in CSS (autoprefixer)
@@ -30,39 +32,45 @@ Config for quick start web project with Gulp
 + HTML formatting (gulp-prettify)
 
 ## <a name="howto"></a> How it use
-- Install <a href="https://nodejs.org">node.js+npm</a> and <a href="https://git-scm.com/downloads">Git</a>
-- Install <a href="http://bower.io/">Bower</a> (once!)
+
++ Install <a href="https://nodejs.org">node.js+npm</a> and <a href="https://git-scm.com/downloads">Git</a>
++ Install <a href="http://bower.io/">Bower</a> (once!)
 
 ```js
-$ npm install -g bower
+ npm install -g bower
 ```
-- Copy files in the working directory and run it in the console.<br>
-- Initialize git in working directory
+
++ Copy files in the working directory and run it in the console.<br>
++ Initialize git in working directory
 
 ```js
-$ git init
+ git init
 ```
-- Install npm dependencies
+
++ Install npm dependencies
 
 ```js
-$ npm i
+ npm i
 ```
-- Start gulp
+
++ Start gulp
 
 ```js
-$ gulp
+ gulp
 ```
 
-- In browser open page with address <a href="http://localhost:9000/">http://localhost:9000/</a>
++ In browser open page with address <a href="http://localhost:9000/">localhost:9000</a>
 
 ## <a name="maintasks"></a> Main tasks
+
 + `gulp vendor` download vendor plugins and filtered files
 + `gulp build` compile a project
 + `gulp dev` compile a project and launches watchers/server
 + `gulp zip` compile a project in zip
 
 ## <a name="structure"></a> Files and folders structure
-```
+
+```doc
 frontend-template/                     # Project root
 ├── psd                                # Layout psd files folder
 ├── web                                # Compiled files
@@ -100,4 +108,5 @@ frontend-template/                     # Project root
 ```
 
 ## <a name="license"></a> License
+
 [The MIT License (MIT)](https://github.com/deeppines/frontend-template/blob/master/LICENSE)
