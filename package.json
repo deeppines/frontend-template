@@ -4,10 +4,11 @@
     "description": "The template for quick start of web project with Gulp,Pug, Bower etc.",
     "keywords": [
         "gulp",
+        "pug",
+        "sass",
         "frontend",
         "project",
-        "template",
-        "pug"
+        "template"
     ],
     "homepage": "https://github.com/egorkir/frontend-template",
     "author": "Kirdyashkin Egor <egorkir41@gmail.com> (https://github.com/deeppines)",
@@ -21,7 +22,7 @@
         "start": "gulp dev"
     },
     "engines": {
-        "node": ">=4.0.0",
+        "node": ">=6.0.0",
         "npm": "~3.0.0"
     },
     "main": "gulpfile.js",
