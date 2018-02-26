@@ -16,7 +16,7 @@ const browserSync  = require('browser-sync').create();
 const attrSorter   = require('posthtml-attrs-sorter');
 const del          = require('del');
 const colors       = require('colors');
-const notifer      = require('node-notifier');
+const notifier     = require('node-notifier');
 const buffer       = require('vinyl-buffer');
 const imageminPngquant = require('imagemin-pngquant');
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
@@ -27,7 +27,8 @@ const reload       = browserSync.reload;
 // =============================
 
 // Error handler for gulp-plumber
-function errorHandler(err) {
+function errorHandler(error) {
+
     const date = new Date();
     const cwd = process.cwd();
 
