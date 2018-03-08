@@ -33,8 +33,8 @@ Config for quick start web project with Gulp
 
 ## <a name="howto"></a> How it use
 
-+ Install <a href="https://nodejs.org">node.js+npm</a> and <a href="https://git-scm.com/downloads">Git</a>
-+ Install <a href="http://bower.io/">Bower</a> (once!)
++ Install [node.js+npm](https://nodejs.org) and [Git](https://git-scm.com/downloads)
++ Install [Bower](http://bower.io/) (once!)
 
 ```js
  npm install -g bower
@@ -59,7 +59,7 @@ Config for quick start web project with Gulp
  gulp
 ```
 
-+ In browser open page with address <a href="http://localhost:9000/">localhost:9000</a>
++ In browser open page with address [localhost:9000](http://localhost:9000/)
 
 ## <a name="maintasks"></a> Main tasks
 
