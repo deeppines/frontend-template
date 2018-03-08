@@ -86,12 +86,12 @@ var path = {
 
     src: {
         html:    [
-            'source/*.pug',
-            '!source/*.md',
+            'source/pages/*.pug',
+            '!**/*.md',
         ],
         js:      [
             'source/js/*.js',
-            '!source/js/**/*.md',
+            '!**/*.md',
         ],
         style:   [
             'source/scss/*.scss',
@@ -100,15 +100,15 @@ var path = {
         ],
         img:     [
             'source/images/content/**/*.*',
-            '!source/images/content/**/*.md',
+            '!**/*.md',
         ],
         sprites: [
             'source/images/sprites/**/*.*',
-            '!source/images/sprites/**/*.md'
+            '!**/*.md'
         ],
         fonts:   [
             'source/fonts/**/*.*',
-            '!source/fonts/**/*.md',
+            '!**/*.md',
         ],
         libs:    './bower_components/'
     },
