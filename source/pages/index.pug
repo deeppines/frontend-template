@@ -1,12 +1,13 @@
-doctype html
-html(lang="ru")
+extends ../layouts/_default
 
-    head
-        include ../modules/meta.pug
+block head
+    include ../modules/meta.pug
 
-    body
-        include ../modules/header/header
-
-        main(role="main")
-
-        include ../modules/footer/footer
+block body
+    block header
+        header 
+            h1 All done!
+    block main
+        main
+    block footer
+        footer
