@@ -85,7 +85,9 @@ frontend-template/                     # Project root
 │   |   ├── custom                     # Custom scripts folder
 │   |   ├── functions                  # Functions scripts
 │   │   └── common.js                  # Common JavaScript file
+│   ├── layouts                        # Layouts folder
 │   ├── modules                        # Modules folder
+│   ├── pages                          # Pages folder
 │   ├── scss                           # Scss style folder
 │   |   ├── core                       # Base style, variables, mixins etc
 │   |   ├── components                 # Components style folder
