@@ -67,6 +67,7 @@ Config for quick start web project with Gulp
 + `gulp build` compile a project
 + `gulp dev` compile a project and launches watchers/server
 + `gulp zip` compile a project in zip
++ `gulp clean` del web folder
 
 ## <a name="structure"></a> Files and folders structure
 
