@@ -27,11 +27,11 @@
     },
     "main": "gulpfile.js",
     "devDependencies": {
-        "autoprefixer": "^8.0.0",
+        "autoprefixer": "^8.1.0",
         "browser-sync": "^2.23.6",
         "colors": "^1.1.2",
         "del": "^3.0.0",
-        "eslint": "^4.18.0",
+        "eslint": "^4.18.2",
         "eslint-config-yandex": "^1.0.6",
         "gulp": "^3.9.1",
         "gulp-bower": "^0.0.14",
