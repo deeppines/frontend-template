@@ -8,30 +8,7 @@
 
 Config for quick start web project with Gulp
 
-1. [Features](#features)
-2. [How it use](#howto)
-3. [Main tasks](#maintasks)
-4. [Files and folders structure](#structure)
-5. [License](#license)
-
-## <a name="features"></a> Features
-
-+ Fast and easy collector (gulp)
-+ Server and synchronous site testing in the browser (using the browser-sync)
-+ Autosubstitution of vendor prefixes in CSS (autoprefixer)
-+ SASS preprocessor (gulp-sass)
-+ CSS formatting (gulp-csscomb)
-+ CSS min (gulp-csso)
-+ Any files concatenation (gulp-rigger)
-+ Compiled files package in zip (gulp-zip)
-+ Errors output without stopping gulp (gulp-plumber)
-+ Sort HTML attributes (posthtml-attrs-sorter)
-+ Merge and sort media queries in external file (gulp-merge-media-queries)
-+ Build of png sprites (gulp-spritesmith)
-+ Pug template and HTML preprocessor (gulp-pug)
-+ HTML formatting (gulp-prettify)
-
-## <a name="howto"></a> How it use
+## How it use
 
 + Install [node.js+npm](https://nodejs.org) and [Git](https://git-scm.com/downloads)
 + Install [Bower](http://bower.io/) (once!)
@@ -40,7 +17,7 @@ Config for quick start web project with Gulp
  npm install -g bower
 ```
 
-+ Copy files in the working directory and run it in the console.<br>
++ Copy files in the working directory and run it in the console.
 + Initialize git in working directory
 
 ```js
@@ -61,7 +38,7 @@ Config for quick start web project with Gulp
 
 + In browser open page with address [localhost:9000](http://localhost:9000/)
 
-## <a name="maintasks"></a> Main tasks
+## Main tasks
 
 + `gulp vendor` download vendor plugins and filtered files
 + `gulp build` compile a project
@@ -69,47 +46,18 @@ Config for quick start web project with Gulp
 + `gulp zip` compile a project in zip
 + `gulp clean` del web folder
 
-## <a name="structure"></a> Files and folders structure
+## Contribution
 
-```doc
-frontend-template/                     # Project root
-├── psd                                # Layout psd files folder
-├── web                                # Compiled files
-├── dest                               # Folder with zip archives
-├── source                             # Source files
-│   ├── fonts                          # Custom fonts folder
-│   ├── images                         # Images folder
-│   │   ├── content                    # Content Images folder
-│   │   └── sprites                    # Sprites images folder
-│   ├── js                             # JavaScript folder
-│   |   ├── custom                     # Custom scripts folder
-│   |   ├── functions                  # Functions scripts
-│   │   └── common.js                  # Common JavaScript file
-│   ├── layouts                        # Layouts folder
-│   ├── modules                        # Modules folder
-│   ├── pages                          # Pages folder
-│   ├── scss                           # Scss style folder
-│   |   ├── core                       # Base style, variables, mixins etc
-│   |   ├── components                 # Components style folder
-│   |   ├── vendors                    # Vendors plugins style
-│   |   ├── _common.scss               # Other style
-│   |   └── style.scss                 # Config styles file
-│   └── index.pug                      # Index pug template file
-|
-├── .eslintignore                      # JavaScript linter config
-├── .eslintrc                          # JavaScript linter config
-├── .pug-lintrc                        # Pug linter config
-├── .scss-lint.yml                     # Scss linter config
-├── .csscomb.json                      # csscomb config
-├── .travis.yml                        # TravisCI config
-├── bower.json                         # Bower config
-├── package.json                       # Dependencies for node.js
-├── gulpfile.js                        # gulp.js config
-├── browserslist                       # Autoprefixer browser list
-├── LICENSE                            # License
-└── README.md                          # File you read
-```
+Please report issues/bugs, feature requests and suggestions for improvements to the [issue tracker][issue].
 
-## <a name="license"></a> License
+## Changelog
 
-[The MIT License (MIT)](https://github.com/deeppines/frontend-template/blob/master/LICENSE)
+Notable changes to this project documented in this file - [changelog.md][changelog]
+
+## License
+
+[The MIT License (MIT)][license]
+
+[changelog]:https://github.com/deeppines/frontend-template/blob/master/CHANGELOG.md
+[license]:https://github.com/deeppines/frontend-template/blob/master/LICENSE
+[issue]:https://github.com/deeppines/frontend-template/issues
