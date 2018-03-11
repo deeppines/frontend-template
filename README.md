@@ -10,13 +10,13 @@ Config for quick start web project with Gulp
 
 ## How it use
 
-### With npm
-
-+ Install [node.js+npm](https://nodejs.org)
++ Install [node.js](https://nodejs.org)
 + Install [Bower](http://bower.io/) (once!)
   ```bash
   npm install -g bower
   ```
+
+### With npm
 
 + Clone or [download](https://github.com/deeppines/frontend-template/tree/master) the project
     ```bash

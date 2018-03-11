@@ -29,13 +29,13 @@ Notable changes to this project documented in this file - [changelog.md][changel
 
 ## How it use
 
-### With npm
-
-+ Install [node.js+npm](https://nodejs.org)
++ Install [node.js](https://nodejs.org)
 + Install [Bower](http://bower.io/) (once!)
   ```bash
   npm install -g bower
   ```
+
+### With npm
 
 + Clone or [download](https://github.com/deeppines/frontend-template/tree/master) the project
     ```bash
