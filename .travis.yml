@@ -4,6 +4,12 @@ node_js:
   - "7"
   - "6"
 
+cache:
+  yarn: true
+
 before_script:
   - npm install -g gulp
-script: gulp build
+  - yarn install
+script:
+  - gulp build
+  - yarn run build
