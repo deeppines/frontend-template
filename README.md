@@ -43,7 +43,6 @@ Config for quick start web project with Gulp
 
 ### With yarn
 
-+ install the [node.js](https://nodejs.org)
 + install the [Yarn](https://yarnpkg.com/en/docs/install)
 + Clone or [download](https://github.com/deeppines/frontend-template/tree/master) the project
     ```bash

@@ -62,7 +62,6 @@ Notable changes to this project documented in this file - [changelog.md][changel
 
 ### With yarn
 
-+ install the [node.js](https://nodejs.org)
 + install the [Yarn](https://yarnpkg.com/en/docs/install)
 + Clone or [download](https://github.com/deeppines/frontend-template/tree/master) the project
     ```bash
