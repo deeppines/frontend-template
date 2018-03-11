@@ -31,17 +31,16 @@ Notable changes to this project documented in this file - [changelog.md][changel
 
 ### With npm
 
-+ Install [node.js+npm](https://nodejs.org) and [Git](https://git-scm.com/downloads)
++ Install [node.js+npm](https://nodejs.org)
 + Install [Bower](http://bower.io/) (once!)
   ```bash
   npm install -g bower
   ```
 
-+ Copy files in the working directory and run it in the console.
-+ Initialize git in working directory
-  ```bash
-  git init
-  ```
++ Clone or [download](https://github.com/deeppines/frontend-template/tree/master) the project
+    ```bash
+    git clone git@github.com:deeppines/frontend-template.git -b master --depth 1 my-project
+    ```
 
 + Install npm dependencies
   ```bash
@@ -65,7 +64,7 @@ Notable changes to this project documented in this file - [changelog.md][changel
 
 + install the [node.js](https://nodejs.org)
 + install the [Yarn](https://yarnpkg.com/en/docs/install)
-+ Clone or [download](https://github.com/deeppines/frontend-template/archive/gulp4.zip) the project
++ Clone or [download](https://github.com/deeppines/frontend-template/tree/master) the project
     ```bash
     git clone git@github.com:deeppines/frontend-template.git -b master --depth 1 my-project
     ```
@@ -73,6 +72,10 @@ Notable changes to this project documented in this file - [changelog.md][changel
     ```bash
     yarn run setup
     ```
++ Start gulp
+  ```bash
+  yarn run gulp
+  ```
 
 #### Main tasks
 
