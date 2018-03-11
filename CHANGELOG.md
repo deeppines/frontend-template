@@ -9,6 +9,7 @@ Notable changes to this project
 - update `README.md`
 - update `package.json`, add yarn engine and scripts
 - update `.travis.yml`, add new scripts
+- update mixins
 
 ### Added
 
