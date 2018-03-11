@@ -29,41 +29,58 @@ Notable changes to this project documented in this file - [changelog.md][changel
 
 ## How it use
 
+### With npm
+
 + Install [node.js+npm](https://nodejs.org) and [Git](https://git-scm.com/downloads)
 + Install [Bower](http://bower.io/) (once!)
-
-```js
- npm install -g bower
-```
+  ```bash
+  npm install -g bower
+  ```
 
 + Copy files in the working directory and run it in the console.
 + Initialize git in working directory
-
-```js
- git init
-```
+  ```bash
+  git init
+  ```
 
 + Install npm dependencies
-
-```js
- npm i
-```
+  ```bash
+  npm i
+  ```
 
 + Start gulp
+  ```bash
+  gulp
+  ```
 
-```js
- gulp
-```
-
-+ In browser open page with address [localhost:9000](http://localhost:9000/)
-
-## Main tasks
+#### Main tasks
 
 + `gulp vendor` download vendor plugins and filtered files
 + `gulp build` compile a project
 + `gulp dev` compile a project and launches watchers/server
 + `gulp zip` compile a project in zip
 + `gulp clean` del web folder
+
+### With yarn
+
++ install the [node.js](https://nodejs.org)
++ install the [Yarn](https://yarnpkg.com/en/docs/install)
++ Clone or [download](https://github.com/deeppines/frontend-template/archive/gulp4.zip) the project
+    ```bash
+    git clone git@github.com:deeppines/frontend-template.git -b master --depth 1 my-project
+    ```
++ Go to project folder and run
+    ```bash
+    yarn run setup
+    ```
+
+#### Main tasks
+
++ `yarn run vendor` download vendor plugins and filtered files
++ `yarn run build` compile a project
++ `yarn run dev` compile a project and launches watchers/server
++ `yarn run zip` compile a project in zip
++ `yarn run clean` del web folder
 
 ## Files and folders structure
 
