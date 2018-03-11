@@ -85,6 +85,17 @@ Notable changes to this project documented in this file - [changelog.md][changel
 + `yarn run zip` compile a project in zip
 + `yarn run clean` del web folder
 
+## Mixins list
+
++ absolute-center-x
++ absolute-center-y
++ absolute-center
++ imgresponsive
++ placeholder
++ clearfix
++ nobutton
++ nolist
+
 ## Files and folders structure
 
 ```doc
