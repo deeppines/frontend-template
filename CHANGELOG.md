@@ -4,6 +4,8 @@ Notable changes to this project
 
 ## [Unreleased]
 
+## [1.5.9] - 2018-03-12
+
 ### Changed
 
 - update `README.md`
@@ -18,3 +20,4 @@ Notable changes to this project
 - add `yarn.lock`
 
 [Unreleased]: https://github.com/deeppines/frontend-template/tree/dev
+[1.5.9]: https://github.com/deeppines/frontend-template/releases/tag/1.5.9
