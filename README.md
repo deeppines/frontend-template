@@ -8,60 +8,32 @@
 
 Config for quick start web project with Gulp
 
-1. [Features](#features)
-2. [How it use](#howto)
-3. [Main tasks](#maintasks)
-4. [Files and folders structure](#structure)
-5. [License](#license)
+## How it use
 
-## <a name="features"></a> Features
-
-+ Fast and easy collector (gulp)
-+ Server and synchronous site testing in the browser (using the browser-sync)
-+ Autosubstitution of vendor prefixes in CSS (autoprefixer)
-+ SASS preprocessor (gulp-sass)
-+ CSS formatting (gulp-csscomb)
-+ CSS min (gulp-csso)
-+ Any files concatenation (gulp-rigger)
-+ Compiled files package in zip (gulp-zip)
-+ Errors output without stopping gulp (gulp-plumber)
-+ Sort HTML attributes (posthtml-attrs-sorter)
-+ Merge and sort media queries in external file (gulp-merge-media-queries)
-+ Build of png sprites (gulp-spritesmith)
-+ Pug template and HTML preprocessor (gulp-pug)
-+ HTML formatting (gulp-prettify)
-
-## <a name="howto"></a> How it use
-
-+ Install [node.js+npm](https://nodejs.org) and [Git](https://git-scm.com/downloads)
++ Install [node.js](https://nodejs.org)
 + Install [Bower](http://bower.io/) (once!)
+  ```bash
+  npm install -g bower
+  ```
 
-```js
- npm install -g bower
-```
+### With npm
 
-+ Copy files in the working directory and run it in the console.<br>
-+ Initialize git in working directory
-
-```js
- git init
-```
++ Clone or [download](https://github.com/deeppines/frontend-template/tree/master) the project
+    ```bash
+    git clone git@github.com:deeppines/frontend-template.git -b master --depth 1 my-project
+    ```
 
 + Install npm dependencies
-
-```js
- npm i
-```
+  ```bash
+  npm i
+  ```
 
 + Start gulp
+  ```bash
+  gulp
+  ```
 
-```js
- gulp
-```
-
-+ In browser open page with address [localhost:9000](http://localhost:9000/)
-
-## <a name="maintasks"></a> Main tasks
+#### Main tasks
 
 + `gulp vendor` download vendor plugins and filtered files
 + `gulp build` compile a project
@@ -69,47 +41,42 @@ Config for quick start web project with Gulp
 + `gulp zip` compile a project in zip
 + `gulp clean` del web folder
 
-## <a name="structure"></a> Files and folders structure
+### With yarn
 
-```doc
-frontend-template/                     # Project root
-├── psd                                # Layout psd files folder
-├── web                                # Compiled files
-├── dest                               # Folder with zip archives
-├── source                             # Source files
-│   ├── fonts                          # Custom fonts folder
-│   ├── images                         # Images folder
-│   │   ├── content                    # Content Images folder
-│   │   └── sprites                    # Sprites images folder
-│   ├── js                             # JavaScript folder
-│   |   ├── custom                     # Custom scripts folder
-│   |   ├── functions                  # Functions scripts
-│   │   └── common.js                  # Common JavaScript file
-│   ├── layouts                        # Layouts folder
-│   ├── modules                        # Modules folder
-│   ├── pages                          # Pages folder
-│   ├── scss                           # Scss style folder
-│   |   ├── core                       # Base style, variables, mixins etc
-│   |   ├── components                 # Components style folder
-│   |   ├── vendors                    # Vendors plugins style
-│   |   ├── _common.scss               # Other style
-│   |   └── style.scss                 # Config styles file
-│   └── index.pug                      # Index pug template file
-|
-├── .eslintignore                      # JavaScript linter config
-├── .eslintrc                          # JavaScript linter config
-├── .pug-lintrc                        # Pug linter config
-├── .scss-lint.yml                     # Scss linter config
-├── .csscomb.json                      # csscomb config
-├── .travis.yml                        # TravisCI config
-├── bower.json                         # Bower config
-├── package.json                       # Dependencies for node.js
-├── gulpfile.js                        # gulp.js config
-├── browserslist                       # Autoprefixer browser list
-├── LICENSE                            # License
-└── README.md                          # File you read
-```
++ install the [Yarn](https://yarnpkg.com/en/docs/install)
++ Clone or [download](https://github.com/deeppines/frontend-template/tree/master) the project
+    ```bash
+    git clone git@github.com:deeppines/frontend-template.git -b master --depth 1 my-project
+    ```
++ Go to project folder and run
+    ```bash
+    yarn run setup
+    ```
++ Start gulp
+  ```bash
+  yarn run gulp
+  ```
 
-## <a name="license"></a> License
+#### Main tasks
 
-[The MIT License (MIT)](https://github.com/deeppines/frontend-template/blob/master/LICENSE)
++ `yarn run vendor` download vendor plugins and filtered files
++ `yarn run build` compile a project
++ `yarn run dev` compile a project and launches watchers/server
++ `yarn run zip` compile a project in zip
++ `yarn run clean` del web folder
+
+## Contribution
+
+Please report issues/bugs, feature requests and suggestions for improvements to the [issue tracker][issue].
+
+## Changelog
+
+Notable changes to this project documented in this file - [changelog.md][changelog]
+
+## License
+
+[The MIT License (MIT)][license]
+
+[changelog]:https://github.com/deeppines/frontend-template/blob/master/CHANGELOG.md
+[license]:https://github.com/deeppines/frontend-template/blob/master/LICENSE
+[issue]:https://github.com/deeppines/frontend-template/issues
