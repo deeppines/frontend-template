@@ -73,6 +73,10 @@ Please report issues/bugs, feature requests and suggestions for improvements to 
 
 Notable changes to this project documented in this file - [changelog.md][changelog]
 
+## Documentation
+
+See more in full documentation - [link][documentation].
+
 ## License
 
 [The MIT License (MIT)][license]
@@ -80,3 +84,4 @@ Notable changes to this project documented in this file - [changelog.md][changel
 [changelog]:https://github.com/deeppines/frontend-template/blob/master/CHANGELOG.md
 [license]:https://github.com/deeppines/frontend-template/blob/master/LICENSE
 [issue]:https://github.com/deeppines/frontend-template/issues
+[documentation]:https://github.com/deeppines/frontend-template/blob/master/docs/fulldoc.md
