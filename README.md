@@ -12,6 +12,7 @@ Config for quick start web project with Gulp
 
 + Install [node.js](https://nodejs.org)
 + Install [Bower](http://bower.io/) (once!)
+
   ```bash
   npm install -g bower
   ```
@@ -19,16 +20,19 @@ Config for quick start web project with Gulp
 ### With npm
 
 + Clone or [download](https://github.com/deeppines/frontend-template/tree/master) the project
-    ```bash
-    git clone git@github.com:deeppines/frontend-template.git -b master --depth 1 my-project
-    ```
+
+  ```bash
+  git clone git@github.com:deeppines/frontend-template.git -b master --depth 1 my-project
+  ```
 
 + Install npm dependencies
+
   ```bash
   npm i
   ```
 
 + Start gulp
+
   ```bash
   gulp
   ```
@@ -45,14 +49,19 @@ Config for quick start web project with Gulp
 
 + install the [Yarn](https://yarnpkg.com/en/docs/install)
 + Clone or [download](https://github.com/deeppines/frontend-template/tree/master) the project
-    ```bash
-    git clone git@github.com:deeppines/frontend-template.git -b master --depth 1 my-project
-    ```
+
+  ```bash
+  git clone git@github.com:deeppines/frontend-template.git -b master --depth 1 my-project
+  ```
+
 + Go to project folder and run
-    ```bash
-    yarn run setup
-    ```
+
+  ```bash
+  yarn run setup
+  ```
+
 + Start gulp
+
   ```bash
   yarn run gulp
   ```
