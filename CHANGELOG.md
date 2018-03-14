@@ -4,6 +4,11 @@ Notable changes to this project
 
 ## [Unreleased]
 
+### Changed
+
+- update `README.md` - added link for full documentation
+- update doc file
+
 ## [1.5.9] - 2018-03-12
 
 ### Changed
