@@ -31,6 +31,7 @@ Notable changes to this project documented in this file - [changelog.md][changel
 
 + Install [node.js](https://nodejs.org)
 + Install [Bower](http://bower.io/) (once!)
+
   ```bash
   npm install -g bower
   ```
@@ -38,16 +39,19 @@ Notable changes to this project documented in this file - [changelog.md][changel
 ### With npm
 
 + Clone or [download](https://github.com/deeppines/frontend-template/tree/master) the project
-    ```bash
-    git clone git@github.com:deeppines/frontend-template.git -b master --depth 1 my-project
-    ```
+
+  ```bash
+  git clone git@github.com:deeppines/frontend-template.git -b master --depth 1 my-project
+  ```
 
 + Install npm dependencies
+
   ```bash
   npm i
   ```
 
 + Start gulp
+
   ```bash
   gulp
   ```
@@ -64,14 +68,19 @@ Notable changes to this project documented in this file - [changelog.md][changel
 
 + install the [Yarn](https://yarnpkg.com/en/docs/install)
 + Clone or [download](https://github.com/deeppines/frontend-template/tree/master) the project
-    ```bash
-    git clone git@github.com:deeppines/frontend-template.git -b master --depth 1 my-project
-    ```
+
+  ```bash
+  git clone git@github.com:deeppines/frontend-template.git -b master --depth 1 my-project
+  ```
+
 + Go to project folder and run
-    ```bash
-    yarn run setup
-    ```
+
+  ```bash
+  yarn run setup
+  ```
+
 + Start gulp
+
   ```bash
   yarn run gulp
   ```
@@ -102,6 +111,7 @@ frontend-template/                     # Project root
 ├── psd                                # Layout psd files folder
 ├── web                                # Compiled files
 ├── dest                               # Folder with zip archives
+├── docs                               # Documentation
 ├── source                             # Source files
 │   ├── fonts                          # Custom fonts folder
 │   ├── images                         # Images folder
@@ -122,6 +132,7 @@ frontend-template/                     # Project root
 │   |   └── style.scss                 # Config styles file
 │   └── index.pug                      # Index pug template file
 |
+├── .editorconfig                      # Editor config file
 ├── .eslintignore                      # JavaScript linter config
 ├── .eslintrc                          # JavaScript linter config
 ├── .pug-lintrc                        # Pug linter config
