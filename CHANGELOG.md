@@ -6,6 +6,14 @@ Notable changes to this project
 
 ### Changed
 
+- updated gulp task for js
+
+### Added
+
+- add new watch task for js
+
+### Changed
+
 - update `README.md` - added link for full documentation
 - update doc file
 
