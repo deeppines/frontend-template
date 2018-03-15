@@ -91,6 +91,7 @@ var path = {
         ],
         js:      [
             'source/js/*.js',
+            '!**/_*.js',
             '!**/*.md',
         ],
         style:   [
@@ -114,13 +115,14 @@ var path = {
     },
 
     watch: {
-        html:    'source/**/*.pug',
-        js:      'source/js/**/*.js',
-        style:   'source/scss/**/*.scss',
-        modules: 'source/modules/**/*.scss',
-        img:     'source/images/content/**/*.*',
-        sprites: 'source/images/sprites/**/*.*',
-        fonts:   'source/fonts/**/*.*'
+        html:           'source/**/*.pug',
+        js:             'source/js/**/*.js',
+        style:          'source/scss/**/*.scss',
+        img:            'source/images/content/**/*.*',
+        sprites:        'source/images/sprites/**/*.*',
+        fonts:          'source/fonts/**/*.*',
+        modulesStyle:   'source/modules/**/*.scss',
+        modulesScript:  'source/modules/**/*.js',
     },
 
     clean:      './web'
@@ -345,8 +347,12 @@ gulp.task('watch', function(){
         return runSequence('build:css', reload);
     });
 
-    $.watch([path.watch.modules], function (event, cb) {
+    $.watch([path.watch.modulesStyle], function (event, cb) {
         return runSequence('build:css', reload);
+    });
+
+    $.watch([path.watch.modulesScript], function (event, cb) {
+        return runSequence('build:js', reload);
     });
 
     $.watch([path.watch.js], function(event, cb) {
