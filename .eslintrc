@@ -1,0 +1,7 @@
+{
+  "extends": "loris/es5",
+  "root": true,
+  "rules": {
+    "no-implicit-globals": "off"
+  }
+}
