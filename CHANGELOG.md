@@ -7,7 +7,8 @@ Notable changes to this project
 ### Changed
 
 - updated gulp task for js
-- updated `.eslintrc` - add es6 lint config
+- updated `.eslintrc` - add es5 lint config
+- update function scripts
 
 ### Added
 
