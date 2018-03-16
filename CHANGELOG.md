@@ -7,10 +7,16 @@ Notable changes to this project
 ### Changed
 
 - updated gulp task for js
+- updated `.eslintrc` - add es6 lint config
 
 ### Added
 
 - add new watch task for js
+- add `eslint-config-loris`
+
+### Removed
+
+- remove `eslint-config-yandex`
 
 ### Changed
 
