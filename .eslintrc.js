@@ -1,4 +1,4 @@
 module.exports = {
-    extends: 'loris/es6',
+    extends: 'loris/es5',
     root: true
 };
