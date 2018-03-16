@@ -1,5 +1,7 @@
 // Responsive iframe video
 // nowrap - url parametr. For example '//embed.smileexpo'
+
+/* eslint-disable no-unused-vars */
 function responsiveIframe(contentContainer, videoWrapper, nowrap) {
     'use strict';
 
