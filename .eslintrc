@@ -1,6 +1,10 @@
 {
   "extends": "loris/es5",
   "root": true,
+  "env": {
+    "browser": true,
+    "jquery": true
+  },
   "rules": {
     "no-implicit-globals": "off"
   }
