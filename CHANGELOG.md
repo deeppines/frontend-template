@@ -9,6 +9,8 @@ Notable changes to this project
 - updated gulp task for js
 - updated `.eslintrc` - add es5 lint config
 - update function scripts
+- update `README.md` - added link for full documentation
+- update doc file
 
 ### Added
 
@@ -18,11 +20,6 @@ Notable changes to this project
 ### Removed
 
 - remove `eslint-config-yandex`
-
-### Changed
-
-- update `README.md` - added link for full documentation
-- update doc file
 
 ## [1.5.9] - 2018-03-12
 
