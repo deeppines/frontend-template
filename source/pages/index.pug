@@ -1,9 +1,32 @@
 extends ../layouts/_default
 
+//- mixins
+include ../modules/meta/meta
+
 block var
+    -
+        var fonts = [
+            'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&subset=latin,cyrillic'
+        ];
+
+        var css = [
+            'libs/css-hamburgers/dist/hamburgers.min.css',
+            'libs/font-awesome/css/font-awesome.min.css',
+            'libs/slick-carousel/slick/slick.css',
+            'libs/slick-carousel/slick/slick-theme.css',
+            'libs/bootstrap/dist/css/bootstrap.min.css'
+        ];
+
+        var js = [
+            'libs/jquery/dist/jquery.min.js',
+            'libs/bootstrap/dist/js/bootstrap.min.js',
+            'libs/slick-carousel/slick/slick.min.js',
+            'http://maps.googleapis.com/maps/api/js?key=AIzaSyBMIdjyZmJPMrW7Kq2S9u-xmMIJnrIRMIg&amp;amp;amp;sensor=false',
+            'js/map.js'
+        ];
 
 block head
-    include ../modules/meta/meta.pug
+    +meta('', '', css, js, fonts)
 
 block body
     block header
