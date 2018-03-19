@@ -1,6 +1,7 @@
 # Changelog
 
 Notable changes to this project.
+
 The format is based on [Keep a Changelog][changelogDoc]
 
 ## [Unreleased]
