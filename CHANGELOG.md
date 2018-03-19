@@ -11,6 +11,7 @@ Notable changes to this project
 - update function scripts
 - update `README.md` - added link for full documentation
 - update doc file
+- meta file is updated to a mixin
 
 ### Added
 
