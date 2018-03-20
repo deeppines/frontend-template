@@ -4,8 +4,8 @@
 [![devDependencies Status](https://david-dm.org/deeppines/frontend-template/dev-status.svg)](https://david-dm.org/deeppines/frontend-template?type=dev)
 [![GitHub version](https://badge.fury.io/gh/deeppines%2Ffrontend-template.svg)](https://github.com/deeppines/frontend-template)
 [![GitHub release](https://img.shields.io/github/release/deeppines/frontend-template.svg)](https://github.com/deeppines/frontend-template/releases)
+[![changelog](https://img.shields.io/badge/link-changelog-blue.svg)](https://github.com/deeppines/frontend-template/blob/master/CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/deeppines/frontend-template/blob/master/LICENSE)
-[![changelog: yes](https://img.shields.io/badge/changelog-yes-brightgreen.svg)](https://github.com/deeppines/frontend-template/blob/master/CHANGELOG.md)
 
 Config for quick start web project with Gulp
 
