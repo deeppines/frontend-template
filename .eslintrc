@@ -1,8 +1,11 @@
 {
-  "extends": "loris/es5",
+  "extends": [
+    "eslint:recommended"
+  ],
   "root": true,
   "env": {
     "browser": true,
+    "node": true,
     "jquery": true
   },
   "rules": {

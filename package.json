@@ -66,7 +66,8 @@
         "posthtml-attrs-sorter": "^1.1.0",
         "run-sequence": "^2.2.1",
         "vinyl-buffer": "^1.0.1",
-        "node-notifier": "^5.2.1"
+        "node-notifier": "^5.2.1",
+        "jstransformer-ejs": "^0.2.0"
     },
     "extends": ".pug-lintrc"
 }
