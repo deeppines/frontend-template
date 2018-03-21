@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog][changelogDoc]
 
 ## [Unreleased]
 
+### Changed
+
+- updated `gitignore` - generated [gitignore.io](https://www.gitignore.io)
+
 ### Added
 
 - `jstransformer-ejs`
