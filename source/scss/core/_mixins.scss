@@ -5,9 +5,10 @@
 //
 //===================================//
 
-@import 'mixins/clearfix';
 @import 'mixins/nolist';
+@import 'mixins/nolink';
 @import 'mixins/nobutton';
+@import 'mixins/clearfix';
 @import 'mixins/imgresponsive';
 @import 'mixins/placeholder';
 @import 'mixins/absolute-center';
