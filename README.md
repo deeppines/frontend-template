@@ -83,10 +83,5 @@ Please report issues/bugs, feature requests and suggestions for improvements to 
 
 See more in full documentation - [link][documentation].
 
-## License
-
-[The MIT License (MIT)][license]
-
-[license]:https://github.com/deeppines/frontend-template/blob/master/LICENSE
 [issue]:https://github.com/deeppines/frontend-template/issues
 [documentation]:https://github.com/deeppines/frontend-template/blob/master/docs/fulldoc.md
