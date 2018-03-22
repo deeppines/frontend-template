@@ -103,6 +103,7 @@ Notable changes to this project documented in this file - [changelog.md][changel
 + clearfix
 + nobutton
 + nolist
++ nolink
 
 ## Files and folders structure
 
