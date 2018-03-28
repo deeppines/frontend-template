@@ -104,6 +104,7 @@ Notable changes to this project documented in this file - [changelog.md][changel
 + nobutton
 + nolist
 + nolink
++ size
 
 ## Files and folders structure
 
