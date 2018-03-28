@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog][changelogDoc]
 ### Added
 
 - `jstransformer-ejs`
+- add sass mixin `size`
 
 ## [1.6.0] - 2018-03-20
 
