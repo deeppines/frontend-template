@@ -6,9 +6,93 @@
   "env": {
     "browser": true,
     "node": true,
-    "jquery": true
+    "jquery": true,
+    "es6": true
   },
   "rules": {
-    "no-implicit-globals": "off"
+    "linebreak-style": ["error", "unix"],
+    "eol-last": ["error", "always"],
+    "no-trailing-spaces": "error",
+    "indent": ["error", 4],
+    "no-mixed-spaces-and-tabs": "error",
+    "no-multiple-empty-lines": ["error",
+      {
+        "max": 2,
+      }
+    ],
+    "max-len": ["error",
+      {
+        "code": 120
+      }
+    ],
+    "camelcase": "error",
+    "new-cap": ["error",
+      {
+        "newIsCap": true,
+        "capIsNew": true
+      }
+    ],
+    "new-parens": "error",
+    "one-var": ["error", "never"],
+    "vars-on-top": "error",
+    "no-shadow": "error",
+    "object-curly-spacing": ["error", "never"],
+    "array-bracket-spacing": ["error", "never"],
+    "key-spacing": "error",
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "no-extra-semi": "error",
+    "semi-spacing": "error",
+    "comma-style": ["error", "last"],
+    "no-spaced-func": "error",
+    "space-before-function-paren": ["error",
+      {
+        "anonymous": "always",
+        "named": "never"
+      }
+    ],
+    "keyword-spacing": ["error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "space-in-parens": ["error", "never"],
+    "no-multi-spaces": "error",
+    "operator-linebreak": ["error", "after"],
+    "curly": "error",
+    "brace-style": "error",
+    "space-before-blocks": ["error", "always"],
+    "no-cond-assign": "error",
+    "yoda": ["error", "never"],
+    "no-duplicate-case": "error",
+    "no-inner-declarations": ["error", "both"],
+    "no-unreachable": "error",
+    "no-redeclare": ["error",
+      {
+        "builtinGlobals": true
+      }
+    ],
+    "no-with": "error",
+    "eqeqeq": "error",
+    "no-unneeded-ternary": "error",
+    "space-unary-ops": ["error",
+      {
+        "words": true,
+        "nonwords": false
+      }
+    ],
+    "no-eval": "error",
+    "no-throw-literal": "error",
+    "valid-typeof": "error",
+    "no-implicit-coercion": ["error",
+      {
+        "boolean": true,
+        "number": true,
+        "string": true
+      }
+    ],
+    "no-multi-str": "error",
+    "spaced-comment": ["error", "always"],
   }
 }
