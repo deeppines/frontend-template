@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog][changelogDoc]
 ### Changed
 
 - updated `gitignore` - generated [gitignore.io](https://www.gitignore.io)
+- updated `.eslintrc` config
 
 ### Added
 
