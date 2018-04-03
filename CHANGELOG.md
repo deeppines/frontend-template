@@ -15,10 +15,15 @@ The format is based on [Keep a Changelog][changelogDoc]
 
 - `jstransformer-ejs`
 - add sass mixin `size`
+- add social module 0.0.1 ver
 
 ### Removed
 
 - `components` folder and all files
+
+### Fixed
+
+- fix sass linter for VSC editor
 
 ## [1.6.0] - 2018-03-20
 
