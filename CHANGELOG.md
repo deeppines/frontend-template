@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog][changelogDoc]
 
 - updated `gitignore` - generated [gitignore.io](https://www.gitignore.io)
 - updated `.eslintrc` config
+- updated `.sass-lint.yml` config
 
 ### Added
 
