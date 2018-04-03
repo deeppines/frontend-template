@@ -10,11 +10,21 @@ The format is based on [Keep a Changelog][changelogDoc]
 
 - updated `gitignore` - generated [gitignore.io](https://www.gitignore.io)
 - updated `.eslintrc` config
+- updated `.sass-lint.yml` config
 
 ### Added
 
 - `jstransformer-ejs`
 - add sass mixin `size`
+- add social module 0.0.1 ver
+
+### Removed
+
+- `components` folder and all files
+
+### Fixed
+
+- fix sass linter for VSC editor
 
 ## [1.6.0] - 2018-03-20
 
