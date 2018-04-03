@@ -16,6 +16,10 @@ The format is based on [Keep a Changelog][changelogDoc]
 - `jstransformer-ejs`
 - add sass mixin `size`
 
+### Removed
+
+- `components` folder and all files
+
 ## [1.6.0] - 2018-03-20
 
 ### Changed
