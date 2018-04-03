@@ -1,0 +1,6 @@
+mixin social(mod, icons, url)
+        ul(class=['social', `${mod}` != '' ? `social_${mod}` : ``])
+            each val, i in icons
+                li.social__item
+                    a(href=url[i] target="_blank").social__link
+                        i(class=`fab fa-fw ${icons[i]}`)
