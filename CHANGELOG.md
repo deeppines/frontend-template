@@ -11,12 +11,14 @@ The format is based on [Keep a Changelog][changelogDoc]
 - updated `gitignore` - generated [gitignore.io](https://www.gitignore.io)
 - updated `.eslintrc` config
 - updated `.sass-lint.yml` config
+- updated documentation
 
 ### Added
 
 - `jstransformer-ejs`
 - add sass mixin `size`
 - add social module 0.0.1 ver
+- add meta module 0.0.1 ver
 
 ### Removed
 
