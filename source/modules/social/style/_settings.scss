@@ -1,0 +1,42 @@
+// =============================
+// Social module 0.0.1 ver
+// =============================
+
+$social-setting: (
+    // social block
+    social-position:        relative,
+    social-display:         flex,
+    social-flex-direction:  row,
+    social-justify-content: center,
+    social-font-size:       10px,
+    
+    // item setting
+    item-position:          relative,
+    item-display:           flex,
+    item-flex-direction:    row,
+    item-justify-content:   center,
+    item-align-items:       center,
+    item-width:             40px,
+    item-height:            40px,
+    item-padding:           0,
+    item-margin-right:      0,
+    
+    // item theme setting
+    item-background-color:  transparent,
+    
+    // item square border theme setting
+    item-square-margin-right:  .416em,
+    item-square-border:        2px solid,
+    item-square-border-color:  #3F51B5,
+    
+    // item circle border theme setting
+    item-circle-margin-right:  .416em,
+    item-circle-border:        2px solid,
+    item-circle-border-radius: 50%,
+    item-circle-border-color:  #3F51B5,
+    
+    // item icon theme setting
+    item-font-size:         2.4em,
+    item-color:             #3F51B5,
+    item-color-hover:       #CDDC39,
+);

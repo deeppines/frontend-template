@@ -1,0 +1,45 @@
+// =============================
+// Social module 0.0.1 ver
+// =============================
+
+.social {
+    position: map-get($social-setting, social-position);
+    display: map-get($social-setting, social-display);
+    flex-direction: map-get($social-setting, social-flex-direction);
+    justify-content: map-get($social-setting, social-justify-content);
+    font-size: map-get($social-setting, social-font-size);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    * {
+        box-sizing: border-box;
+    }
+    &__item {
+        position: map-get($social-setting, item-position);
+        display: map-get($social-setting, item-display);
+        flex-direction: map-get($social-setting, item-flex-direction);
+        justify-content: map-get($social-setting, item-justify-content);
+        align-items: map-get($social-setting, item-align-items);
+        width: map-get($social-setting, item-width);
+        height: map-get($social-setting, item-height);
+        padding: map-get($social-setting, item-padding);
+        margin-right: map-get($social-setting, item-margin-right); // theme
+        font-size: map-get($social-setting, item-font-size);
+        color: map-get($social-setting, item-color);
+        background-color: map-get($social-setting, item-background-color);
+        overflow: hidden;
+        transition: all .4s;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__link {
+        color: inherit;
+        text-decoration: none;
+        transition: all .4s;
+        &:hover {
+            color: map-get($social-setting, item-color-hover);
+        }
+    }
+}

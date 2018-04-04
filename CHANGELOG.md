@@ -6,17 +6,21 @@ The format is based on [Keep a Changelog][changelogDoc]
 
 ## [Unreleased]
 
+## [1.6.1] - 2018-04-04
+
 ### Changed
 
 - updated `gitignore` - generated [gitignore.io](https://www.gitignore.io)
 - updated `.eslintrc` config
 - updated `.sass-lint.yml` config
+- updated documentation
 
 ### Added
 
 - `jstransformer-ejs`
 - add sass mixin `size`
 - add social module 0.0.1 ver
+- add meta module 0.0.1 ver
 
 ### Removed
 
@@ -67,5 +71,6 @@ The format is based on [Keep a Changelog][changelogDoc]
 
 [changelogDoc]: https://keepachangelog.com/en/1.0.0/
 [Unreleased]: https://github.com/deeppines/frontend-template/tree/dev
+[1.6.1]: https://github.com/deeppines/frontend-template/releases/tag/1.6.1
 [1.6.0]: https://github.com/deeppines/frontend-template/releases/tag/1.6.0
 [1.5.9]: https://github.com/deeppines/frontend-template/releases/tag/1.5.9
