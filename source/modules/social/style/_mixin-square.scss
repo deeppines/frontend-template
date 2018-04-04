@@ -1,0 +1,15 @@
+// =============================
+// Social module 0.0.1 ver
+// =============================
+
+.social {
+    &_border {
+        &-square {
+            .social__item {
+                border: map-get($social-setting, item-square-border);
+                border-color: map-get($social-setting, item-square-border-color);
+                margin-right: map-get($social-setting, item-square-margin-right);
+            }
+        }
+    }
+}

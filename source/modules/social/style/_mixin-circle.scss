@@ -1,0 +1,16 @@
+// =============================
+// Social module 0.0.1 ver
+// =============================
+
+.social {
+    &_border {
+        &-circle {
+            .social__item {
+                border: map-get($social-setting, item-circle-border);
+                border-color: map-get($social-setting, item-circle-border-color);
+                border-radius: map-get($social-setting, item-circle-border-radius);
+                margin-right: map-get($social-setting, item-circle-margin-right);
+            }
+        }
+    }
+}
