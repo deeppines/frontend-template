@@ -93,6 +93,11 @@ Notable changes to this project documented in this file - [changelog.md][changel
 + `yarn run zip` compile a project in zip
 + `yarn run clean` del web folder
 
+## Modules list
+
++ meta module
++ social module
+
 ## Mixins list
 
 + absolute-center-x
@@ -128,7 +133,6 @@ frontend-template/                     # Project root
 │   ├── pages                          # Pages folder
 │   ├── scss                           # Scss style folder
 │   |   ├── core                       # Base style, variables, mixins etc
-│   |   ├── components                 # Components style folder
 │   |   ├── vendors                    # Vendors plugins style
 │   |   ├── _common.scss               # Other style
 │   |   └── style.scss                 # Config styles file
