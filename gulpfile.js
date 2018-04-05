@@ -90,25 +90,25 @@ var path = {
             '!**/*.md',
         ],
         js:      [
-            'source/js/*.js',
+            'source/resources/js/*.js',
             '!**/_*.js',
             '!**/*.md',
         ],
         style:   [
-            'source/scss/*.scss',
+            'source/resources/scss/*.scss',
             '!**/_*.scss',
             '!**/*.md',
         ],
         img:     [
-            'source/images/content/**/*.*',
+            'source/resources/images/content/**/*.*',
             '!**/*.md',
         ],
         sprites: [
-            'source/images/sprites/**/*.*',
+            'source/resources/images/sprites/**/*.*',
             '!**/*.md'
         ],
         fonts:   [
-            'source/fonts/**/*.*',
+            'source/resources/fonts/**/*.*',
             '!**/*.md',
         ],
         libs:    './bower_components/'
@@ -116,13 +116,13 @@ var path = {
 
     watch: {
         html:           'source/**/*.pug',
-        js:             'source/js/**/*.js',
-        style:          'source/scss/**/*.scss',
-        img:            'source/images/content/**/*.*',
-        sprites:        'source/images/sprites/**/*.*',
-        fonts:          'source/fonts/**/*.*',
-        modulesStyle:   'source/modules/**/*.scss',
-        modulesScript:  'source/modules/**/*.js',
+        js:             'source/resources/js/**/*.js',
+        style:          'source/resources/scss/**/*.scss',
+        img:            'source/resources/images/content/**/*.*',
+        sprites:        'source/resources/images/sprites/**/*.*',
+        fonts:          'source/resources/fonts/**/*.*',
+        modulesStyle:   'source/components/**/*.scss',
+        modulesScript:  'source/components/**/*.js',
     },
 
     clean:      './web'
@@ -170,7 +170,7 @@ var option = {
 
     spritesmith: {
         imgName: 'sprite.png',
-        imgPath: '/images/sprites/sprite.png',
+        imgPath: '/resources/images/sprites/sprite.png',
         cssName: '_sprite.scss',
         cssFormat: 'css',
         algorithm: 'binary-tree',
@@ -320,7 +320,7 @@ gulp.task('build:sprite', function () {
         .pipe(gulp.dest(path.build.sprites));
 
     spriteData.css.pipe(buffer())
-        .pipe(gulp.dest('source/scss/core/'));
+        .pipe(gulp.dest('source/resources/scss/core/'));
 
     return spriteData.img.pipe(buffer());
 });

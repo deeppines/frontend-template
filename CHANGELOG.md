@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog][changelogDoc]
 
 ## [Unreleased]
 
+### Changed
+
+- renamed folder `modules` on `components`
+- renamed folder `layout` on `views`
+
 ## [1.6.1] - 2018-04-04
 
 ### Changed
