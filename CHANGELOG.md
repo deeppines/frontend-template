@@ -10,6 +10,11 @@ The format is based on [Keep a Changelog][changelogDoc]
 
 - renamed folder `modules` on `components`
 - renamed folder `layout` on `views`
+- updated doc file
+
+### Added
+
+- add `resurces` folder
 
 ## [1.6.1] - 2018-04-04
 
