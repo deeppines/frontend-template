@@ -90,25 +90,25 @@ var path = {
             '!**/*.md',
         ],
         js:      [
-            'source/resources/js/*.js',
+            'source/static/js/*.js',
             '!**/_*.js',
             '!**/*.md',
         ],
         style:   [
-            'source/resources/scss/*.scss',
+            'source/static/scss/*.scss',
             '!**/_*.scss',
             '!**/*.md',
         ],
         img:     [
-            'source/resources/images/content/**/*.*',
+            'source/static/images/content/**/*.*',
             '!**/*.md',
         ],
         sprites: [
-            'source/resources/images/sprites/**/*.*',
+            'source/static/images/sprites/**/*.*',
             '!**/*.md'
         ],
         fonts:   [
-            'source/resources/fonts/**/*.*',
+            'source/static/fonts/**/*.*',
             '!**/*.md',
         ],
         libs:    './bower_components/'
@@ -116,11 +116,11 @@ var path = {
 
     watch: {
         html:           'source/**/*.pug',
-        js:             'source/resources/js/**/*.js',
-        style:          'source/resources/scss/**/*.scss',
-        img:            'source/resources/images/content/**/*.*',
-        sprites:        'source/resources/images/sprites/**/*.*',
-        fonts:          'source/resources/fonts/**/*.*',
+        js:             'source/static/js/**/*.js',
+        style:          'source/static/scss/**/*.scss',
+        img:            'source/static/images/content/**/*.*',
+        sprites:        'source/static/images/sprites/**/*.*',
+        fonts:          'source/static/fonts/**/*.*',
         modulesStyle:   'source/components/**/*.scss',
         modulesScript:  'source/components/**/*.js',
     },
@@ -170,7 +170,7 @@ var option = {
 
     spritesmith: {
         imgName: 'sprite.png',
-        imgPath: '/resources/images/sprites/sprite.png',
+        imgPath: '/static/images/sprites/sprite.png',
         cssName: '_sprite.scss',
         cssFormat: 'css',
         algorithm: 'binary-tree',
@@ -320,7 +320,7 @@ gulp.task('build:sprite', function () {
         .pipe(gulp.dest(path.build.sprites));
 
     spriteData.css.pipe(buffer())
-        .pipe(gulp.dest('source/resources/scss/core/'));
+        .pipe(gulp.dest('source/static/scss/core/'));
 
     return spriteData.img.pipe(buffer());
 });

@@ -15,7 +15,7 @@ The format is based on [Keep a Changelog][changelogDoc]
 
 ### Added
 
-- add `resurces` folder
+- add `static` folder
 
 ## [1.6.1] - 2018-04-04
 

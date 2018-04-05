@@ -122,7 +122,7 @@ frontend-template/                     # Project root
 ├── source                             # Source files
 │   ├── components                     # Components folder
 │   ├── pages                          # Pages folder
-│   ├── resources                      # Resources folder
+│   ├── static
 │   │   ├── images                     # Images folder
 │   │   │   ├── content                # Content Images folder
 │   │   │   └── sprites                # Sprites images folder
