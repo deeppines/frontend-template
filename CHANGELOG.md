@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog][changelogDoc]
 
 - renamed folder `modules` on `components`
 - renamed folder `layout` on `views`
+- renamed folder `web` on `dist`
 - updated doc file
 
 ### Added

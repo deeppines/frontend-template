@@ -75,13 +75,13 @@ function getDateTime() {
 var path = {
 
     build: {
-        html:    'web/',
-        js:      'web/js/',
-        css:     'web/css/',
-        img:     'web/images/',
-        sprites: 'web/images/sprites',
-        fonts:   'web/fonts/',
-        libs:    'web/libs/'
+        html:    'dist/',
+        js:      'dist/js/',
+        css:     'dist/css/',
+        img:     'dist/images/',
+        sprites: 'dist/images/sprites',
+        fonts:   'dist/fonts/',
+        libs:    'dist/libs/'
     },
 
     src: {
@@ -125,7 +125,7 @@ var path = {
         modulesScript:  'source/components/**/*.js',
     },
 
-    clean:      './web'
+    clean:      './dist'
 };
 
 // =============================
@@ -135,7 +135,7 @@ var path = {
 var option = {
 
     browserSync: {
-        server: './web',
+        server: './dist',
         tunnel: false,
         open: false,
         host: 'localhost',
@@ -327,11 +327,11 @@ gulp.task('build:sprite', function () {
 
 gulp.task('build:zip', function() {
     var datetime = '-' + getDateTime();
-    var zipName = 'web' + datetime + '.zip';
+    var zipName = 'dist' + datetime + '.zip';
 
-    return gulp.src('web/**/*.*')
+    return gulp.src('dist/**/*.*')
         .pipe($.zip(zipName))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('archives'));
 });
 
 // =============================
