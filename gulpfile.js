@@ -75,13 +75,13 @@ function getDateTime() {
 var path = {
 
     build: {
-        html:    'web/',
-        js:      'web/js/',
-        css:     'web/css/',
-        img:     'web/images/',
-        sprites: 'web/images/sprites',
-        fonts:   'web/fonts/',
-        libs:    'web/libs/'
+        html:    'dist/',
+        js:      'dist/js/',
+        css:     'dist/css/',
+        img:     'dist/images/',
+        sprites: 'dist/images/sprites',
+        fonts:   'dist/fonts/',
+        libs:    'dist/libs/'
     },
 
     src: {
@@ -90,25 +90,25 @@ var path = {
             '!**/*.md',
         ],
         js:      [
-            'source/js/*.js',
+            'source/static/js/*.js',
             '!**/_*.js',
             '!**/*.md',
         ],
         style:   [
-            'source/scss/*.scss',
+            'source/static/scss/*.scss',
             '!**/_*.scss',
             '!**/*.md',
         ],
         img:     [
-            'source/images/content/**/*.*',
+            'source/static/images/content/**/*.*',
             '!**/*.md',
         ],
         sprites: [
-            'source/images/sprites/**/*.*',
+            'source/static/images/sprites/**/*.*',
             '!**/*.md'
         ],
         fonts:   [
-            'source/fonts/**/*.*',
+            'source/static/fonts/**/*.*',
             '!**/*.md',
         ],
         libs:    './bower_components/'
@@ -116,16 +116,16 @@ var path = {
 
     watch: {
         html:           'source/**/*.pug',
-        js:             'source/js/**/*.js',
-        style:          'source/scss/**/*.scss',
-        img:            'source/images/content/**/*.*',
-        sprites:        'source/images/sprites/**/*.*',
-        fonts:          'source/fonts/**/*.*',
-        modulesStyle:   'source/modules/**/*.scss',
-        modulesScript:  'source/modules/**/*.js',
+        js:             'source/static/js/**/*.js',
+        style:          'source/static/scss/**/*.scss',
+        img:            'source/static/images/content/**/*.*',
+        sprites:        'source/static/images/sprites/**/*.*',
+        fonts:          'source/static/fonts/**/*.*',
+        modulesStyle:   'source/components/**/*.scss',
+        modulesScript:  'source/components/**/*.js',
     },
 
-    clean:      './web'
+    clean:      './dist'
 };
 
 // =============================
@@ -135,7 +135,7 @@ var path = {
 var option = {
 
     browserSync: {
-        server: './web',
+        server: './dist',
         tunnel: false,
         open: false,
         host: 'localhost',
@@ -170,7 +170,7 @@ var option = {
 
     spritesmith: {
         imgName: 'sprite.png',
-        imgPath: '/images/sprites/sprite.png',
+        imgPath: '/static/images/sprites/sprite.png',
         cssName: '_sprite.scss',
         cssFormat: 'css',
         algorithm: 'binary-tree',
@@ -320,18 +320,18 @@ gulp.task('build:sprite', function () {
         .pipe(gulp.dest(path.build.sprites));
 
     spriteData.css.pipe(buffer())
-        .pipe(gulp.dest('source/scss/core/'));
+        .pipe(gulp.dest('source/static/scss/core/'));
 
     return spriteData.img.pipe(buffer());
 });
 
 gulp.task('build:zip', function() {
     var datetime = '-' + getDateTime();
-    var zipName = 'web' + datetime + '.zip';
+    var zipName = 'dist' + datetime + '.zip';
 
-    return gulp.src('web/**/*.*')
+    return gulp.src('dist/**/*.*')
         .pipe($.zip(zipName))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('archives'));
 });
 
 // =============================

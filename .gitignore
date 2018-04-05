@@ -241,4 +241,6 @@ $RECYCLE.BIN/
 ### Frontend Template ###
 # Folders
 /psd/
+/archives/
+/resources/
 /dist/

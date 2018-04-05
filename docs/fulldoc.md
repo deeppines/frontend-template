@@ -120,24 +120,24 @@ frontend-template/                     # Project root
 ├── dest                               # Folder with zip archives
 ├── docs                               # Documentation
 ├── source                             # Source files
-│   ├── fonts                          # Custom fonts folder
-│   ├── images                         # Images folder
-│   │   ├── content                    # Content Images folder
-│   │   └── sprites                    # Sprites images folder
-│   ├── js                             # JavaScript folder
-│   |   ├── custom                     # Custom scripts folder
-│   |   ├── functions                  # Functions scripts
-│   │   └── common.js                  # Common JavaScript file
-│   ├── layouts                        # Layouts folder
-│   ├── modules                        # Modules folder
+│   ├── components                     # Components folder
 │   ├── pages                          # Pages folder
-│   ├── scss                           # Scss style folder
-│   |   ├── core                       # Base style, variables, mixins etc
-│   |   ├── vendors                    # Vendors plugins style
-│   |   ├── _common.scss               # Other style
-│   |   └── style.scss                 # Config styles file
-│   └── index.pug                      # Index pug template file
-|
+│   ├── static
+│   │   ├── images                     # Images folder
+│   │   │   ├── content                # Content Images folder
+│   │   │   └── sprites                # Sprites images folder
+│   │   ├── js                         # JavaScripts folder
+│   │   │   ├── custom                 # Custom scripts folder
+│   │   │   ├── functions              # Functions scripts
+│   │   │   └── common.js              # Common JavaScript file
+│   │   ├── scss                       # Scss style folder
+│   │   │   ├── core                   # Base style, variables, mixins etc
+│   │   │   ├── vendors                # Vendors plugins style
+│   │   │   ├── _common.scss           # Other style
+│   │   │   └── style.scss             # Config styles file
+│   │   └── fonts                      # Custom fonts folder
+│   └── views                          # Views folder
+│
 ├── .editorconfig                      # Editor config file
 ├── .eslintignore                      # JavaScript linter config
 ├── .eslintrc                          # JavaScript linter config

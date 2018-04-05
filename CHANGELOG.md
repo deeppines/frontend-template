@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog][changelogDoc]
 
 ## [Unreleased]
 
+## [1.6.2] - 2018-04-05
+
+### Changed
+
+- renamed folder `modules` on `components`
+- renamed folder `layout` on `views`
+- renamed folder `web` on `dist`
+- updated doc file
+
+### Added
+
+- add `static` folder
+
 ## [1.6.1] - 2018-04-04
 
 ### Changed
@@ -71,6 +84,7 @@ The format is based on [Keep a Changelog][changelogDoc]
 
 [changelogDoc]: https://keepachangelog.com/en/1.0.0/
 [Unreleased]: https://github.com/deeppines/frontend-template/tree/dev
+[1.6.2]: https://github.com/deeppines/frontend-template/releases/tag/1.6.2
 [1.6.1]: https://github.com/deeppines/frontend-template/releases/tag/1.6.1
 [1.6.0]: https://github.com/deeppines/frontend-template/releases/tag/1.6.0
 [1.5.9]: https://github.com/deeppines/frontend-template/releases/tag/1.5.9
