@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog][changelogDoc]
 
 ## [Unreleased]
 
+### Changed
+
+- updated `package.json`
+
+### Added
+
+- add gulp folder and new tasks/utils/config
+
+### Deprecated
+
+- `gulp 3.9.1`
+
 ## [1.6.2] - 2018-04-05
 
 ### Changed
