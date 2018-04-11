@@ -6,18 +6,18 @@ import imageminJpegRecompress from 'imagemin-jpeg-recompress';
 import imageminPngquant from 'imagemin-pngquant';
 
 export const path = {
-    root: 'web',
+    root: 'dist',
     dist: 'dist',
     build: {
-        js: 'web/js',
-        css: 'web/css',
-        img: 'web/images',
-        fonts: 'web/fonts'
+        js: 'dist/js',
+        css: 'dist/css',
+        img: 'dist/images',
+        fonts: 'dist/fonts'
     }
 };
 
 export const browserSyncConfig = {
-    server: './web',
+    server: './dist',
     notify: false,
     open: false,
     host: 'localhost',
