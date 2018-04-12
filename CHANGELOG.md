@@ -9,10 +9,13 @@ The format is based on [Keep a Changelog][changelogDoc]
 ### Changed
 
 - updated `package.json`
+- updated `.eslintrc` - add new plugins
+- updated `.eslintignore`
 
 ### Added
 
 - add gulp folder and new tasks/utils/config
+- add `babelrc`
 
 ### Deprecated
 
