@@ -1,47 +1,11 @@
-'use strict';
-    //====================================
-    //--------- Functions ----------------
-    //====================================
+// ====================================
+// --------- Functions ----------------
+// ====================================
 
-    //= functions/debounce.js
-    //= functions/miss-click.js
-    //= functions/responsive-iframe.js
+import debounce from './functions/debounce';
+import responsiveIframe from './functions/responsive-iframe';
 
-$(document).ready(function () {
-    //====================================
-    //--------- Custom Scripts -----------
-    //====================================
-
-    //= custom/button-top.js
-    //= custom/modal.js
-
-    //====================================
-    //-------- Only this site ------------
-    //====================================
-
-
-
-    //====================================
-    //------ Listener functions ----------
-    //====================================
-
-    var resizeListener = debounce(function () {
-        // Do something
-    }, 200);
-    window.addEventListener('resize', resizeListener);
-
-    var scrollListener = debounce(function () {
-        // Do something
-    }, 200);
-    window.addEventListener('scroll', scrollListener);
-
-    //====================================
-    //--------- Setting libs -------------
-    //====================================
-
-
-});
-
-//====================================
-//---------- DOCUMENT ----------------
-//====================================
+export {
+    debounce as debounce,
+    responsiveIframe as responsiveIframe
+};
