@@ -9,17 +9,24 @@ The format is based on [Keep a Changelog][changelogDoc]
 ### Changed
 
 - updated `package.json`
+- updated `yarn.lock`
 - updated `.eslintrc` - add new plugins
 - updated `.eslintignore`
+- updated folder arch
+- updated static scripts
 
 ### Added
 
 - add gulp folder and new tasks/utils/config
 - add `babelrc`
+- add webpack config
+- add `gulpfile.babel.js`
+- add babel and webpack packages
 
-### Deprecated
+### Removed
 
-- `gulp 3.9.1`
+- removed `gulpfile.js`
+- removed `bower.json`
 
 ## [1.6.2] - 2018-04-05
 
@@ -33,6 +40,11 @@ The format is based on [Keep a Changelog][changelogDoc]
 ### Added
 
 - add `static` folder
+
+### Deprecated
+
+- bower
+- `gulp 3.9.1`
 
 ## [1.6.1] - 2018-04-04
 
