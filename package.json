@@ -21,11 +21,11 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "gulp dev",
         "setup": "yarn install",
-        "vendor": "yarn run gulp vendor",
-        "build": "yarn run gulp build",
+        "clean": "yarn run gulp clean",
+        "clean-all": "cross-env NODE_ENV=testing yarn run gulp clean",
         "dev": "yarn run gulp dev",
-        "zip": "yarn run gulp zip",
-        "clean": "yarn run gulp clean"
+        "zip": "cross-env NODE_ENV=production yarn run gulp zip",
+        "build": "cross-env NODE_ENV=production yarn run gulp build"
     },
     "engines": {
         "node": ">=6.0.0",
