@@ -8,8 +8,10 @@ cache:
   yarn: true
 
 before_script:
-  - npm install -g gulp
   - yarn install
 script:
-  - gulp build
+  - yarn run gulp html
+  - yarn run gulp css
+  - yarn run gulp scripts
+  - yarn run gulp assets
   - yarn run build
