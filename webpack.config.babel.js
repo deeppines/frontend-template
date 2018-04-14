@@ -1,11 +1,14 @@
 import path from 'path';
 import webpack from 'webpack';
 
-import {NODE_ENV, isDevelopment} from './gulp/utils/env';
+const NODE_ENV = process.env.NODE_ENV ? "production" : "development";
+const isDevelopment = NODE_ENV === "development";
 
 const outputFileName = '[name]-bundle.js';
 
 let options = {
+    mode: NODE_ENV,
+
     context: path.resolve(__dirname + '/source/static/scripts'),
 
     entry: {
@@ -14,7 +17,7 @@ let options = {
 
     output: {
         filename: outputFileName,
-        path: path.resolve(__dirname, 'web'),
+        path: path.resolve(__dirname, 'dist'),
         library: '[name]'
     },
 
@@ -31,7 +34,7 @@ let options = {
 };
 
 options.plugins = [
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
 
     new webpack.DefinePlugin({
         NODE_ENV: JSON.stringify(NODE_ENV),
@@ -51,20 +54,7 @@ if (isDevelopment) {
     );
 } else {
     options.plugins.push(
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            uglifyOptions: {
-                ie8: true,
-                ecma: 5
-            },
-            output: {
-                comments: false,
-                beautify: false,
-                bracketize: true,
-                quote_style: 1
-            },
-            compress: true
-        }),
+        
     );
 }
 
