@@ -1,11 +1,13 @@
 import path from 'path';
 import webpack from 'webpack';
 
-import {NODE_ENV, isDevelopment} from './gulp/utils/env';
+import { NODE_ENV, isDevelopment } from './gulp/utils/env';
 
 const outputFileName = '[name]-bundle.js';
 
 let options = {
+    mode: 'production',
+
     context: path.resolve(__dirname + '/source/static/scripts'),
 
     entry: {
@@ -14,7 +16,7 @@ let options = {
 
     output: {
         filename: outputFileName,
-        path: path.resolve(__dirname, 'web'),
+        path: path.resolve(__dirname, 'dist'),
         library: '[name]'
     },
 
