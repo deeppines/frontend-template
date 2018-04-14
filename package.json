@@ -1,7 +1,7 @@
 {
     "name": "frontend-template",
     "version": "1.6.2",
-    "description": "The template for quick start of web project with Gulp4/Webpack/Pug/Sass",
+    "description": "The template for quick start of web project with Gulp 4/Webpack 4/Pug/Sass",
     "keywords": [
         "gulp",
         "webpack",
@@ -70,7 +70,7 @@
         "imagemin-pngquant": "^5.1.0",
         "node-notifier": "^5.2.1",
         "posthtml-attrs-sorter": "^1.1.0",
-        "webpack": "^3.10.0",
+        "webpack": "^4.5.0",
         "webpack-stream": "^4.0.3",
         "jstransformer-ejs": "^0.2.0"
     },
