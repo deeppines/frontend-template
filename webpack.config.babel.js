@@ -1,12 +1,13 @@
 import path from 'path';
 import webpack from 'webpack';
 
-import { NODE_ENV, isDevelopment } from './gulp/utils/env';
+const NODE_ENV = process.env.NODE_ENV ? "production" : "development";
+const isDevelopment = NODE_ENV === "development";
 
 const outputFileName = '[name]-bundle.js';
 
 let options = {
-    mode: 'production',
+    mode: NODE_ENV,
 
     context: path.resolve(__dirname + '/source/static/scripts'),
 
@@ -53,20 +54,7 @@ if (isDevelopment) {
     );
 } else {
     options.plugins.push(
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            uglifyOptions: {
-                ie8: true,
-                ecma: 5
-            },
-            output: {
-                comments: false,
-                beautify: false,
-                bracketize: true,
-                quote_style: 1
-            },
-            compress: true
-        }),
+        
     );
 }
 
