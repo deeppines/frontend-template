@@ -22,6 +22,7 @@ The format is based on [Keep a Changelog][changelogDoc]
 - add webpack config
 - add `gulpfile.babel.js`
 - add babel and webpack packages
+- add `libs` folder for vendor source
 
 ### Removed
 
