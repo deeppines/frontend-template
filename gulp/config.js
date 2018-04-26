@@ -7,7 +7,7 @@ import imageminPngquant from 'imagemin-pngquant';
 
 export const path = {
     root: 'dist',
-    dist: 'dist',
+    dist: 'build',
     build: {
         js: 'dist/js',
         css: 'dist/css',
