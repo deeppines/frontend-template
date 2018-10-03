@@ -22,17 +22,16 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "gulp": "./node_modules/.bin/gulp",
-        "setup": "yarn install",
-        "clean": "yarn run gulp clean",
-        "clean-all": "cross-env NODE_ENV=testing yarn run gulp clean",
-        "dev": "yarn run gulp dev",
-        "zip": "cross-env NODE_ENV=production yarn run gulp zip",
-        "build": "cross-env NODE_ENV=production yarn run gulp build"
+        "start": "gulp --debug",
+        "clean": "gulp clean",
+        "clean-all": "cross-env NODE_ENV=testing gulp clean",
+        "dev": "gulp dev",
+        "zip": "cross-env NODE_ENV=production gulp zip",
+        "build": "cross-env NODE_ENV=production gulp build"
     },
     "engines": {
         "node": ">=7.0.0",
-        "npm": "~5.6.0",
-        "yarn": "^1.3.2"
+        "npm": "~5.6.0"
     },
     "main": "gulpfile.js",
     "devDependencies": {
@@ -40,7 +39,7 @@
         "babel-core": "^6.26.3",
         "babel-cli": "^6.26.0",
         "babel-eslint": "^10.0.1",
-        "babel-loader": "^8.0.4",
+        "babel-loader": "^7.0.0",
         "babel-preset-env": "^1.7.0",
         "babel-preset-es2015": "^6.24.1",
         "browser-sync": "^2.24.7",
@@ -49,7 +48,7 @@
         "del": "^3.0.0",
         "eslint": "^5.6.1",
         "eslint-plugin-import": "^2.14.0",
-        "gulp": "gulp@next",
+        "gulp": "4.0.0",
         "gulp-csscomb": "^3.0.8",
         "gulp-csso": "^3.0.1",
         "gulp-if": "^2.0.2",

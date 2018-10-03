@@ -28,6 +28,7 @@ The format is based on [Keep a Changelog][changelogDoc]
 
 - removed `gulpfile.js`
 - removed `bower.json`
+- removed yarn scripts
 
 ## [1.6.2] - 2018-04-05
 
