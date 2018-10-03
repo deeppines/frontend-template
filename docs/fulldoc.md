@@ -53,7 +53,7 @@ Notable changes to this project documented in this file - [changelog.md][changel
 + Start gulp
 
   ```bash
-  gulp
+  npm start
   ```
 
 #### Main tasks
@@ -63,35 +63,6 @@ Notable changes to this project documented in this file - [changelog.md][changel
 + `gulp dev` compile a project and launches watchers/server
 + `gulp zip` compile a project in zip
 + `gulp clean` del web folder
-
-### With yarn
-
-+ install the [Yarn](https://yarnpkg.com/en/docs/install)
-+ Clone or [download](https://github.com/deeppines/frontend-template/tree/master) the project
-
-  ```bash
-  git clone git@github.com:deeppines/frontend-template.git -b master --depth 1 my-project
-  ```
-
-+ Go to project folder and run
-
-  ```bash
-  yarn run setup
-  ```
-
-+ Start gulp
-
-  ```bash
-  yarn run gulp
-  ```
-
-#### Main tasks
-
-+ `yarn run vendor` download vendor plugins and filtered files
-+ `yarn run build` compile a project
-+ `yarn run dev` compile a project and launches watchers/server
-+ `yarn run zip` compile a project in zip
-+ `yarn run clean` del web folder
 
 ## Modules list
 

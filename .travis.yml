@@ -4,14 +4,11 @@ node_js:
   - "7"
   - "6"
 
-cache:
-  yarn: true
-
 before_script:
-  - yarn install
+  - npm i
 script:
-  - yarn run gulp html
-  - yarn run gulp css
-  - yarn run gulp scripts
-  - yarn run gulp assets
-  - yarn run build
+  - gulp html
+  - gulp css
+  - gulp scripts
+  - gulp assets
+  - gulp build
